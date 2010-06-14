@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.test_files   = Dir['spec/**/*_spec.rb', 'features/**/*']
   s.authors = ["Joe Ferris"]
   s.email   = %q{jferris@thoughtbot.com}
-  s.homepage = "http://thoughtbot.com/projects/factory_girl_rails"
+  s.homepage = "http://github.com/thoughtbot/factory_girl_rails"
   s.add_runtime_dependency('rails', '>= 3.0.0.beta4')
   s.add_runtime_dependency('factory_girl', '~> 1.3')
   s.add_development_dependency('rake')
