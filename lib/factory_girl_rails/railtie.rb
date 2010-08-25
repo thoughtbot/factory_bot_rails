@@ -1,14 +1,14 @@
 require 'factory_girl'
 require 'rails'
 
-class Factory
+module FactoryGirl
   class Railtie < Rails::Railtie
     config.after_initialize do
-      Factory.definition_file_paths = [
+      FactoryGirl.definition_file_paths = [
         File.join(Rails.root, 'test', 'factories'),
         File.join(Rails.root, 'spec', 'factories')
       ]
-      Factory.find_definitions
+      FactoryGirl.find_definitions
     end
   end
 end
