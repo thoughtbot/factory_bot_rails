@@ -5,3 +5,4 @@ tmp
 rdoc
 coverage
 .DS_Store
+.idea
