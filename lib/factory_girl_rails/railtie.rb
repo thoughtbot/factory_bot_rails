@@ -1,5 +1,5 @@
 require 'factory_girl'
-require 'rails'
+require 'rails/railtie'
 
 module FactoryGirl
   class Railtie < Rails::Railtie
