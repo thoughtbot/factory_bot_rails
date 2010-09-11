@@ -5,11 +5,11 @@ Feature: automatically load step definitions
     And I save the following as "Gemfile"
       """
       source "http://rubygems.org"
-      gem 'rails', '3.0.0.beta4'
+      gem 'rails', '3.0.0'
       gem 'sqlite3-ruby', :require => 'sqlite3'
       gem 'factory_girl_rails', :path => '../../'
       """
-    When I run "bundle lock"
+    When I run "bundle install"
     And I save the following as "db/migrate/1_create_users.rb"
       """
       class CreateUsers < ActiveRecord::Migration
