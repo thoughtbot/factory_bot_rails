@@ -4,7 +4,8 @@ Feature:
   I would like to use factory_girl_rails generators.
 
   Scenario: The factory_girl_rails generators create a factory file
-  for each model that I generate
+  for each model that I generate when I use the --fixture-replacement option
+  with test unit
     Given I run "rails new test_app"
     And I cd to "test_app"
     And a file named "Gemfile" with:
@@ -30,3 +31,7 @@ Feature:
     And I run "rake db:migrate"
     When I run "rake test"
     Then the output should contain "1 tests, 1 assertions, 0 failures, 0 errors"
+    And the following files should exist:
+      | test/factories/users.rb |
+    And the following files should not exist:
+      | test/fixtures/users.yml |
