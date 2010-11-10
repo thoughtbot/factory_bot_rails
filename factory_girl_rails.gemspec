@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = %q{factory_girl_rails}
-  s.version     = '1.0'
+  s.version     = '1.1.beta1'
   s.summary     = %q{factory_girl_rails provides integration between
     factory_girl and rails 3}
   s.description = %q{factory_girl_rails provides integration between
@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
   s.authors = ["Joe Ferris"]
   s.email   = %q{jferris@thoughtbot.com}
   s.homepage = "http://github.com/thoughtbot/factory_girl_rails"
-  s.add_runtime_dependency('rails', '>= 3.0.0.beta4')
-  s.add_runtime_dependency('factory_girl', '~> 1.3')
+  s.add_runtime_dependency('rails', '>= 3.0.0')
+  s.add_runtime_dependency('factory_girl', '~> 2.0.0.beta')
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec')
   s.add_development_dependency('cucumber')
