@@ -4,3 +4,4 @@ factory_girl-*.gem
 tmp
 rdoc
 coverage
+pkg
