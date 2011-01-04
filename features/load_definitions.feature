@@ -1,16 +1,12 @@
 Feature: automatically load step definitions
 
+  @disable-bundler
   Scenario: generate a rails 3 application and use factory definitions
-    When I generate a new rails application
-    And I save the following as "Gemfile"
-      """
-      source "http://rubygems.org"
-      gem 'rails', '3.0.0.beta4'
-      gem 'sqlite3-ruby', :require => 'sqlite3'
-      gem 'factory_girl_rails', :path => '../../'
-      """
-    When I run "bundle lock"
-    And I save the following as "db/migrate/1_create_users.rb"
+    When I successfully run "rails new testapp"
+    And I cd to "testapp"
+    And I add "factory_girl_rails" from this project as a dependency
+    When I successfully run "bundle install"
+    And I write to "db/migrate/1_create_users.rb" with:
       """
       class CreateUsers < ActiveRecord::Migration
         def self.up
@@ -20,19 +16,19 @@ Feature: automatically load step definitions
         end
       end
       """
-    When I run "rake db:migrate"
-    And I save the following as "app/models/user.rb"
+    When I successfully run "rake db:migrate --trace"
+    And I write to "app/models/user.rb" with:
       """
       class User < ActiveRecord::Base
       end
       """
-    When I save the following as "test/factories.rb"
+    When I write to "test/factories.rb" with:
       """
       Factory.define :user do |user|
         user.name 'Frank'
       end
       """
-    When I save the following as "test/unit/user_test.rb"
+    When I write to "test/unit/user_test.rb" with:
       """
       require 'test_helper'
 
@@ -43,5 +39,5 @@ Feature: automatically load step definitions
         end
       end
       """
-    When I run "rake test"
-    Then I should see "1 tests, 1 assertions, 0 failures, 0 errors"
+    When I successfully run "rake test --trace"
+    Then the output should contain "1 tests, 1 assertions, 0 failures, 0 errors"
