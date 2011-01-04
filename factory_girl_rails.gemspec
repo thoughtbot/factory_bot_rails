@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = %q{factory_girl_rails}
-  s.version     = '1.0'
+  s.version     = '1.0.1'
   s.summary     = %q{factory_girl_rails provides integration between
     factory_girl and rails 3}
   s.description = %q{factory_girl_rails provides integration between
