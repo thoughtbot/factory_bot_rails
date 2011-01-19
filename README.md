@@ -1,4 +1,5 @@
-= factory_girl
+factory_girl
+============
 
 factory_girl is a fixtures replacement with a straightforward definition
 syntax, support for multiple build strategies (saved instances, unsaved
@@ -6,34 +7,46 @@ instances, attribute hashes, and stubbed objects), and support for multiple
 factories for the same class (user, admin_user, and so on), including factory
 inheritance.
 
-== Rails
+Rails
+-----
 
 factory_girl_rails provides Rails integration for factory_girl. All
 Rails-specific features are only compatible with Rails 3.
 
 Currenty, automatic factory definition loading is the only Rails-specific feature.
 
-== Download
+Download
+--------
 
 Github: http://github.com/thoughtbot/factory_girl_rails/tree/master
 
 Gem:
-  gem install factory_girl_rails
+    gem install factory_girl_rails
 
-== Configuration
+Configuration
+-------------
 
 Add factory_girl Rails to your Gemfile:
 
-  gem 'factory_girl_rails'
+    gem 'factory_girl_rails'
 
-== More Information
+More Information
+----------------
 
 factory_girl: http://github.com/thoughtbot/factory_girl/tree/master
 
-== Author
+Credits
+-------
 
-factory_girl_rails was written by Joe Ferris.
+factory_girl was originally written by Joe Ferris
 
-Thanks to all members of thoughtbot for inspiration, ideas, and funding.
+![thoughtbot](http://thoughtbot.com/images/tm/logo.png)
 
-Copyright 2010 Joe Ferris and thoughtbot[http://www.thoughtbot.com], inc.
+factory_girl is maintained and funded by [thoughtbot, inc](http://thoughtbot.com/community)
+
+The names and logos for thoughtbot are trademarks of thoughtbot, inc.
+
+License
+-------
+
+factory_girl is Copyright © 2008-2011 Joe Ferris and thoughtbot. It is free software, and may be redistributed under the terms specified in the LICENSE file.
