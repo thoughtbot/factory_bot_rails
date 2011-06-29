@@ -1,6 +1,6 @@
 *.swp
 test.db
-factory_girl-*.gem
+factory_girl_rails-*.gem
 tmp
 rdoc
 coverage
