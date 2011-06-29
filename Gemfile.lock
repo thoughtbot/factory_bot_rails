@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    factory_girl_rails (1.1.beta2)
+    factory_girl_rails (1.1.beta3)
       factory_girl (~> 2.0.0.beta)
       railties (>= 3.0.0)
 
