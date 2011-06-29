@@ -17,6 +17,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec')
   s.add_development_dependency('cucumber')
+  s.add_development_dependency('aruba')
+  s.add_development_dependency('rails', '3.0.7')
+
   s.platform = Gem::Platform::RUBY
   s.rubygems_version = %q{1.2.0}
 end

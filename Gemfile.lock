@@ -1,3 +1,10 @@
+PATH
+  remote: .
+  specs:
+    factory_girl_rails (1.1.beta1)
+      factory_girl (~> 2.0.0.beta)
+      railties (>= 3.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -43,6 +50,7 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    factory_girl (2.0.0.beta3)
     gherkin (2.2.8)
       json (~> 1.4.6)
       term-ansicolor (~> 1.0.5)
@@ -96,6 +104,7 @@ PLATFORMS
 DEPENDENCIES
   aruba
   cucumber
+  factory_girl_rails!
   rails (= 3.0.7)
   rake
   rspec
