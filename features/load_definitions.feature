@@ -24,8 +24,10 @@ Feature: automatically load step definitions
       """
     When I write to "test/factories.rb" with:
       """
-      Factory.define :user do |user|
-        user.name 'Frank'
+      FactoryGirl.define do
+        factory :user do
+          name "Frank"
+        end
       end
       """
     When I write to "test/unit/user_test.rb" with:
@@ -34,7 +36,7 @@ Feature: automatically load step definitions
 
       class UserTest < ActiveSupport::TestCase
         test "use factory" do
-          user = Factory(:user)
+          user = FactoryGirl.create(:user)
           assert_equal 'Frank', user.name
         end
       end
