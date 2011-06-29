@@ -15,8 +15,8 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('railties', '>= 3.0.0')
   s.add_runtime_dependency('factory_girl', '~> 2.0.0.beta')
   s.add_development_dependency('rake')
-  s.add_development_dependency('rspec')
-  s.add_development_dependency('cucumber')
+  s.add_development_dependency('rspec', '~> 2.6.0')
+  s.add_development_dependency('cucumber', '~> 1.0.0')
   s.add_development_dependency('aruba')
   s.add_development_dependency('rails', '3.0.7')
 
