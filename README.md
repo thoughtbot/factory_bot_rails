@@ -35,6 +35,11 @@ More Information
 
 factory_girl: http://github.com/thoughtbot/factory_girl/tree/master
 
+Contributing
+------------
+
+Please see CONTRIBUTING.md for details.
+
 Credits
 -------
 
