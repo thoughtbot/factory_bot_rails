@@ -34,7 +34,7 @@ Add factory_girl_rails to your Gemfile:
 Cucumber Integration
 --------------------
 
-factory_girl ships with step definitions for Cucumber integration. For more information, see the factory_girl README.
+factory_girl ships with step definitions for Cucumber integration. For more information, see the GETTING_STARTED file in the factory_girl repo.
 
 
 More Information
