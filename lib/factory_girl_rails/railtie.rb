@@ -5,6 +5,7 @@ module FactoryGirl
   class Railtie < Rails::Railtie
     config.after_initialize do
       FactoryGirl.definition_file_paths = [
+        File.join(Rails.root, 'factories'),
         File.join(Rails.root, 'test', 'factories'),
         File.join(Rails.root, 'spec', 'factories')
       ]
