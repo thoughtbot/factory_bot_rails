@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :<%= singular_name %> do
-  <% for attribute in attributes -%>
+<% for attribute in attributes -%>
     <%= attribute.name %> <%= attribute.default.inspect %>
-  <% end -%>
+<% end -%>
   end
 end
