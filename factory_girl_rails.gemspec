@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.email   = %q{jferris@thoughtbot.com}
   s.homepage = "http://github.com/thoughtbot/factory_girl_rails"
   s.add_runtime_dependency('railties', '>= 3.0.0')
-  s.add_runtime_dependency('factory_girl', '~> 2.1.0')
+  s.add_runtime_dependency('factory_girl', '~> 2.2.0')
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec', '~> 2.6.0')
   s.add_development_dependency('cucumber', '~> 1.0.0')
