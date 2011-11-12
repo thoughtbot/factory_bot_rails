@@ -1,13 +1,7 @@
-require 'rubygems'
-require 'bundler/setup'
-require 'rake/gempackagetask'
+require 'bundler'
 require 'cucumber/rake/task'
 
-eval("$specification = #{IO.read('factory_girl_rails.gemspec')}")
-Rake::GemPackageTask.new($specification) do |package|
-  package.need_zip = true
-  package.need_tar = true
-end
+Bundler::GemHelper.install_tasks
 
 Cucumber::Rake::Task.new(:cucumber) do |t|
   t.fork = true
