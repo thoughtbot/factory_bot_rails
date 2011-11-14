@@ -14,12 +14,15 @@ module FactoryGirl
       end
     end
 
-    config.after_initialize do
+    initializer "factory_girl.set_factory_paths" do
       FactoryGirl.definition_file_paths = [
           File.join(Rails.root, 'factories'),
           File.join(Rails.root, 'test', 'factories'),
           File.join(Rails.root, 'spec', 'factories')
       ]
+    end
+
+    config.after_initialize do
       FactoryGirl.find_definitions
     end
   end
