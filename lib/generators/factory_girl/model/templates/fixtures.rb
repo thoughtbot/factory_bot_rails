@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :<%= singular_name %> do
+  factory :<%= file_path %><%= ", :class => #{class_path}" if namespaced? %> do
 <% for attribute in attributes -%>
     <%= attribute.name %> <%= attribute.default.inspect %>
 <% end -%>
