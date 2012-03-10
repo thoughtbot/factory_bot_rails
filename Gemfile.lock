@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     factory_girl_rails (1.7.0)
-      factory_girl (~> 2.6.0)
+      factory_girl (~> 3.0.0.rc)
       railties (>= 3.0.0)
 
 GEM
@@ -56,8 +56,8 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    factory_girl (2.6.0)
-      activesupport (>= 2.3.9)
+    factory_girl (3.0.0.rc1)
+      activesupport (>= 3.0.0)
     ffi (1.0.9)
     gherkin (2.4.1)
       json (>= 1.4.6)
