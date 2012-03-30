@@ -7,7 +7,7 @@ module FactoryGirl
       class_option :dir, :type => :string, :default => "test/factories", :desc => "The directory where the factories should go"
       
       def create_fixture_file
-        template 'fixtures.rb', File.join(options[:dir], "#{table_name}.rb")
+        template 'fixtures.erb', File.join(options[:dir], "#{table_name}.rb")
       end
     end
   end
