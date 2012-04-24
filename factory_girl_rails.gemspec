@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_runtime_dependency('railties', '>= 3.0.0')
-  s.add_runtime_dependency('factory_girl', '~> 3.1.0')
+  s.add_runtime_dependency('factory_girl', '~> 3.2.0')
 
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec', '~> 2.6.0')
