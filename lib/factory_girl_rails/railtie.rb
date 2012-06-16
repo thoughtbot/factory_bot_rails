@@ -8,7 +8,9 @@ module FactoryGirl
       generators = config.respond_to?(:app_generators) ? config.app_generators : config.generators
 
       if generators.options[:rails][:test_framework] == :rspec
-        generators.fixture_replacement :factory_girl, :dir => 'spec/factories'
+        unless generators.options[:rails][:factories] == false
+          generators.fixture_replacement :factory_girl, :dir => 'spec/factories'
+        end
       else
         generators.test_framework :test_unit, :fixture => false, :fixture_replacement => :factory_girl
       end
