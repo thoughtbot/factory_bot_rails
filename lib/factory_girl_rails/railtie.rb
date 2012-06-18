@@ -6,10 +6,11 @@ module FactoryGirl
 
     initializer "factory_girl.set_fixture_replacement" do
       generators = config.respond_to?(:app_generators) ? config.app_generators : config.generators
+      options    = generators.options[:rails]
 
-      if generators.options[:rails][:test_framework] == :rspec
-        generators.fixture_replacement :factory_girl, :dir => 'spec/factories'
-      else
+      if options[:test_framework] == :rspec && !options[:fixture_replacement]
+        generators.fixture_replacement :factory_girl
+      elsif options[:test_framework] != :rspec
         generators.test_framework :test_unit, :fixture => false, :fixture_replacement => :factory_girl
       end
     end
