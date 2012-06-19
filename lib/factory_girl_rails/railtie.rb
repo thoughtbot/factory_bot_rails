@@ -8,7 +8,7 @@ module FactoryGirl
       generators = config.respond_to?(:app_generators) ? config.app_generators : config.generators
       options    = generators.options[:rails]
 
-      if options[:test_framework] == :rspec && !options[:fixture_replacement]
+      if options[:test_framework] == :rspec && !options.has_key?(:fixture_replacement)
         generators.fixture_replacement :factory_girl
       elsif options[:test_framework] != :rspec
         generators.test_framework :test_unit, :fixture => false, :fixture_replacement => :factory_girl
