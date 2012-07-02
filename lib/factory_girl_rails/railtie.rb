@@ -10,8 +10,6 @@ module FactoryGirl
 
       if options[:test_framework] == :rspec && !options.has_key?(:fixture_replacement)
         generators.fixture_replacement :factory_girl
-      elsif options[:test_framework] != :rspec
-        generators.test_framework :test_unit, :fixture => false, :fixture_replacement => :factory_girl
       end
     end
 
