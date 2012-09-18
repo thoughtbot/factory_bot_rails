@@ -29,3 +29,13 @@ Feature:
       | spec/factories/users.rb |
     And the following files should not exist:
       | spec/fixtures/users.yml |
+
+  Scenario: Using Factory Girl and Factory Girl Rails with RSpec should generate a factory file in a preferred location
+    And I add "rspec-rails" as a dependency
+    And I set the FactoryGirl :dir option to "spec/support/factories"
+    And I successfully run `bundle install`
+    And I successfully run `bundle exec rails generate model User name:string`
+    Then the following files should exist:
+      | spec/support/factories/users.rb |
+    And the following files should not exist:
+      | spec/fixtures/users.yml |
