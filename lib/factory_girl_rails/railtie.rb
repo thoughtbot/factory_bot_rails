@@ -10,7 +10,8 @@ module FactoryGirl
       if generators.options[:rails][:test_framework] == :rspec
         generators.fixture_replacement :factory_girl, :dir => 'spec/factories'
       else
-        generators.test_framework :test_unit, :fixture => false, :fixture_replacement => :factory_girl
+        test_framework = generators.options[:rails][:test_framework] || :test_unit
+        generators.test_framework test_framework, :fixture => false, :fixture_replacement => :factory_girl
       end
     end
 
