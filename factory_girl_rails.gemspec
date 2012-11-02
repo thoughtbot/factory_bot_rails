@@ -11,16 +11,16 @@ Gem::Specification.new do |s|
     loading)}
 
   s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.test_files    = `git ls-files -- Appraisals {spec,features,gemfiles}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
   s.add_runtime_dependency('railties', '>= 3.0.0')
   s.add_runtime_dependency('factory_girl', '~> 4.1.0')
 
+  s.add_development_dependency('appraisal', '~> 0.4')
   s.add_development_dependency('rake')
-  s.add_development_dependency('rspec', '~> 2.6.0')
+  s.add_development_dependency('rspec', '~> 2.11.0')
   s.add_development_dependency('cucumber', '~> 1.0.0')
   s.add_development_dependency('aruba')
-  s.add_development_dependency('rails', '3.0.7')
 end
