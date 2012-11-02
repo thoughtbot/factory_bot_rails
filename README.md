@@ -30,6 +30,12 @@ Configuration
 Add factory_girl_rails to your Gemfile:
 
     gem 'factory_girl_rails'
+    
+If you are not using rspec then configure your test generator in config/application.rb. For example, to enable MiniTest with Factory, you would add
+
+    config.generators do |g|
+      g.test_framework :mini_test, :spec => true, :fixture=>false, :fixture_replacement=>:factory_girl
+    end
 
 Cucumber Integration
 --------------------
