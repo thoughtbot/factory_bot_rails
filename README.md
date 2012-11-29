@@ -31,6 +31,16 @@ Add factory_girl_rails to your Gemfile:
 
     gem 'factory_girl_rails'
 
+Optionally, to have rails generators automatically generate factories instead
+of fixtures, add the following to your application.rb file:
+
+    config.generators do |g|
+      g.fixture_replacement :factory_girl
+    end
+
+`fixture_replacement :factory_girl` takes an option `:suffix => 'some_suffix'`
+to generate factories as "modelname_some_suffix.rb"
+
 Cucumber Integration
 --------------------
 
