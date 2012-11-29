@@ -1,5 +1,5 @@
 PATH
-  remote: /Users/joshuaclayton/dev/gems/factory_girl_rails
+  remote: /Users/erichu/Dropbox/ruby_apps/gem_development/factory_girl_rails
   specs:
     factory_girl_rails (4.1.0)
       factory_girl (~> 4.1.0)
