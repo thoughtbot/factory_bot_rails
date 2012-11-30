@@ -6,6 +6,7 @@ before_install:
   - gem update --system
 jdk:
   - openjdk6
+script: "bundle exec rake cucumber"
 gemfile:
   - gemfiles/rails30.gemfile
   - gemfiles/rails31.gemfile
