@@ -1,4 +1,4 @@
-factory_girl
+factory_girl [![Build Status](https://secure.travis-ci.org/thoughtbot/factory_girl_rails.png)](http://travis-ci.org/thoughtbot/factory_girl_rails?branch=master)
 ============
 
 factory_girl is a fixtures replacement with a straightforward definition
