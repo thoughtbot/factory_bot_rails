@@ -1,0 +1,15 @@
+rvm:
+  - 1.9.2
+  - 1.9.3
+  - jruby-19mode
+before_install:
+  - gem update --system
+jdk:
+  - openjdk6
+gemfile:
+  - gemfiles/rails30.gemfile
+  - gemfiles/rails31.gemfile
+  - gemfiles/rails32.gemfile
+branches:
+  only:
+    - master
