@@ -18,3 +18,13 @@ When /^I set the FactoryGirl :suffix option to "([^"]+)"$/ do |suffix|
   RUBY
 
 end
+
+When /^I configure the factories directory as "([^"]+)"$/ do |factory_dir|
+  append_to_file File.join('config', 'application.rb'), <<-END
+class Testapp::Application
+  config.generators do |g|
+    g.fixture_replacement :factory_girl, :dir => "#{factory_dir}"
+  end
+end
+  END
+end

@@ -29,3 +29,24 @@ Feature:
       | spec/factories/users.rb |
     And the following files should not exist:
       | spec/fixtures/users.yml |
+
+  Scenario: Using Factory Girl and Factory Girl Rails does not override a manually-configured factories directory using RSpec
+    When I add "rspec-rails" as a dependency
+    And I configure the factories directory as "custom/dir"
+    And I successfully run `bundle install`
+    And I successfully run `bundle exec rails generate model User name:string`
+    Then the following files should not exist:
+      | test/factories/users.rb |
+      | spec/factories/users.rb |
+    But the following files should exist:
+      | custom/dir/users.rb |
+
+    Scenario: Using Factory Girl and Factory Girl Rails does not override a manually-configured factories directory using Test::Unit
+      When I configure the factories directory as "custom/dir"
+      And I successfully run `bundle install`
+      And I successfully run `bundle exec rails generate model User name:string`
+      Then the following files should not exist:
+        | test/factories/users.rb |
+        | spec/factories/users.rb |
+      But the following files should exist:
+        | custom/dir/users.rb |
