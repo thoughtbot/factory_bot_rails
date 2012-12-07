@@ -8,6 +8,7 @@ before_install:
   - bundle exec rake appraisal:install
 jdk:
   - openjdk6
+script: "bundle exec rake cucumber"
 gemfile:
   - gemfiles/rails30.gemfile
   - gemfiles/rails31.gemfile
