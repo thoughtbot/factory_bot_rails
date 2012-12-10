@@ -28,3 +28,16 @@ class Testapp::Application
 end
   END
 end
+
+When /^I configure the testing framework to use MiniTest$/ do
+  append_to_file('Gemfile', %{gem "minitest-rails", :group => [:development, :test]\n})
+  step %{I successfully run `rails generate mini_test:install`}
+
+  append_to_file File.join('config', 'application.rb'), <<-END
+class Testapp::Application
+  config.generators do |g|
+    g.test_framework :mini_test, :fixture => false, :fixture_replacement => :factory_girl
+  end
+end
+  END
+end

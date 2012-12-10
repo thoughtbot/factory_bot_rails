@@ -41,12 +41,34 @@ Feature:
     But the following files should exist:
       | custom/dir/users.rb |
 
-    Scenario: Using Factory Girl and Factory Girl Rails does not override a manually-configured factories directory using Test::Unit
-      When I configure the factories directory as "custom/dir"
-      And I successfully run `bundle install`
-      And I successfully run `bundle exec rails generate model User name:string`
-      Then the following files should not exist:
-        | test/factories/users.rb |
-        | spec/factories/users.rb |
-      But the following files should exist:
-        | custom/dir/users.rb |
+  Scenario: Using Factory Girl and Factory Girl Rails does not override a manually-configured factories directory using Test::Unit
+    When I configure the factories directory as "custom/dir"
+    And I successfully run `bundle install`
+    And I successfully run `bundle exec rails generate model User name:string`
+    Then the following files should not exist:
+      | test/factories/users.rb |
+      | spec/factories/users.rb |
+    But the following files should exist:
+      | custom/dir/users.rb |
+
+  Scenario: Using Factory Girl and Factory Girl Rails with MiniTest should generate a factory file
+    When I add "minitest" as a dependency
+    And I configure the testing framework to use MiniTest
+    And I successfully run `bundle install`
+    And I successfully run `bundle exec rails generate model User name:string`
+    Then the following files should exist:
+      | test/factories/users.rb |
+    But the following files should not exist:
+      | spec/fixtures/users.yml |
+
+  Scenario: Using Factory Girl and Factory Girl Rails with MiniTest and a custom directory should generate a factory file
+    When I configure the factories directory as "custom/dir"
+    And I add "minitest" as a dependency
+    And I configure the testing framework to use MiniTest
+    And I successfully run `bundle install`
+    And I successfully run `bundle exec rails generate model User name:string`
+    Then the following files should exist:
+      | custom/dir/users.rb |
+    But the following files should not exist:
+      | spec/fixtures/users.yml |
+    And the file "test/models/user_test.rb" should contain "MiniTest::Rails::ActiveSupport::TestCase"

@@ -13,7 +13,7 @@ module FactoryGirl
           generators.fixture_replacement :factory_girl, :dir => 'spec/factories'
         end
       else
-        generators.test_framework :test_unit, :fixture => false, :fixture_replacement => :factory_girl
+        generators.test_framework rails_options[:test_framework], :fixture => false, :fixture_replacement => :factory_girl
       end
     end
 
