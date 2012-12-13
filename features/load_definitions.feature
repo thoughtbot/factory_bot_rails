@@ -3,6 +3,7 @@ Feature: automatically load step definitions
     When I successfully run `bundle exec rails new testapp`
     And I cd to "testapp"
     And I add "factory_girl_rails" from this project as a dependency
+	And I configure the database connection for the application
     When I successfully run `bundle install`
     And I write to "db/migrate/1_create_users.rb" with:
       """

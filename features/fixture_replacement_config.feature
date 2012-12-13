@@ -10,6 +10,7 @@ Feature:
     Given I successfully run `bundle exec rails new testapp`
     And I cd to "testapp"
     And I add "factory_girl_rails" from this project as a dependency
+	And I configure the database connection for the application
 
   Scenario: Using Factory Girl and Factory Girl Rails with Test Unit generates
   a factory file and does not generate a fixture file

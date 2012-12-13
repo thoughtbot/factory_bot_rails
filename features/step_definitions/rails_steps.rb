@@ -41,3 +41,15 @@ class Testapp::Application
 end
   END
 end
+
+When /^I configure the database connection for the application$/ do
+  if RUBY_PLATFORM =~ /java/
+  overwrite_file "config/database.yml", <<-END
+development: &development
+    adapter: jdbcsqlite3
+    database: db/test.sqlite3
+test:
+    <<: *development
+END
+  end
+end

@@ -8,6 +8,7 @@ Feature:
     When I successfully run `bundle exec rails new testapp`
     And I cd to "testapp"
     And I add "factory_girl_rails" from this project as a dependency
+	And I configure the database connection for the application
     When I successfully run `bundle install`
     And I successfully run `bundle exec rails generate model User name:string --fixture-replacement=factory_girl`
     And I successfully run `bundle exec rails generate model Namespaced::User name:string --fixture-replacement=factory_girl`
@@ -21,6 +22,7 @@ Feature:
     When I successfully run `bundle exec rails new testapp`
     And I cd to "testapp"
     And I add "factory_girl_rails" from this project as a dependency
+	And I configure the database connection for the application
     When I successfully run `bundle install`
     And I set the FactoryGirl :suffix option to "factory"
     And I successfully run `bundle exec rails generate model User name:string --fixture-replacement=factory_girl`

@@ -29,6 +29,10 @@ GEM
       activesupport (= 3.2.9)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
+    activerecord-jdbc-adapter (1.2.2.1)
+    activerecord-jdbcsqlite3-adapter (1.2.2.1)
+      activerecord-jdbc-adapter (~> 1.2.2.1)
+      jdbc-sqlite3 (~> 3.7.2)
     activeresource (3.2.9)
       activemodel (= 3.2.9)
       activesupport (= 3.2.9)
@@ -56,12 +60,17 @@ GEM
     factory_girl (4.1.0)
       activesupport (>= 3.0.0)
     ffi (1.2.0)
+    ffi (1.2.0-java)
     gherkin (2.11.5)
+      json (>= 1.4.6)
+    gherkin (2.11.5-java)
       json (>= 1.4.6)
     hike (1.2.1)
     i18n (0.6.1)
+    jdbc-sqlite3 (3.7.2)
     journey (1.0.4)
     json (1.7.5)
+    json (1.7.5-java)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -116,9 +125,11 @@ GEM
     tzinfo (0.3.35)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
+  activerecord-jdbcsqlite3-adapter
   appraisal (~> 0.5.0)
   aruba (~> 0.5.1)
   cucumber (~> 1.2.1)
