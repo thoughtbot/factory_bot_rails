@@ -9,9 +9,9 @@ before_install:
 jdk:
   - openjdk6
 gemfile:
-  - gemfiles/rails30.gemfile
-  - gemfiles/rails31.gemfile
-  - gemfiles/rails32.gemfile
+  - gemfiles/rails3.0.gemfile
+  - gemfiles/rails3.1.gemfile
+  - gemfiles/rails3.2.gemfile
 branches:
   only:
     - master
