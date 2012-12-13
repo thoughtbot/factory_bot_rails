@@ -4,8 +4,7 @@ rvm:
   - jruby-19mode
 before_install:
   - gem update --system
-  - bundle install
-  - bundle exec rake appraisal:install
+  - gem install minitest-rails
 jdk:
   - openjdk6
 gemfile:
