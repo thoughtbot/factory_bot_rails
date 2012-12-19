@@ -44,12 +44,7 @@ end
 
 When /^I configure the database connection for the application$/ do
   if RUBY_PLATFORM =~ /java/
-  overwrite_file "config/database.yml", <<-END
-development: &development
-    adapter: jdbcsqlite3
-    database: db/test.sqlite3
-test:
-    <<: *development
-END
+    contents = File.read File.join(File.dirname(__FILE__), '..', '..', 'tmp', 'aruba', 'testapp', 'config', 'database.yml')
+    overwrite_file 'config/database.yml', contents.gsub('adapter: sqlite3', 'adapter: jdbcsqlite3')
   end
 end
