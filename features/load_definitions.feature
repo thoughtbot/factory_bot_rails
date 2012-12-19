@@ -1,9 +1,11 @@
 Feature: automatically load step definitions
+
   Background:
     When I successfully run `bundle exec rails new testapp`
     And I cd to "testapp"
     And I add "factory_girl_rails" from this project as a dependency
-	And I configure the database connection for the application
+    And I configure the database connection for the application
+    And I reset Bundler environment variable
     When I successfully run `bundle install`
     And I write to "db/migrate/1_create_users.rb" with:
       """
@@ -22,7 +24,6 @@ Feature: automatically load step definitions
       end
       """
 
-  @disable-bundler
   Scenario: generate a rails 3 application and use factory definitions
     When I write to "test/factories.rb" with:
       """
@@ -46,7 +47,6 @@ Feature: automatically load step definitions
     When I successfully run `bundle exec rake test --trace`
     Then the output should contain "1 tests, 1 assertions, 0 failures, 0 errors"
 
-  @disable-bundler
   Scenario: use factories advertised by railties/engines/3rd-party gems
     When I append to "config/application.rb" with:
       """
