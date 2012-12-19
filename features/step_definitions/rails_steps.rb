@@ -48,3 +48,12 @@ When /^I configure the database connection for the application$/ do
     overwrite_file 'config/database.yml', contents.gsub('adapter: sqlite3', 'adapter: jdbcsqlite3')
   end
 end
+
+When /^I comment out gem "([^"]*)" from my Gemfile$/ do |gem_name|
+  in_current_dir do
+    content = File.read('Gemfile')
+    File.open('Gemfile', 'w') do |f|
+      f.write content.sub(/gem ['"]#{gem_name}/, '#\1')
+    end
+  end
+end

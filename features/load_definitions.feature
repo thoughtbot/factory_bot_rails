@@ -6,6 +6,7 @@ Feature: automatically load step definitions
     And I add "factory_girl_rails" from this project as a dependency
     And I configure the database connection for the application
     And I reset Bundler environment variable
+    And I comment out gem "turn" from my Gemfile
     When I successfully run `bundle install`
     And I write to "db/migrate/1_create_users.rb" with:
       """
