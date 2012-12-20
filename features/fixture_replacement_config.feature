@@ -20,6 +20,7 @@ Feature:
   Scenario: Using Factory Girl and Factory Girl Rails with RSpec should generate a factory file
     When I add "rspec-rails" as a dependency
     And I successfully run `bundle install`
+    Then the output should contain "rspec-rails"
     And I successfully run `bundle exec rails generate model User name:string`
     Then the following files should exist:
       | spec/factories/users.rb |
@@ -30,6 +31,7 @@ Feature:
     When I add "rspec-rails" as a dependency
     And I configure the factories directory as "custom/dir"
     And I successfully run `bundle install`
+    Then the output should contain "rspec-rails"
     And I successfully run `bundle exec rails generate model User name:string`
     Then the following files should not exist:
       | test/factories/users.rb |
@@ -51,6 +53,7 @@ Feature:
     When I add "minitest" as a dependency
     And I configure the testing framework to use MiniTest
     And I successfully run `bundle install`
+    Then the output should contain "minitest"
     And I successfully run `bundle exec rails generate model User name:string`
     Then the following files should exist:
       | test/factories/users.rb |
@@ -62,6 +65,7 @@ Feature:
     And I add "minitest" as a dependency
     And I configure the testing framework to use MiniTest
     And I successfully run `bundle install`
+    Then the output should contain "minitest"
     And I successfully run `bundle exec rails generate model User name:string`
     Then the following files should exist:
       | custom/dir/users.rb |
