@@ -5,9 +5,8 @@ Feature: automatically load step definitions
     And I cd to "testapp"
     And I add "factory_girl_rails" from this project as a dependency
     And I configure the database connection for the application
-    And I reset Bundler environment variable
     And I comment out gem "turn" from my Gemfile
-    When I successfully run `bundle install`
+    And I run `bundle install` with a clean environment
     And I write to "db/migrate/1_create_users.rb" with:
       """
       class CreateUsers < ActiveRecord::Migration
@@ -18,7 +17,7 @@ Feature: automatically load step definitions
         end
       end
       """
-    When I successfully run `bundle exec rake db:migrate --trace`
+    When I run `bundle exec rake db:migrate --trace` with a clean environment
     And I write to "app/models/user.rb" with:
       """
       class User < ActiveRecord::Base
@@ -45,7 +44,7 @@ Feature: automatically load step definitions
         end
       end
       """
-    When I successfully run `bundle exec rake test --trace`
+    When I run `bundle exec rake test --trace` with a clean environment
     Then the output should contain "1 tests, 1 assertions, 0 failures, 0 errors"
 
   Scenario: use factories advertised by railties/engines/3rd-party gems
@@ -83,5 +82,5 @@ Feature: automatically load step definitions
         end
       end
       """
-    When I successfully run `bundle exec rake test --trace`
+    When I run `bundle exec rake test --trace` with a clean environment
     Then the output should contain "1 tests, 1 assertions, 0 failures, 0 errors"

@@ -7,11 +7,10 @@ Feature:
     And I cd to "testapp"
     And I add "factory_girl_rails" from this project as a dependency
     And I configure the database connection for the application
-    And I reset Bundler environment variable
 
   Scenario: Using Factory Girl and Factory Girl Rails with Test Unit generates a factory file and does not generate a fixture file
-    And I successfully run `bundle install`
-    And I successfully run `bundle exec rails generate model User name:string`
+    And I run `bundle install` with a clean environment
+    And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should exist:
       | test/factories/users.rb |
     And the following files should not exist:
@@ -19,9 +18,9 @@ Feature:
 
   Scenario: Using Factory Girl and Factory Girl Rails with RSpec should generate a factory file
     When I add "rspec-rails" as a dependency
-    And I successfully run `bundle install`
+    And I run `bundle install` with a clean environment
     Then the output should contain "rspec-rails"
-    And I successfully run `bundle exec rails generate model User name:string`
+    And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should exist:
       | spec/factories/users.rb |
     And the following files should not exist:
@@ -30,9 +29,9 @@ Feature:
   Scenario: Using Factory Girl and Factory Girl Rails does not override a manually-configured factories directory using RSpec
     When I add "rspec-rails" as a dependency
     And I configure the factories directory as "custom/dir"
-    And I successfully run `bundle install`
+    And I run `bundle install` with a clean environment
     Then the output should contain "rspec-rails"
-    And I successfully run `bundle exec rails generate model User name:string`
+    And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should not exist:
       | test/factories/users.rb |
       | spec/factories/users.rb |
@@ -41,8 +40,8 @@ Feature:
 
   Scenario: Using Factory Girl and Factory Girl Rails does not override a manually-configured factories directory using Test::Unit
     When I configure the factories directory as "custom/dir"
-    And I successfully run `bundle install`
-    And I successfully run `bundle exec rails generate model User name:string`
+    And I run `bundle install` with a clean environment
+    And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should not exist:
       | test/factories/users.rb |
       | spec/factories/users.rb |
@@ -52,9 +51,9 @@ Feature:
   Scenario: Using Factory Girl and Factory Girl Rails with MiniTest should generate a factory file
     When I add "minitest" as a dependency
     And I configure the testing framework to use MiniTest
-    And I successfully run `bundle install`
+    And I run `bundle install` with a clean environment
     Then the output should contain "minitest"
-    And I successfully run `bundle exec rails generate model User name:string`
+    And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should exist:
       | test/factories/users.rb |
     But the following files should not exist:
@@ -64,9 +63,9 @@ Feature:
     When I configure the factories directory as "custom/dir"
     And I add "minitest" as a dependency
     And I configure the testing framework to use MiniTest
-    And I successfully run `bundle install`
+    And I run `bundle install` with a clean environment
     Then the output should contain "minitest"
-    And I successfully run `bundle exec rails generate model User name:string`
+    And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should exist:
       | custom/dir/users.rb |
     But the following files should not exist:
