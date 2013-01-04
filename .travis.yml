@@ -4,7 +4,7 @@ rvm:
   - jruby-19mode
 before_install:
   - gem update --system
-  - gem install minitest-rails therubyrhino jquery-rails turn rspec-rails
+  - gem install minitest-rails therubyrhino jquery-rails rspec-rails
 jdk:
   - openjdk6
 gemfile:
