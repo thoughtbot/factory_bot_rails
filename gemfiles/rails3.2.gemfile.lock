@@ -151,7 +151,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-jdbcsqlite3-adapter
+  activerecord-jdbcsqlite3-adapter (~> 1.2.5)
   appraisal (~> 0.5.0)
   aruba (~> 0.5.1)
   coffee-rails

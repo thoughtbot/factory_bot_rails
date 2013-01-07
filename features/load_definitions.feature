@@ -4,7 +4,6 @@ Feature: automatically load step definitions
     When I successfully run `bundle exec rails new testapp`
     And I cd to "testapp"
     And I add "factory_girl_rails" from this project as a dependency
-    And I configure the database connection for the application
     And I comment out gem "turn" from my Gemfile
     And I run `bundle install` with a clean environment
     And I write to "db/migrate/1_create_users.rb" with:

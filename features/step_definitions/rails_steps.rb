@@ -42,13 +42,6 @@ end
   END
 end
 
-When /^I configure the database connection for the application$/ do
-  if RUBY_PLATFORM =~ /java/
-    contents = File.read File.join(File.dirname(__FILE__), '..', '..', 'tmp', 'aruba', 'testapp', 'config', 'database.yml')
-    overwrite_file 'config/database.yml', contents.gsub('adapter: sqlite3', 'adapter: jdbcsqlite3')
-  end
-end
-
 When /^I comment out gem "([^"]*)" from my Gemfile$/ do |gem_name|
   in_current_dir do
     content = File.read('Gemfile')

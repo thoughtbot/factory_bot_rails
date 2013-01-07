@@ -7,7 +7,6 @@ Feature:
     Given I successfully run `bundle exec rails new testapp`
     And I cd to "testapp"
     And I add "factory_girl_rails" from this project as a dependency
-		And I configure the database connection for the application
 
   Scenario: The factory_girl_rails generators create a factory file for each model that I generate
     When I run `bundle install` with a clean environment
