@@ -13,7 +13,6 @@ appraise "rails3.1" do
   gem "sass-rails"
   gem "coffee-rails"
   gem "uglifier"
-  gem "turn"
   gem "sqlite3", ">= 1.3.4", platforms: :mri
   gem "activerecord-jdbcsqlite3-adapter", "~> 1.2.5", platforms: :jruby
   gem "minitest-rails"
