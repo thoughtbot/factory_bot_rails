@@ -1,7 +1,7 @@
 PATH
   remote: /Users/joshuaclayton/dev/gems/factory_girl_rails
   specs:
-    factory_girl_rails (4.1.0)
+    factory_girl_rails (4.2.0)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
 
