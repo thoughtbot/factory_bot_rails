@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- Appraisals {spec,features,gemfiles}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+  s.license       = "MIT"
 
   s.add_runtime_dependency('railties', '>= 3.0.0')
   s.add_runtime_dependency('factory_girl', '~> 4.2.0')
