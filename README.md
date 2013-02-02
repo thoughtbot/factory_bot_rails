@@ -1,4 +1,4 @@
-factory_girl
+factory_girl [![Build Status](https://secure.travis-ci.org/thoughtbot/factory_girl_rails.png)](http://travis-ci.org/thoughtbot/factory_girl_rails?branch=master)
 ============
 
 factory_girl is a fixtures replacement with a straightforward definition
@@ -72,4 +72,4 @@ The names and logos for thoughtbot are trademarks of thoughtbot, inc.
 License
 -------
 
-factory_girl is Copyright © 2008-2012 Joe Ferris and thoughtbot. It is free software, and may be redistributed under the terms specified in the LICENSE file.
+factory_girl is Copyright © 2008-2013 Joe Ferris and thoughtbot. It is free software, and may be redistributed under the terms specified in the LICENSE file.
