@@ -9,9 +9,8 @@ module FactoryGirl
       rails_options = generators.options[:rails]
 
       if rails_options[:test_framework] == :rspec
-        if !rails_options.has_key?(:fixture_replacement)
-          generators.fixture_replacement :factory_girl, :dir => 'spec/factories'
-        end
+        dir = custom_dir_or_default(generators)
+        generators.fixture_replacement :factory_girl, :dir => dir
       else
         generators.test_framework rails_options[:test_framework], :fixture => false, :fixture_replacement => :factory_girl
       end
@@ -27,6 +26,12 @@ module FactoryGirl
 
     config.after_initialize do
       FactoryGirl.find_definitions
+    end
+
+    private
+
+    def custom_dir_or_default(generators)
+      generators.options[:factory_girl].try(:[], :dir) || 'spec/factories'
     end
   end
 end

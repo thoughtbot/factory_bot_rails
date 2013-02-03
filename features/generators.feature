@@ -16,13 +16,3 @@ Feature:
     And the output should contain "test/factories/namespaced_users.rb"
     And the file "test/factories/users.rb" should contain "factory :user do"
     And the file "test/factories/namespaced_users.rb" should contain "factory :namespaced_user, :class => 'Namespaced::User' do"
-
-  Scenario: The factory_girl_rails generators create a factory file with a custom name for each model that I generate
-    When I run `bundle install` with a clean environment
-    And I set the FactoryGirl :suffix option to "factory"
-    And I run `bundle exec rails generate model User name:string --fixture-replacement=factory_girl` with a clean environment
-    And I run `bundle exec rails generate model Namespaced::User name:string --fixture-replacement=factory_girl` with a clean environment
-    Then the output should contain "test/factories/users_factory.rb"
-    And the output should contain "test/factories/namespaced_users_factory.rb"
-    And the file "test/factories/users_factory.rb" should contain "factory :user do"
-    And the file "test/factories/namespaced_users_factory.rb" should contain "factory :namespaced_user, :class => 'Namespaced::User' do"
