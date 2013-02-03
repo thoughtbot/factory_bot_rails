@@ -9,6 +9,16 @@
     And I add "factory_girl_rails" from this project as a dependency
     And I set the FactoryGirl :suffix option to "factory"
 
+  Scenario: The factory_girl_rails generators create a factory file with a custom name for each model that I generate
+    When I run `bundle install` with a clean environment
+    And I set the FactoryGirl :suffix option to "factory"
+    And I run `bundle exec rails generate model User name:string --fixture-replacement=factory_girl` with a clean environment
+    And I run `bundle exec rails generate model Namespaced::User name:string --fixture-replacement=factory_girl` with a clean environment
+    Then the output should contain "test/factories/users_factory.rb"
+    And the output should contain "test/factories/namespaced_users_factory.rb"
+    And the file "test/factories/users_factory.rb" should contain "factory :user do"
+    And the file "test/factories/namespaced_users_factory.rb" should contain "factory :namespaced_user, :class => 'Namespaced::User' do"
+
   Scenario: Using Factory Girl Rails with a custom suffix option and Rspec should generate a factory file
     When I add "rspec-rails" as a dependency
     And I run `bundle install` with a clean environment
