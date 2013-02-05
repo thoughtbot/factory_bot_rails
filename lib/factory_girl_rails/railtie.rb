@@ -8,9 +8,15 @@ module FactoryGirl
       generators = config.respond_to?(:app_generators) ? config.app_generators : config.generators
       rails_options = generators.options[:rails]
 
+      puts generators.options
+      puts rails_options
       if rails_options[:test_framework] == :rspec
-        if !rails_options.has_key?(:fixture_replacement)
-          generators.fixture_replacement :factory_girl, :dir => 'spec/factories'
+        factory_girl_dir = generators.options.fetch(:factory_girl, { :dir => 'spec/factories' })[:dir]
+
+        if rails_options.has_key?(:fixture_replacement)
+          generators.fixture_replacement rails_options[:fixture_replacement], :dir => factory_girl_dir
+        else
+          generators.fixture_replacement :factory_girl, :dir => factory_girl_dir
         end
       else
         generators.test_framework rails_options[:test_framework], :fixture => false, :fixture_replacement => :factory_girl
@@ -19,9 +25,9 @@ module FactoryGirl
 
     initializer "factory_girl.set_factory_paths" do
       FactoryGirl.definition_file_paths = [
-        File.join(Rails.root, 'factories'),
-        File.join(Rails.root, 'test', 'factories'),
-        File.join(Rails.root, 'spec', 'factories')
+        Rails.root.join('factories'),
+        Rails.root.join('test', 'factories'),
+        Rails.root.join('spec', 'factories')
       ]
     end
 
