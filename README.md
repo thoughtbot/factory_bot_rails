@@ -1,16 +1,16 @@
 factory_girl [![Build Status](https://secure.travis-ci.org/thoughtbot/factory_girl_rails.png)](http://travis-ci.org/thoughtbot/factory_girl_rails?branch=master)
 ============
 
-factory_girl is a fixtures replacement with a straightforward definition
+`factory_girl` is a fixtures replacement with a straightforward definition
 syntax, support for multiple build strategies (saved instances, unsaved
 instances, attribute hashes, and stubbed objects), and support for multiple
-factories for the same class (user, admin_user, and so on), including factory
+factories for the same class (`user`, `admin_user`, and so on), including factory
 inheritance.
 
 Rails
 -----
 
-factory_girl_rails provides Rails integration for factory_girl. All
+`factory_girl_rails` provides Rails integration for `factory_girl`. All
 Rails-specific features are only compatible with Rails 3.
 
 Currently, automatic factory definition loading is the only Rails-specific feature.
@@ -27,7 +27,7 @@ Gem:
 Configuration
 -------------
 
-Add factory_girl_rails to your Gemfile:
+Add `factory_girl_rails` to your Gemfile:
 
     gem 'factory_girl_rails'
 
@@ -38,14 +38,12 @@ of fixtures, add the following to your application.rb file:
       g.fixture_replacement :factory_girl
     end
 
+If you use `factory_girl` for fixture replacement, ensure that
+`factory_girl_rails` is available in the development group. If it's not, Rails
+will generate standard yml files instead of factory files.
+
 `fixture_replacement :factory_girl` takes an option `:suffix => 'some_suffix'`
 to generate factories as "modelname_some_suffix.rb"
-
-Cucumber Integration
---------------------
-
-factory_girl ships with step definitions for Cucumber integration. For more information, see the GETTING_STARTED file in the factory_girl repo.
-
 
 More Information
 ----------------
