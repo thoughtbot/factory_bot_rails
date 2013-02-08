@@ -1,4 +1,5 @@
 require 'generators/factory_girl'
+require 'factory_girl_rails'
 
 module FactoryGirl
   module Generators
