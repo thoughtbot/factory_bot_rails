@@ -8,8 +8,6 @@ module FactoryGirl
       generators = config.respond_to?(:app_generators) ? config.app_generators : config.generators
       rails_options = generators.options[:rails]
 
-      puts generators.options
-      puts rails_options
       if rails_options[:test_framework] == :rspec
         factory_girl_dir = generators.options.fetch(:factory_girl, { :dir => 'spec/factories' })[:dir]
 
