@@ -77,3 +77,15 @@ Feature:
     But the following files should not exist:
       | spec/fixtures/users.yml |
     And the file "test/models/user_test.rb" should contain "MiniTest::Rails::ActiveSupport::TestCase"
+
+  Scenario: Disable Factory Girl generator
+    When I configure the factories as:
+      """
+      config.generators |g|
+        g.factory_girl false
+      end
+      """
+    And I run `bundle install` with a clean environment
+    And I run `bundle exec rails generate model User name:string` with a clean environment
+    Then the following files should not exist:
+      | test/factories/users.rb |
