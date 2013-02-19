@@ -11,8 +11,9 @@ module FactoryGirl
       next if rails_options[:factory_girl] == false
 
       generators.test_framework rails_options[:test_framework], :fixture => false, :fixture_replacement => :factory_girl
-      factory_girl_dir = generators.options.fetch(:factory_girl, { :dir => 'spec/factories' })[:dir]
-      generators.fixture_replacement :factory_girl, :dir => factory_girl_dir
+      factory_girl_opts = generators.options.fetch(:factory_girl, {})
+      factory_girl_opts = {:dir => 'spec/factories'}.merge factory_girl_opts if rails_options[:test_framework] == :rspec
+      generators.fixture_replacement :factory_girl, factory_girl_opts
     end
 
     initializer "factory_girl.set_factory_paths" do
