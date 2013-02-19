@@ -31,18 +31,26 @@ Add `factory_girl_rails` to your Gemfile:
 
     gem 'factory_girl_rails'
 
-Optionally, to have rails generators automatically generate factories instead
-of fixtures, add the following to your application.rb file:
+Generators for factories will automatically substitute fixture (and maybe any other
+`fixture_replacement` you set). If you want disable this feature, add the
+following to your application.rb file:
 
     config.generators do |g|
-      g.fixture_replacement :factory_girl
+      g.factory_girl false
+    end
+
+Default factories directory is `test/factories`, or `spec/factories` if
+`test_framework` generator is set to `:rspec`; change this behavior with:
+
+    config.generators do |g|
+      g.factory_girl dir: 'custom/dir/for/factories'
     end
 
 If you use `factory_girl` for fixture replacement, ensure that
 `factory_girl_rails` is available in the development group. If it's not, Rails
 will generate standard yml files instead of factory files.
 
-`fixture_replacement :factory_girl` takes an option `:suffix => 'some_suffix'`
+`factory_girl` takes an option `suffix: 'some_suffix'`
 to generate factories as "modelname_some_suffix.rb"
 
 More Information
