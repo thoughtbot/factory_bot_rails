@@ -16,13 +16,20 @@ module FactoryGirl
       factory_girl_opts = {:dir => 'spec/factories'}.merge factory_girl_opts if rails_options[:test_framework] == :rspec
       generators.fixture_replacement :factory_girl, factory_girl_opts
     end
-
+    
     initializer "factory_girl.set_factory_paths" do
-      FactoryGirl.definition_file_paths = [
+      paths = [
         Rails.root.join('factories'),
         Rails.root.join('test', 'factories'),
-        Rails.root.join('spec', 'factories')
+        Rails.root.join('spec', 'factories'),
       ]
+      
+      generators = config.respond_to?(:app_generators) ? config.app_generators : config.generators
+      custom_dir = generators.options.fetch(:factory_girl).fetch(:dir) rescue false
+      # top priority to custom dir
+      paths.unshift Rails.root.join(custom_dir) if custom_dir
+      # if rspec is the test_framework, there are two 'spec/factories'
+      FactoryGirl.definition_file_paths = paths.uniq
     end
 
     config.after_initialize do
