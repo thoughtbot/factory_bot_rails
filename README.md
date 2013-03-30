@@ -1,4 +1,4 @@
-# factory_girl_rails [![Build Status](https://secure.travis-ci.org/thoughtbot/factory_girl_rails.png)](http://travis-ci.org/thoughtbot/factory_girl_rails?branch=master)
+# factory_girl_rails [![Gem Version](https://badge.fury.io/rb/factory_girl_rails.png)](http://badge.fury.io/rb/factory_girl_rails) [![Build Status](https://secure.travis-ci.org/thoughtbot/factory_girl_rails.png)](http://travis-ci.org/thoughtbot/factory_girl_rails?branch=master) [![Dependency Status](https://gemnasium.com/thoughtbot/factory_girl_rails.png)](https://gemnasium.com/thoughtbot/factory_girl_rails)
 
 [`factory_girl`](https://github.com/thoughtbot/factory_girl) is a fixtures replacement with a straightforward definition
 syntax, support for multiple build strategies (saved instances, unsaved
