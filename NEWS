@@ -1,0 +1,9 @@
+4.2.1 (February 8, 2013)
+  Fix bug when configuring FG and RSpec fixture directory
+  Remove debugging
+  Require factory_girl_rails explicitly in generator
+
+4.2.0 (January 25, 2013)
+  Add appraisal and get test suite working reliably with turn gem
+  Support MiniTest
+  Allow a custom directory for factories to be specified
