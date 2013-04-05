@@ -19,6 +19,5 @@ module FactoryGirlRails
         @generators.options.fetch(:factory_girl, { dir: 'spec/factories' })[:dir]
       end
     end
-
   end
 end
