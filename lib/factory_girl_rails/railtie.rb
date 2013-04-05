@@ -7,26 +7,29 @@ module FactoryGirl
     initializer "factory_girl.set_fixture_replacement" do
       generators = config.respond_to?(:app_generators) ? config.app_generators : config.generators
       rails_options = generators.options[:rails]
+            
+      next if rails_options[:factory_girl] == false
 
-      if rails_options[:test_framework] == :rspec
-        factory_girl_dir = generators.options.fetch(:factory_girl, { :dir => 'spec/factories' })[:dir]
-
-        if rails_options.has_key?(:fixture_replacement)
-          generators.fixture_replacement rails_options[:fixture_replacement], :dir => factory_girl_dir
-        else
-          generators.fixture_replacement :factory_girl, :dir => factory_girl_dir
-        end
-      else
-        generators.test_framework rails_options[:test_framework], :fixture => false, :fixture_replacement => :factory_girl
-      end
+      generators.test_framework rails_options[:test_framework], :fixture => false, :fixture_replacement => :factory_girl
+      factory_girl_opts = generators.options.fetch(:fixture_replacement, {})
+      factory_girl_opts.merge! generators.options.fetch(:factory_girl, {})
+      factory_girl_opts = {:dir => 'spec/factories'}.merge factory_girl_opts if rails_options[:test_framework] == :rspec
+      generators.fixture_replacement :factory_girl, factory_girl_opts
     end
-
+    
     initializer "factory_girl.set_factory_paths" do
-      FactoryGirl.definition_file_paths = [
+      paths = [
         Rails.root.join('factories'),
         Rails.root.join('test', 'factories'),
-        Rails.root.join('spec', 'factories')
+        Rails.root.join('spec', 'factories'),
       ]
+      
+      generators = config.respond_to?(:app_generators) ? config.app_generators : config.generators
+      custom_dir = generators.options.fetch(:factory_girl).fetch(:dir) rescue false
+      # top priority to custom dir
+      paths.unshift Rails.root.join(custom_dir) if custom_dir
+      # if rspec is the test_framework, there are two 'spec/factories'
+      FactoryGirl.definition_file_paths = paths.uniq
     end
 
     config.after_initialize do
