@@ -1,4 +1,4 @@
-# factory_girl_rails [![Gem Version](https://badge.fury.io/rb/factory_girl_rails.png)](http://badge.fury.io/rb/factory_girl_rails) [![Build Status](https://secure.travis-ci.org/thoughtbot/factory_girl_rails.png)](http://travis-ci.org/thoughtbot/factory_girl_rails?branch=master) [![Dependency Status](https://gemnasium.com/thoughtbot/factory_girl_rails.png)](https://gemnasium.com/thoughtbot/factory_girl_rails)
+# factory_girl_rails [![Gem Version][version-image]][version] [![Build Status][ci-image]][ci] [![Dependency Status][dependencies-image]][dependencies] [![Code Climate][grade-image]][grade]
 
 [`factory_girl`](https://github.com/thoughtbot/factory_girl) is a fixtures replacement with a straightforward definition
 syntax, support for multiple build strategies (saved instances, unsaved
@@ -88,3 +88,12 @@ The names and logos for thoughtbot are trademarks of thoughtbot, inc.
 ## License
 
 factory_girl is Copyright © 2008-2013 Joe Ferris and thoughtbot. It is free software, and may be redistributed under the terms specified in the LICENSE file.
+
+[version]: http://badge.fury.io/rb/factory_girl_rails
+[version-image]: https://badge.fury.io/rb/factory_girl_rails.png
+[ci]: http://travis-ci.org/thoughtbot/factory_girl_rails?branch=master
+[ci-image]: https://secure.travis-ci.org/thoughtbot/factory_girl_rails.png
+[dependencies]: https://gemnasium.com/thoughtbot/factory_girl_rails
+[dependencies-image]: https://gemnasium.com/thoughtbot/factory_girl_rails.png
+[grade]: https://codeclimate.com/github/thoughtbot/factory_girl_rails
+[grade-image]: https://codeclimate.com/github/thoughtbot/factory_girl_rails.png
