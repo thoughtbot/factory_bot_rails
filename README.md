@@ -12,22 +12,24 @@ Rails-specific features are only compatible with Rails 3.
 
 Currently, automatic factory definition loading is the only Rails-specific feature.
 
-## Download
-Github: http://github.com/thoughtbot/factory_girl_rails/tree/master
-
 ## Installation
 
-Using [RubyGems](https://github.com/rubygems/rubygems):
-
-`gem install factory_girl_rails`
-
-Using [Bundler](https://github.com/carlhuda/bundler), inside of your `Gemfile`:
+Add this line to your application's Gemfile:
 
 ```ruby
 group :development, :test do
   gem 'factory_girl_rails'
 end
 ```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install factory_girl_rails
+    
 
 ## Configuration
 
