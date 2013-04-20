@@ -1,7 +1,7 @@
 if RUBY_VERSION >= '2.0'
-  rails_versions = ['3.2.13.rc2']
+  rails_versions = ['3.2.13']
 else
-  rails_versions = ['3.0.20', '3.1.11', '3.2.12']
+  rails_versions = ['3.0.20', '3.1.11']
 end
 
 rails_versions.each do |rails_version|
