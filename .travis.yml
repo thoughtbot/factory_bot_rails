@@ -12,16 +12,15 @@ jdk:
 gemfile:
   - gemfiles/3.0.20.gemfile
   - gemfiles/3.1.11.gemfile
-  - gemfiles/3.2.12.gemfile
-  - gemfiles/3.2.13.rc2.gemfile
+  - gemfiles/3.2.13.gemfile
 matrix:
+  allow_failures:
+    - jruby-19mode
   exclude:
     - rvm: 2.0.0
       gemfile: gemfiles/3.0.20.gemfile
     - rvm: 2.0.0
       gemfile: gemfiles/3.1.11.gemfile
-    - rvm: 2.0.0
-      gemfile: gemfiles/3.2.12.gemfile
 branches:
   only:
     - master
