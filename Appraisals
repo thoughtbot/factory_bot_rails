@@ -33,3 +33,16 @@ appraise "rails3.2" do
   gem "jquery-rails"
   gem "rspec-rails"
 end
+
+appraise "rails4.0" do
+  gem "rails", "~> 4.0.0.rc1"
+  gem "sass-rails", "~> 4.0.0.rc1"
+  gem "coffee-rails"
+  gem "uglifier"
+  gem "sqlite3", ">= 1.3.4", :platforms=>:mri
+  gem "activerecord-jdbcsqlite3-adapter", "~> 1.2.5", :platforms=>:jruby
+  gem "minitest-rails"
+  gem "therubyrhino"
+  gem "jquery-rails"
+  gem "rspec-rails"
+end
