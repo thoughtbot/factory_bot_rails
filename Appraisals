@@ -2,6 +2,7 @@ appraise "rails3.0" do
   gem "rails", "3.0.20"
   gem "sqlite3", ">= 1.3.4", platforms: :mri
   gem "activerecord-jdbcsqlite3-adapter", "~> 1.2.5", platforms: :jruby
+  gem "jruby-openssl", platforms: :jruby
   gem "minitest-rails"
   gem "therubyrhino"
   gem "jquery-rails"
@@ -17,6 +18,7 @@ appraise "rails3.1" do
   gem "activerecord-jdbcsqlite3-adapter", "~> 1.2.5", platforms: :jruby
   gem "minitest-rails"
   gem "therubyrhino"
+  gem "jruby-openssl", platforms: :jruby
   gem "jquery-rails"
   gem "rspec-rails"
   gem "turn", "0.8.3"
@@ -31,6 +33,7 @@ appraise "rails3.2" do
   gem "activerecord-jdbcsqlite3-adapter", "~> 1.2.5", platforms: :jruby
   gem "minitest-rails"
   gem "therubyrhino"
+  gem "jruby-openssl", platforms: :jruby
   gem "jquery-rails"
   gem "rspec-rails"
 end
