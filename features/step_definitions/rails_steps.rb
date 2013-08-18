@@ -39,7 +39,7 @@ end
 
 When /^I configure the testing framework to use MiniTest$/ do
   append_to_file('Gemfile', %{gem "minitest-rails", :group => [:development, :test]\n})
-  step %{I run `rails generate mini_test:install` with a clean environment}
+  step %{I run `rails generate mini_test:install --skip` with a clean environment}
 
   append_to_file File.join('config', 'application.rb'), <<-END
 class Testapp::Application
