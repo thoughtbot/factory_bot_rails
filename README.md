@@ -1,6 +1,6 @@
 # factory_girl_rails [![Gem Version][version-image]][version] [![Build Status][ci-image]][ci] [![Dependency Status][dependencies-image]][dependencies] [![Code Climate][grade-image]][grade]
 
-[`factory_girl`](https://github.com/thoughtbot/factory_girl) is a fixtures replacement with a straightforward definition
+[`factory_girl`][fg] is a fixtures replacement with a straightforward definition
 syntax, support for multiple build strategies (saved instances, unsaved
 instances, attribute hashes, and stubbed objects), and support for multiple
 factories for the same class (`user`, `admin_user`, and so on), including factory
@@ -25,17 +25,12 @@ end
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install factory_girl_rails
     
-
 ## Configuration
 
 With the gem inside both `:development` and `:test` groups, Factory Girl will 
-automatically become your fixture replacement when using rails generators. By default, 
-Rails will attempt to create your factories inside of `spec/factories`.
+automatically become your fixture replacement when using Rails generators. By default, 
+Rails will attempt to create your factories in `test/factories`.
 
 To change this default, if you're using RSpec as your test framework for instance, 
 add the following to your `config/application.rb`:
@@ -89,6 +84,7 @@ The names and logos for thoughtbot are trademarks of thoughtbot, inc.
 
 factory_girl is Copyright © 2008-2013 Joe Ferris and thoughtbot. It is free software, and may be redistributed under the terms specified in the LICENSE file.
 
+[fg]: https://github.com/thoughtbot/factory_girl
 [version]: http://badge.fury.io/rb/factory_girl_rails
 [version-image]: https://badge.fury.io/rb/factory_girl_rails.png
 [ci]: http://travis-ci.org/thoughtbot/factory_girl_rails?branch=master
