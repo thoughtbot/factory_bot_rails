@@ -25,3 +25,17 @@ appraise "rails3.2" do
   gem "rspec-rails"
   gem "turn"
 end
+
+appraise "rails4.0" do
+  gem "rails"
+  gem "sass-rails"
+  gem "coffee-rails"
+  gem "uglifier"
+  gem "sqlite3", ">= 1.3.4", platforms: :mri
+  gem "activerecord-jdbcsqlite3-adapter", "~> 1.3.2", platforms: :jruby
+  gem "minitest-rails"
+  gem "therubyrhino"
+  gem "jquery-rails"
+  gem "rspec-rails"
+  gem "turn"
+ end
