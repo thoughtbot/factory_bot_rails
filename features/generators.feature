@@ -26,3 +26,18 @@ Feature:
     And the output should contain "test/factories/namespaced_users_factory.rb"
     And the file "test/factories/users_factory.rb" should contain "factory :user do"
     And the file "test/factories/namespaced_users_factory.rb" should contain "factory :namespaced_user, :class => 'Namespaced::User' do"
+
+  Scenario: The factory_girl_rails generators create a factory file using configured suffix with RSpec for each model that I generate
+    When I add "rspec-rails" as a dependency
+    And I configure the factories as:
+      """
+      config.generators do |g|
+        g.test_framework :rspec
+        g.fixture_replacement :factory_girl, suffix: 'factory'
+      end
+      """
+    And I run `bundle install` with a clean environment
+    Then the output should contain "rspec-rails"
+    And I run `bundle exec rails generate model User name:string` with a clean environment
+    Then the following files should exist:
+      | spec/factories/users_factory.rb |
