@@ -12,5 +12,6 @@ gem "minitest-rails"
 gem "therubyrhino"
 gem "jquery-rails"
 gem "rspec-rails"
+gem "turn"
 
 gemspec :path=>"../"

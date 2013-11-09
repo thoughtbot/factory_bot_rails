@@ -9,6 +9,7 @@ appraise "rails3.1" do
   gem "therubyrhino"
   gem "jquery-rails"
   gem "rspec-rails"
+  gem "turn"
 end
 
 appraise "rails3.2" do
@@ -22,4 +23,5 @@ appraise "rails3.2" do
   gem "therubyrhino"
   gem "jquery-rails"
   gem "rspec-rails"
+  gem "turn"
 end
