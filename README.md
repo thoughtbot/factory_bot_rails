@@ -32,7 +32,7 @@ Add `factory_girl_rails` to your Gemfile:
     gem 'factory_girl_rails'
 
 Generators for factories will automatically substitute fixture (and maybe any other
-`fixture_replacement` you set). If you want disable this feature, add the
+`fixture_replacement` you set). If you want to disable this feature, add the
 following to your application.rb file:
 
     config.generators do |g|
