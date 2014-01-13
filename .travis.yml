@@ -6,6 +6,7 @@ before_install:
   - gem update --system
   - gem install turn --version 0.8.2
   - gem install turn --version 0.8.3
+bundler_args: ""
 jdk:
   - openjdk6
 gemfile:
