@@ -11,7 +11,7 @@ Rails
 -----
 
 `factory_girl_rails` provides Rails integration for `factory_girl`. All
-Rails-specific features are only compatible with Rails 3.
+Rails-specific features are only compatible with Rails 3 and 4.
 
 Currently, automatic factory definition loading is the only Rails-specific feature.
 
