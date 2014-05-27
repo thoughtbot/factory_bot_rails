@@ -1,3 +1,5 @@
+language: ruby
+cache: bundler
 rvm:
   - 1.9.3
   - 2.0.0
@@ -9,8 +11,12 @@ before_install:
 jdk:
   - openjdk6
 gemfile:
-  - gemfiles/rails3.1.gemfile
   - gemfiles/rails3.2.gemfile
+  - gemfiles/rails4.0.gemfile
+  - gemfiles/rails4.1.gemfile
 branches:
   only:
     - master
+install:
+  - "travis_retry bundle install"
+  - "travis_retry bundle exec appraisal install"

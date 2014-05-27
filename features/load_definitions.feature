@@ -4,7 +4,6 @@ Feature: automatically load step definitions
     When I successfully run `bundle exec rails new testapp`
     And I cd to "testapp"
     And I add "factory_girl_rails" from this project as a dependency
-    And I comment out gem "turn" from my Gemfile
     And I run `bundle install` with a clean environment
     And I write to "db/migrate/1_create_users.rb" with:
       """
@@ -23,7 +22,7 @@ Feature: automatically load step definitions
       end
       """
 
-  Scenario: generate a rails 3 application and use factory definitions
+  Scenario: generate a Rails application and use factory definitions
     When I write to "test/factories.rb" with:
       """
       FactoryGirl.define do
@@ -44,7 +43,7 @@ Feature: automatically load step definitions
       end
       """
     When I run `bundle exec rake test --trace` with a clean environment
-    Then the output should contain "1 tests, 1 assertions, 0 failures, 0 errors"
+    Then the output should contain "1 assertions, 0 failures, 0 errors"
 
   Scenario: use factories advertised by railties/engines/3rd-party gems
     When I append to "config/application.rb" with:
@@ -82,4 +81,4 @@ Feature: automatically load step definitions
       end
       """
     When I run `bundle exec rake test --trace` with a clean environment
-    Then the output should contain "1 tests, 1 assertions, 0 failures, 0 errors"
+    Then the output should contain "1 assertions, 0 failures, 0 errors"

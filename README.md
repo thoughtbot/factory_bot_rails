@@ -10,10 +10,12 @@ inheritance.
 Rails
 -----
 
-`factory_girl_rails` provides Rails integration for `factory_girl`. All
-Rails-specific features are only compatible with Rails 3.
+`factory_girl_rails` provides Rails integration for `factory_girl`.
 
 Currently, automatic factory definition loading is the only Rails-specific feature.
+
+Supported Rails versions are listed in [`Appraisals`](Appraisals). Supported
+Ruby versions are listed in [`.travis.yml`](.travis.yml).
 
 Download
 --------
@@ -84,4 +86,6 @@ The names and logos for thoughtbot are trademarks of thoughtbot, inc.
 License
 -------
 
-factory_girl is Copyright © 2008-2013 Joe Ferris and thoughtbot. It is free software, and may be redistributed under the terms specified in the LICENSE file.
+factory_girl is Copyright © 2008-2014 Joe Ferris and thoughtbot. It is free
+software, and may be redistributed under the terms specified in the LICENSE
+file.

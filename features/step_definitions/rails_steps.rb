@@ -19,6 +19,14 @@ When /^I set the FactoryGirl :suffix option to "([^"]+)"$/ do |suffix|
 
 end
 
+When /^I print out "([^"]*)"$/ do |path|
+  in_current_dir do
+    File.open(path, 'r') do |f|
+      puts f.inspect
+    end
+  end
+end
+
 When /^I configure the factories as:$/ do |string|
   append_to_file File.join('config', 'application.rb'), <<-END
 class Testapp::Application
@@ -32,19 +40,6 @@ When /^I configure the factories directory as "([^"]+)"$/ do |factory_dir|
 class Testapp::Application
   config.generators do |g|
     g.fixture_replacement :factory_girl, :dir => "#{factory_dir}"
-  end
-end
-  END
-end
-
-When /^I configure the testing framework to use MiniTest$/ do
-  append_to_file('Gemfile', %{gem "minitest-rails", :group => [:development, :test]\n})
-  step %{I run `rails generate mini_test:install` with a clean environment}
-
-  append_to_file File.join('config', 'application.rb'), <<-END
-class Testapp::Application
-  config.generators do |g|
-    g.test_framework :mini_test, :fixture => false, :fixture_replacement => :factory_girl
   end
 end
   END

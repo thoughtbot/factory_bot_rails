@@ -1,6 +1,6 @@
 Feature:
   In order to easily generate factory files instead of fixture files when generating models
-  As a user of Rails3 and factory_girl
+  As a user of Rails and Factory Girl
   I would like to use factory_girl_rails generators.
 
   Background:

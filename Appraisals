@@ -1,25 +1,16 @@
-appraise "rails3.1" do
-  gem "rails", "3.1.10"
-  gem "sass-rails"
-  gem "coffee-rails"
-  gem "uglifier"
-  gem "sqlite3", ">= 1.3.4", platforms: :mri
-  gem "activerecord-jdbcsqlite3-adapter", "~> 1.2.5", platforms: :jruby
-  gem "minitest-rails"
-  gem "therubyrhino"
-  gem "jquery-rails"
-  gem "rspec-rails"
+# These are the versions of Rails we want to test against.
+appraise 'rails3.2' do
+  gem 'rails', '~> 3.2.18'
+  gem 'sass-rails'
 end
 
-appraise "rails3.2" do
-  gem "rails", "3.2.11"
-  gem "sass-rails"
-  gem "coffee-rails"
-  gem "uglifier"
-  gem "sqlite3", ">= 1.3.4", platforms: :mri
-  gem "activerecord-jdbcsqlite3-adapter", "~> 1.2.5", platforms: :jruby
-  gem "minitest-rails"
-  gem "therubyrhino"
-  gem "jquery-rails"
-  gem "rspec-rails"
+appraise 'rails4.0' do
+  gem 'rails', '~> 4.0.5'
+  gem 'sass-rails'
+end
+
+appraise 'rails4.1' do
+  gem 'rails', '~> 4.1.1'
+  gem 'sass-rails', '~> 4.0.3'
+  gem 'spring'
 end
