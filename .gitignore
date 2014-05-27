@@ -1,9 +1,9 @@
 *.swp
-test.db
-factory_girl_rails-*.gem
-tmp
-rdoc
-coverage
-pkg
 .bundle
-Gemfile.lock
+gemfiles/
+coverage
+factory_girl_rails-*.gem
+pkg
+rdoc
+test.db
+tmp
