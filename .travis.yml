@@ -3,20 +3,14 @@ cache: bundler
 rvm:
   - 1.9.3
   - 2.0.0
+  - 2.1.2
   - jruby-19mode
-before_install:
-  - gem update --system
-  - gem install turn --version 0.8.2
-  - gem install turn --version 0.8.3
 jdk:
   - openjdk6
-gemfile:
-  - gemfiles/rails3.2.gemfile
-  - gemfiles/rails4.0.gemfile
-  - gemfiles/rails4.1.gemfile
 branches:
   only:
     - master
 install:
   - "travis_retry bundle install"
+  - "bundle exec appraisal generate"
   - "travis_retry bundle exec appraisal install"
