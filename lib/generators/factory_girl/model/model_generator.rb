@@ -9,7 +9,7 @@ module FactoryGirl
 
       def create_fixture_file
         filename = [table_name, filename_suffix].compact.join('_')
-        template 'fixtures.erb', File.join(options[:dir], "#{filename}.rb")
+        template 'fixtures.erb', File.join(dir, "#{filename}.rb")
       end
 
       private
@@ -25,6 +25,10 @@ module FactoryGirl
 
       def factory_girl_options
         generators.options[:factory_girl] || {}
+      end
+
+      def dir
+        factory_girl_options[:dir] || "test/factories"
       end
     end
   end
