@@ -14,3 +14,7 @@ install:
   - "travis_retry bundle install"
   - "bundle exec appraisal generate"
   - "travis_retry bundle exec appraisal install"
+gemfile:
+  - gemfiles/rails3.2.gemfile
+  - gemfiles/rails4.0.gemfile
+  - gemfiles/rails4.1.gemfile
