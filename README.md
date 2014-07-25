@@ -1,33 +1,29 @@
-factory_girl [![Build Status](https://secure.travis-ci.org/thoughtbot/factory_girl_rails.png)](http://travis-ci.org/thoughtbot/factory_girl_rails?branch=master)
-============
+# factory_girl_rails [![Build Status][ci-image]][ci] [![Code Climate][grade-image]][grade]
 
-`factory_girl` is a fixtures replacement with a straightforward definition
+[factory_girl][fg] is a fixtures replacement with a straightforward definition
 syntax, support for multiple build strategies (saved instances, unsaved
 instances, attribute hashes, and stubbed objects), and support for multiple
 factories for the same class (`user`, `admin_user`, and so on), including factory
 inheritance.
 
-Rails
------
+## Rails
 
-`factory_girl_rails` provides Rails integration for `factory_girl`.
+factory_girl_rails provides Rails integration for [factory_girl][fg].
 
 Currently, automatic factory definition loading is the only Rails-specific feature.
 
 Supported Rails versions are listed in [`Appraisals`](Appraisals). Supported
 Ruby versions are listed in [`.travis.yml`](.travis.yml).
 
-Download
---------
+## Download
 
-Github: http://github.com/thoughtbot/factory_girl_rails/tree/master
+Github: http://github.com/thoughtbot/factory_girl_rails
 
 Gem:
 
     gem install factory_girl_rails
 
-Configuration
--------------
+## Configuration
 
 Add `factory_girl_rails` to your Gemfile:
 
@@ -54,28 +50,20 @@ config.generators do |g|
 end
 ```
 
-If you use `factory_girl` for fixture replacement, ensure that
-`factory_girl_rails` is available in the development group. If it's not, Rails
-will generate standard yml files instead of factory files.
+If you use factory_girl for fixture replacement, ensure that
+factory_girl_rails is available in the development group. If it's not, Rails
+will generate standard .yml files instead of factory files.
 
-`factory_girl` takes an option `suffix: 'some_suffix'`
-to generate factories as "modelname_some_suffix.rb"
+factory_girl takes an option `suffix: 'some_suffix'` to generate factories as
+`modelname_some_suffix.rb`.
 
-More Information
-----------------
+## Contributing
 
-factory_girl: http://github.com/thoughtbot/factory_girl/tree/master
+Please see [CONTRIBUTING.md]().
 
+## Credits
 
-Contributing
-------------
-
-Please see CONTRIBUTING.md for details.
-
-Credits
--------
-
-factory_girl was originally written by Joe Ferris.
+[factory_girl][fg] was originally written by Joe Ferris.
 
 ![thoughtbot](http://thoughtbot.com/images/tm/logo.png)
 
@@ -83,9 +71,14 @@ factory_girl is maintained and funded by [thoughtbot, inc](http://thoughtbot.com
 
 The names and logos for thoughtbot are trademarks of thoughtbot, inc.
 
-License
--------
+## License
 
-factory_girl is Copyright © 2008-2014 Joe Ferris and thoughtbot. It is free
-software, and may be redistributed under the terms specified in the LICENSE
-file.
+factory_girl_rails is Copyright © 2008-2014 Joe Ferris and thoughtbot. It is free
+software, and may be redistributed under the terms specified in the
+[LICENSE]() file.
+
+[fg]: https://github.com/thoughtbot/factory_girl
+[ci]: http://travis-ci.org/thoughtbot/factory_girl_rails?branch=master
+[ci-image]: https://secure.travis-ci.org/thoughtbot/factory_girl_rails.png
+[grade]: https://codeclimate.com/github/thoughtbot/factory_girl_rails
+[grade-image]: https://codeclimate.com/github/thoughtbot/factory_girl_rails.png
