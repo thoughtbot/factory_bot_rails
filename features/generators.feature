@@ -8,7 +8,7 @@ Feature:
     And I cd to "testapp"
     And I add "factory_girl_rails" from this project as a dependency
 
-  Scenario: The factory_girl_rails generators create a factory file for each model that I generate
+  Scenario: The factory_girl_rails generators create a factory file for each model if there is not a factories.rb file
     When I run `bundle install` with a clean environment
     And I run `bundle exec rails generate model User name:string --fixture-replacement=factory_girl` with a clean environment
     And I run `bundle exec rails generate model Namespaced::User name:string --fixture-replacement=factory_girl` with a clean environment
@@ -17,12 +17,12 @@ Feature:
     And the file "test/factories/users.rb" should contain "factory :user do"
     And the file "test/factories/namespaced_users.rb" should contain "factory :namespaced_user, :class => 'Namespaced::User' do"
 
-  Scenario: The factory_girl_rails generators create a factory file with a custom name for each model that I generate
+  Scenario: The factory_girl_rails generators does not create a factory file for each model if there is a factories.rb file in the test directory
     When I run `bundle install` with a clean environment
-    And I set the FactoryGirl :suffix option to "factory"
+    And I write to "test/factories.rb" with:
+      """
+      FactoryGirl.define do
+      end
+      """
     And I run `bundle exec rails generate model User name:string --fixture-replacement=factory_girl` with a clean environment
-    And I run `bundle exec rails generate model Namespaced::User name:string --fixture-replacement=factory_girl` with a clean environment
-    Then the output should contain "test/factories/users_factory.rb"
-    And the output should contain "test/factories/namespaced_users_factory.rb"
-    And the file "test/factories/users_factory.rb" should contain "factory :user do"
-    And the file "test/factories/namespaced_users_factory.rb" should contain "factory :namespaced_user, :class => 'Namespaced::User' do"
+    Then the file "test/factories.rb" should contain "factory :user do"
