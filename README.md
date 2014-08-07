@@ -59,7 +59,7 @@ factory_girl takes an option `suffix: 'some_suffix'` to generate factories as
 
 ## Contributing
 
-Please see [CONTRIBUTING.md]().
+Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Credits
 
