@@ -10,8 +10,8 @@ Feature:
 
   Scenario: The factory_girl_rails generators create a factory file for each model if there is not a factories.rb file
     When I run `bundle install` with a clean environment
-    And I run `bundle exec rails generate model User name:string --fixture-replacement=factory_girl` with a clean environment
-    And I run `bundle exec rails generate model Namespaced::User name:string --fixture-replacement=factory_girl` with a clean environment
+    And I run `bundle exec rails generate model User name:string` with a clean environment
+    And I run `bundle exec rails generate model Namespaced::User name:string` with a clean environment
     Then the output should contain "test/factories/users.rb"
     And the output should contain "test/factories/namespaced_users.rb"
     And the file "test/factories/users.rb" should contain "factory :user do"
@@ -24,5 +24,5 @@ Feature:
       FactoryGirl.define do
       end
       """
-    And I run `bundle exec rails generate model User name:string --fixture-replacement=factory_girl` with a clean environment
+    And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the file "test/factories.rb" should contain "factory :user do"
