@@ -115,3 +115,18 @@ Feature:
       | spec/factories/users_suffix.rb |
     Then the following files should not exist:
       | spec/factories/users.rb |
+
+  Scenario: Use a filename_proc with the Factory Girl generator
+    When I add "rspec-rails" as a dependency
+    When I configure the factories as:
+      """
+      config.generators do |g|
+        g.factory_girl filename_proc: Proc.new { |tb| "prefix_#{tb.singularize}_suffix" }
+      end
+      """
+    And I run `bundle install` with a clean environment
+    And I run `bundle exec rails generate model User name:string` with a clean environment
+    Then the following files should exist:
+      | spec/factories/prefix_user_suffix.rb |
+    Then the following files should not exist:
+      | spec/factories/users.rb |

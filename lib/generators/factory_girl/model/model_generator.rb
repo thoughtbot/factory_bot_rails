@@ -48,7 +48,6 @@ module FactoryGirl
       end
 
       def create_factory_file
-        filename = [table_name, filename_suffix].compact.join('_')
         file = File.join(options[:dir], "#{filename}.rb")
         create_file(file, single_file_factory_definition)
       end
@@ -73,6 +72,14 @@ RUBY
         attributes.map do |attribute|
           "#{attribute.name} #{attribute.default.inspect}"
         end.join("\n")
+      end
+
+      def filename
+        if factory_girl_options[:filename_proc].present?
+          factory_girl_options[:filename_proc].call(table_name)
+        else
+          [table_name, filename_suffix].compact.join('_')
+        end
       end
 
       def filename_suffix
