@@ -24,7 +24,7 @@ Feature:
       end
 
       """
-    And the file "test/factories/namespaced_users.rb" should contain "factory :namespaced_user, :class => 'Namespaced::User' do"
+    And the file "test/factories/namespaced_users.rb" should contain "factory :namespaced_user, class: 'Namespaced::User' do"
 
   Scenario: The factory_girl_rails generators does not create a factory file for each model if there is a factories.rb file in the test directory
     When I run `bundle install` with a clean environment
