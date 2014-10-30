@@ -49,7 +49,7 @@ module FactoryGirl
       def factory_definition
 <<-RUBY
   factory :#{singular_table_name}#{explicit_class_option} do
-    #{factory_attributes}
+#{factory_attributes.gsub(/^/, "    ")}
   end
 RUBY
       end
@@ -57,7 +57,7 @@ RUBY
       def single_file_factory_definition
 <<-RUBY
 FactoryGirl.define do
-#{factory_definition}
+#{factory_definition.chomp}
 end
 RUBY
       end
