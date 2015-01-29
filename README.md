@@ -62,6 +62,12 @@ If you use factory_girl for fixture replacement and already have a
 factory_girl_rails will insert new factory definitions at the top of
 `factories.rb`.
 
+## Documentation
+
+You should find the documentation for your version of factory_girl_rails on [Rubygems](https://rubygems.org/gems/factory_girl_rails).
+
+See [factory_girl/GETTING_STARTED](https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md) for information on defining and using factories.
+
 ## Contributing
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md).
