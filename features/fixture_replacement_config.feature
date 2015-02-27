@@ -32,6 +32,23 @@ Feature:
     And the following files should not exist:
       | spec/fixtures/users.yml |
 
+  Scenario: Using Factory Girl and Factory Girl Rails with RSpec and suffix configuration should generate a factory file with suffix
+    When I add "rspec-rails" as a dependency
+    And I configure the factories as:
+      """
+      config.generators do |g|
+        g.test_framework :rspec, fixture: true
+        g.fixture_replacement :factory_girl, suffix: 'factory'
+      end
+      """
+    And I run `bundle install` with a clean environment
+    Then the output should contain "rspec-rails"
+    And I run `bundle exec rails generate model User name:string` with a clean environment
+    Then the following files should exist:
+      | spec/factories/users_factory.rb |
+    And the following files should not exist:
+      | spec/fixtures/users.yml |
+
   Scenario: Using Factory Girl and Factory Girl Rails does not override a manually-configured factories directory using RSpec
     When I add "rspec-rails" as a dependency
     And I configure the factories directory as "custom/dir"
