@@ -18,6 +18,13 @@ module FactoryGirl
         desc: "The directory or file root where factories belong"
       )
 
+      class_option(
+        :suffix,
+        type: :string,
+        default: nil,
+        desc: "Suffix to add factory file"
+      )
+
       def create_fixture_file
         if File.exist?(factories_file)
           insert_factory_into_existing_file
@@ -69,7 +76,7 @@ RUBY
       end
 
       def filename_suffix
-        factory_girl_options[:suffix]
+        factory_girl_options[:suffix] || options[:suffix]
       end
 
       def factory_girl_options

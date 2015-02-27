@@ -65,7 +65,7 @@ Feature: automatically load step definitions
     When I write to "lib/some_railtie/factories.rb" with:
       """
       FactoryGirl.define do
-        factory :factory_from_some_railtie, :class => 'User' do
+        factory :factory_from_some_railtie, class: 'User' do
           name 'Artem'
         end
       end
