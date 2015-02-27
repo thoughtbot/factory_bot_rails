@@ -8,7 +8,7 @@ module FactoryGirl
       end
 
       def explicit_class_option
-        ", :class => '#{class_name}'" unless class_name == singular_table_name.camelize
+        ", class: '#{ class_name }'" unless class_name == singular_table_name.camelize
       end
     end
   end
