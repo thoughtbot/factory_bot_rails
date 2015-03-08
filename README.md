@@ -66,15 +66,9 @@ factory_girl_rails will insert new factory definitions at the top of
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Credits
-
-[factory_girl][fg] was originally written by Joe Ferris.
-
-![thoughtbot](http://thoughtbot.com/images/tm/logo.png)
-
-factory_girl is maintained and funded by [thoughtbot, inc](http://thoughtbot.com/community)
-
-The names and logos for thoughtbot are trademarks of thoughtbot, inc.
+factory_girl_rails was originally written by Joe Ferris and is now maintained by Josh
+Clayton. Many improvements and bugfixes were contributed by the [open source
+community](https://github.com/thoughtbot/factory_girl_rails/graphs/contributors).
 
 ## License
 
@@ -82,8 +76,21 @@ factory_girl_rails is Copyright © 2008-2014 Joe Ferris and thoughtbot. It is fr
 software, and may be redistributed under the terms specified in the
 [LICENSE]() file.
 
+## About thoughtbot
+
+![thoughtbot](https://thoughtbot.com/logo.png)
+
+factory_girl_rails is maintained and funded by thoughtbot, inc.
+The names and logos for thoughtbot are trademarks of thoughtbot, inc.
+
+We are passionate about open source software.
+See [our other projects][community].
+We are [available for hire][hire].
+
 [fg]: https://github.com/thoughtbot/factory_girl
 [ci]: http://travis-ci.org/thoughtbot/factory_girl_rails?branch=master
 [ci-image]: https://secure.travis-ci.org/thoughtbot/factory_girl_rails.png
 [grade]: https://codeclimate.com/github/thoughtbot/factory_girl_rails
 [grade-image]: https://codeclimate.com/github/thoughtbot/factory_girl_rails.png
+[community]: https://thoughtbot.com/community?utm_source=github
+[hire]: https://thoughtbot.com?utm_source=github
