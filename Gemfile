@@ -5,7 +5,7 @@ gemspec
 gem 'appraisal'
 gem 'aruba'
 gem 'coffee-rails'
-gem 'cucumber'
+gem 'cucumber', '1.3.19'
 gem 'jquery-rails'
 gem 'rake'
 gem 'rspec-rails'
