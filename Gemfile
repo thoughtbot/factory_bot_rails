@@ -10,11 +10,11 @@ gem 'jquery-rails'
 gem 'rake'
 gem 'rspec-rails'
 gem 'uglifier'
+gem 'test-unit'
 
-if RUBY_PLATFORM == 'java'
-  gem 'activerecord-jdbcsqlite3-adapter'
-  gem 'jdbc-sqlite3'
-  gem 'therubyrhino'
-else
-  gem 'sqlite3'
-end
+gem 'activerecord-jdbcsqlite3-adapter', platforms: :jruby
+gem 'jdbc-sqlite3', platforms: :jruby
+gem 'therubyrhino', platforms: :jruby
+gem 'jruby-openssl', platforms: :jruby
+
+gem 'sqlite3', platforms: :ruby
