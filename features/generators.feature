@@ -26,6 +26,23 @@ Feature:
       """
     And the file "test/factories/namespaced_users.rb" should contain "factory :namespaced_user, class: 'Namespaced::User' do"
 
+  Scenario: The factory_girl_rails generators add a factory in the correct spot
+    When I run `bundle install` with a clean environment
+    And I write to "test/factories.rb" with:
+      """
+      FactoryGirl.define do
+      end
+      """
+    And I run `bundle exec rails generate model User name:string` with a clean environment
+    Then the file "test/factories.rb" should contain exactly:
+      """
+      FactoryGirl.define do
+        factory :user do
+          name "MyString"
+        end
+      end
+      """
+
   Scenario: The factory_girl_rails generators does not create a factory file for each model if there is a factories.rb file in the test directory
     When I run `bundle install` with a clean environment
     And I write to "test/factories.rb" with:

@@ -43,7 +43,7 @@ module FactoryGirl
         insert_into_file(
           factories_file,
           factory_definition,
-          after: "FactoryGirl.define do"
+          after: "FactoryGirl.define do\n"
         )
       end
 
