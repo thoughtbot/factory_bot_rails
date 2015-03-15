@@ -11,7 +11,6 @@ Gem::Specification.new do |s|
     loading)}
 
   s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {spec,features}/*`.split("\n")
   s.require_paths = ["lib"]
   s.license       = "MIT"
 
