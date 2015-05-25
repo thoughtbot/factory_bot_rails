@@ -10,7 +10,7 @@ module FactoryGirl
     end
 
     initializer "factory_girl.set_factory_paths" do
-      paths = FactoryGirl.definition_file_paths = []
+      paths = FactoryGirl.definition_file_paths || []
       FactoryGirl.definition_file_paths = paths.map do |path|
         Rails.root.join(*path.split('/'))
       end
