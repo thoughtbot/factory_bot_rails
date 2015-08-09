@@ -80,7 +80,7 @@ The names and logos for thoughtbot are trademarks of thoughtbot, inc.
 
 factory_girl_rails is Copyright © 2008-2014 Joe Ferris and thoughtbot. It is free
 software, and may be redistributed under the terms specified in the
-[LICENSE]() file.
+[LICENSE](LICENSE) file.
 
 [fg]: https://github.com/thoughtbot/factory_girl
 [ci]: http://travis-ci.org/thoughtbot/factory_girl_rails?branch=master
