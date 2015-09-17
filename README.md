@@ -28,7 +28,9 @@ Gem:
 Add `factory_girl_rails` to your Gemfile:
 
 ```ruby
-gem 'factory_girl_rails'
+group :development, :test do
+  gem 'factory_girl_rails'
+end
 ```
 
 Generators for factories will automatically substitute fixture (and maybe any other
