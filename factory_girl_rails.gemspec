@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
 
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
+  s.executables   = []
   s.license       = "MIT"
 
   s.add_runtime_dependency('railties', '>= 3.0.0')
