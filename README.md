@@ -62,6 +62,9 @@ If you use factory_girl for fixture replacement and already have a
 factory_girl_rails will insert new factory definitions at the top of
 `factories.rb`.
 
+You may need to configure your test suite to include factory_girl methods; see
+[configuration](https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md#configure-your-test-suite).
+
 ## Contributing
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md).
