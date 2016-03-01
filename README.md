@@ -57,11 +57,6 @@ will generate standard .yml files instead of factory files.
 factory_girl takes an option `suffix: 'some_suffix'` to generate factories as
 `modelname_some_suffix.rb`.
 
-If you use factory_girl for fixture replacement and already have a
-`factories.rb` file in the directory that contains your tests,
-factory_girl_rails will insert new factory definitions at the top of
-`factories.rb`.
-
 ## Contributing
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md).
