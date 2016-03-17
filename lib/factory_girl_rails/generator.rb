@@ -32,6 +32,8 @@ module FactoryGirlRails
       rails_options[:test_framework]
     end
 
+    private
+
     def factory_girl_disabled?
       rails_options[:factory_girl] == false
     end
