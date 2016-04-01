@@ -14,7 +14,7 @@ branches:
   only:
     - master
 install:
-  - "travis_retry bundle install"
+  - "travis_retry bundle install --jobs 8"
 gemfile:
   - gemfiles/rails3.2.gemfile
   - gemfiles/rails4.1.gemfile
