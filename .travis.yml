@@ -8,8 +8,6 @@ rvm:
   - 2.1.5
   - 2.2.1
   - jruby-19mode
-jdk:
-  - openjdk6
 branches:
   only:
     - master
