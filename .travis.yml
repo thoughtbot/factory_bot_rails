@@ -6,7 +6,7 @@ before_install:
 cache: bundler
 rvm:
   - 2.1.5
-  - 2.2.1
+  - 2.2.4
   - 2.3.0
   - jruby-19mode
 branches:
