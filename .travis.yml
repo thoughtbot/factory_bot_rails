@@ -1,4 +1,6 @@
 language: ruby
+env:
+  - ARUBA_TIMEOUT=240
 before_install:
   - gem update --system
   - gem update bundler
