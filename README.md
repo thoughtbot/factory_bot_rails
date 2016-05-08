@@ -21,7 +21,7 @@ Github: http://github.com/thoughtbot/factory_girl_rails
 
 Gem:
 
-    gem install factory_girl_rails
+    $ gem install factory_girl_rails
 
 ## Configuration
 
