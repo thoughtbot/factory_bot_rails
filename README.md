@@ -62,6 +62,25 @@ If you use factory_girl for fixture replacement and already have a
 factory_girl_rails will insert new factory definitions at the top of
 `factories.rb`.
 
+## Engines
+
+If FactoryGirl is used in a Rails Engine, it may be nice to make the
+factories available to the application using the engine.
+To do that, include the lines below in the Engine class
+
+```ruby
+    initializer "model_core.factories", :after => "factory_girl.set_factory_paths" do
+      FactoryGirl.definition_file_paths << File.expand_path('../../../spec/factories', __FILE__) if defined?(FactoryGirl)
+    end
+```
+
+If you had a non-automatic way to load factories, you must remove that.
+The above code will load the factories also in a dummy or test app
+while testing the engine, and you will get duplication errors otherwise.
+
+Also, if the Engine is a gem, make sure you add the spec/factories directory
+to the gem files (not test_files).
+
 ## Contributing
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md).
