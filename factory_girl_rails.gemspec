@@ -5,9 +5,9 @@ Gem::Specification.new do |s|
   s.email       = %q{jferris@thoughtbot.com}
   s.homepage    = "http://github.com/thoughtbot/factory_girl_rails"
   s.summary     = %q{factory_girl_rails provides integration between
-    factory_girl and rails 3}
+    factory_girl and rails 3 or newer}
   s.description = %q{factory_girl_rails provides integration between
-    factory_girl and rails 3 (currently just automatic factory definition
+    factory_girl and rails 3 or newer (currently just automatic factory definition
     loading)}
 
   s.files         = `git ls-files`.split("\n")
