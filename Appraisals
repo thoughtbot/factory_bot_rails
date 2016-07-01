@@ -15,7 +15,7 @@ appraise 'rails4.2' do
 end
 
 appraise "rails5.0" do
-  gem "activerecord", "~> 5.0.0.rc1"
-  gem "railties", "~> 5.0.0.rc1"
-  gem "rspec-rails", "~> 3.5.0.beta3"
+  gem "activerecord", "~> 5.0.0"
+  gem "railties", "~> 5.0.0"
+  gem "rspec-rails", "~> 3.5.0.beta4"
 end
