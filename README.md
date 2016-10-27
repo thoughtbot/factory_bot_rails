@@ -77,7 +77,7 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ![thoughtbot](http://thoughtbot.com/images/tm/logo.png)
 
-factory_girl is maintained and funded by [thoughtbot, inc](http://thoughtbot.com/community)
+factory_girl is maintained and funded by [thoughtbot, inc Rails team](https://thoughtbot.com/services/ruby-on-rails)
 
 The names and logos for thoughtbot are trademarks of thoughtbot, inc.
 
