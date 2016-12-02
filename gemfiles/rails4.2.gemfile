@@ -18,4 +18,4 @@ gem "jruby-openssl", :platforms => :jruby
 gem "sqlite3", :platforms => :ruby
 gem "rails", "~> 4.2.0"
 
-gemspec :path => "../"
+gemspec :path => "../", :name => "factory_bot_rails"

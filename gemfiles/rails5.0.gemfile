@@ -19,4 +19,4 @@ gem "sqlite3", :platforms => :ruby
 gem "activerecord", "~> 5.0.0"
 gem "railties", "~> 5.0.0"
 
-gemspec :path => "../"
+gemspec :path => "../", :name => "factory_bot_rails"

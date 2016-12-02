@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    factory_girl_rails (4.8.0)
-      factory_girl (~> 4.8.0)
+    factory_bot_rails (4.8.0)
+      factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
 
 GEM
@@ -63,7 +63,7 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.0.2)
-    factory_girl (4.8.0)
+    factory_bot (4.8.2)
       activesupport (>= 3.0.0)
     ffi (1.9.3)
     ffi (1.9.3-java)
@@ -129,7 +129,7 @@ DEPENDENCIES
   aruba
   coffee-rails
   cucumber (= 1.3.19)
-  factory_girl_rails!
+  factory_bot_rails!
   jdbc-sqlite3
   jquery-rails
   jruby-openssl

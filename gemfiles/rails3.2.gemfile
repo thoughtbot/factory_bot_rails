@@ -19,4 +19,4 @@ gem "sqlite3", :platforms => :ruby
 gem "rails", "~> 3.2.21"
 gem "sass-rails"
 
-gemspec :path => "../"
+gemspec :path => "../", :name => "factory_bot_rails"

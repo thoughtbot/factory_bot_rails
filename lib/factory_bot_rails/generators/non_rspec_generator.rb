@@ -1,4 +1,4 @@
-module FactoryGirlRails
+module FactoryBotRails
   module Generators
     class NonRSpecGenerator
       def initialize(generators)
@@ -6,7 +6,7 @@ module FactoryGirlRails
       end
 
       def run
-        @generators.test_framework test_framework, fixture: false, fixture_replacement: :factory_girl
+        @generators.test_framework test_framework, fixture: false, fixture_replacement: :factory_bot
       end
 
       private
