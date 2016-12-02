@@ -1,6 +1,7 @@
 require 'bundler/setup'
-require 'bundler/gem_tasks'
 require 'cucumber/rake/task'
+
+Bundler::GemHelper.install_tasks name: 'factory_bot_rails'
 
 Cucumber::Rake::Task.new(:cucumber) do |t|
   t.fork = true
