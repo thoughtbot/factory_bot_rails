@@ -89,6 +89,6 @@ software, and may be redistributed under the terms specified in the
 
 [fg]: https://github.com/thoughtbot/factory_girl
 [ci]: http://travis-ci.org/thoughtbot/factory_girl_rails?branch=master
-[ci-image]: https://secure.travis-ci.org/thoughtbot/factory_girl_rails.png
+[ci-image]: https://secure.travis-ci.org/thoughtbot/factory_girl_rails.svg
 [grade]: https://codeclimate.com/github/thoughtbot/factory_girl_rails
-[grade-image]: https://codeclimate.com/github/thoughtbot/factory_girl_rails.png
+[grade-image]: https://codeclimate.com/github/thoughtbot/factory_girl_rails.svg
