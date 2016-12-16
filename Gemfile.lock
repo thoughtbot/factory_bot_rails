@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     factory_girl_rails (4.7.0)
-      factory_girl (~> 4.7.0)
+      factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
 
 GEM
@@ -63,7 +63,7 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.0.2)
-    factory_girl (4.7.0)
+    factory_girl (4.8.0)
       activesupport (>= 3.0.0)
     ffi (1.9.3)
     ffi (1.9.3-java)
@@ -141,4 +141,4 @@ DEPENDENCIES
   uglifier
 
 BUNDLED WITH
-   1.11.2
+   1.13.6
