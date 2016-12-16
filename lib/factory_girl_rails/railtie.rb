@@ -18,10 +18,10 @@ module FactoryGirl
     end
 
     config.after_initialize do
-      FactoryGirl.find_definitions
-
       if defined?(Spring)
         Spring.after_fork { FactoryGirl.reload }
+      else
+        FactoryGirl.find_definitions
       end
     end
   end
