@@ -4,6 +4,9 @@ require 'factory_girl_rails'
 module FactoryGirl
   module Generators
     class ModelGenerator < Base
+      # Indentation for attributes of 4 spaces
+      INDENTATION = "    ".freeze
+
       argument(
         :attributes,
         type: :array,
@@ -55,7 +58,7 @@ module FactoryGirl
       def factory_definition
 <<-RUBY
   factory :#{singular_table_name}#{explicit_class_option} do
-#{factory_attributes.gsub(/^/, "    ")}
+#{factory_attributes}
   end
 RUBY
       end
@@ -70,7 +73,7 @@ RUBY
 
       def factory_attributes
         attributes.map do |attribute|
-          "#{attribute.name} #{attribute.default.inspect}"
+          "#{INDENTATION}#{attribute.name} #{attribute.default.inspect}"
         end.join("\n")
       end
 
