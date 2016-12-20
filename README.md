@@ -17,7 +17,7 @@ Ruby versions are listed in [`.travis.yml`](.travis.yml).
 
 ## Download
 
-Github: http://github.com/thoughtbot/factory_girl_rails
+GitHub: http://github.com/thoughtbot/factory_girl_rails
 
 Gem:
 
