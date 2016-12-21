@@ -7,9 +7,9 @@ before_install:
   - gem cleanup bundler
 cache: bundler
 rvm:
-  - 2.1.5
-  - 2.2.4
-  - 2.3.0
+  - 2.1.10
+  - 2.2.6
+  - 2.3.3
   - jruby-19mode
 branches:
   only:
@@ -26,5 +26,5 @@ matrix:
   allow_failures:
     - rvm: jruby-19mode
       gemfile: gemfiles/rails5.0.gemfile
-    - rvm: 2.1.5
+    - rvm: 2.1.6
       gemfile: gemfiles/rails5.0.gemfile
