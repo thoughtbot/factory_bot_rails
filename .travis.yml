@@ -11,6 +11,7 @@ rvm:
   - 2.2.4
   - 2.3.0
   - jruby-19mode
+  - ruby-head
 branches:
   only:
     - master
