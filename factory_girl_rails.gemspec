@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
     factory_girl and rails 3 or newer (currently just automatic factory definition
     loading)}
 
-  s.files         = Dir['**/*'].keep_if { |file| File.file?(file) }
+  s.files         = `git ls-files`.split("\n").reject { |f| f.match(%r{^(spec|features)/}) }
   s.require_paths = ["lib"]
   s.executables   = []
   s.license       = "MIT"
