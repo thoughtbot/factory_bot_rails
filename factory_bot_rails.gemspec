@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = %q{factory_bot_rails}
-  s.version     = '4.8.0'
+  s.version     = '4.8.2'
   s.authors     = ["Joe Ferris"]
   s.email       = %q{jferris@thoughtbot.com}
   s.homepage    = "http://github.com/thoughtbot/factory_bot_rails"
