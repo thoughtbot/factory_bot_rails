@@ -6,6 +6,21 @@ instances, attribute hashes, and stubbed objects), and support for multiple
 factories for the same class (`user`, `admin_user`, and so on), including factory
 inheritance.
 
+### Transitioning from factory\_girl\_rails?
+
+Transitioning is a two step process:
+
+1) Replace `factory_girl_rails` with `factory_bot_rails` in your Gemfile
+    and `bundle install`
+
+2) Rename all `FactoryGirl` to `FactoryBot` and `factory_girl` to `factory_bot`
+    in your codebase.
+
+This command will perform a `FactoryGirl` to `FactoryBot` rename within your
+`spec/` directory:
+
+```ag -0l FactoryGirl spec | xargs -0 sed -i 's/FactoryGirl/FactoryBot/g'```
+
 ## Rails
 
 factory_bot_rails provides Rails integration for [factory_bot][fb].
