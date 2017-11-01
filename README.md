@@ -8,18 +8,7 @@ inheritance.
 
 ### Transitioning from factory\_girl\_rails?
 
-Transitioning is a two step process:
-
-1) Replace `factory_girl_rails` with `factory_bot_rails` in your Gemfile
-    and `bundle install`
-
-2) Rename all `FactoryGirl` to `FactoryBot` and `factory_girl` to `factory_bot`
-    in your codebase.
-
-This command will perform a `FactoryGirl` to `FactoryBot` rename within your
-`spec/` directory:
-
-```ag -0l FactoryGirl spec | xargs -0 sed -i 's/FactoryGirl/FactoryBot/g'```
+Check out the [guide](https://github.com/thoughtbot/factory_bot/blob/4-9-0-stable/UPGRADE_FROM_FACTORY_GIRL.md).
 
 ## Rails
 
