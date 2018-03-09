@@ -18,7 +18,7 @@ module FactoryBot
     end
 
     config.after_initialize do
-      FactoryBot.find_definitions
+      ActiveSupport.on_load(:active_record) { FactoryBot.find_definitions }
 
       if defined?(Spring)
         Spring.after_fork { FactoryBot.reload }
