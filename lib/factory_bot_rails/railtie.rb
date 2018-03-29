@@ -4,6 +4,13 @@ require 'rails'
 
 module FactoryBot
   class Railtie < Rails::Railtie
+    ORMS_USING_LOAD_HOOKS = {
+      'Mongoid' => :mongoid,
+      'SequelRails' => :sequel,
+      'MongoMapper' => :mongo_mapper,
+      'ActiveRecord' => :active_record,
+      # datamapper doesn't seem to use load hooks...
+    }.freeze
 
     initializer "factory_bot.set_fixture_replacement" do
       FactoryBotRails::Generator.new(config).run
@@ -18,10 +25,21 @@ module FactoryBot
     end
 
     config.after_initialize do
-      ActiveSupport.on_load(:active_record) { FactoryBot.find_definitions }
+      find_definitions_after_orm_load
 
       if defined?(Spring)
         Spring.after_fork { FactoryBot.reload }
+      end
+    end
+
+    def self.find_definitions_after_orm_load
+      return FactoryBot.find_definitions unless hook_name = orm_load_hook_name
+      ActiveSupport.on_load(hook_name) { FactoryBot.find_definitions }
+    end
+
+    def self.orm_load_hook_name
+      ORMS_USING_LOAD_HOOKS.each do |orm_module_name, hook_name|
+        return hook_name if orm_module_name.safe_constantize
       end
     end
   end
