@@ -5,10 +5,10 @@ require 'rails'
 module FactoryBot
   class Railtie < Rails::Railtie
     ORMS_USING_LOAD_HOOKS = {
-      'Mongoid' => :mongoid,
-      'SequelRails' => :sequel,
-      'MongoMapper' => :mongo_mapper,
-      'ActiveRecord' => :active_record,
+      "Mongoid" => :mongoid,
+      "SequelRails" => :sequel,
+      "MongoMapper" => :mongo_mapper,
+      "ActiveRecord" => :active_record,
       # datamapper doesn't seem to use load hooks...
     }.freeze
 
