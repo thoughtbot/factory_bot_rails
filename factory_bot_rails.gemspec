@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = %q{factory_bot_rails}
-  s.version     = '4.8.2'
+  s.version     = '4.10.0'
   s.authors     = ["Joe Ferris"]
   s.email       = %q{jferris@thoughtbot.com}
   s.homepage    = "http://github.com/thoughtbot/factory_bot_rails"
@@ -16,5 +16,5 @@ Gem::Specification.new do |s|
   s.license       = "MIT"
 
   s.add_runtime_dependency('railties', '>= 3.0.0')
-  s.add_runtime_dependency('factory_bot', '~> 4.8.2')
+  s.add_runtime_dependency('factory_bot', '~> 4.10.0')
 end
