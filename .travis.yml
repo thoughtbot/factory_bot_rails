@@ -27,3 +27,10 @@ matrix:
   allow_failures:
     - rvm: 2.1
       gemfile: gemfiles/rails5.0.gemfile
+    # Ruby 2.4+ doesn't work with ActiveSupport 4.1
+    # https://github.com/rails/rails/pull/25161
+    # https://github.com/rails/rails/pull/25737
+    - rvm: 2.4
+      gemfile: gemfiles/rails4.1.gemfile
+    - rvm: 2.5
+      gemfile: gemfiles/rails4.1.gemfile
