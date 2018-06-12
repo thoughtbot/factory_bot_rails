@@ -10,6 +10,8 @@ inheritance.
 
 Check out the [guide](https://github.com/thoughtbot/factory_bot/blob/4-9-0-stable/UPGRADE_FROM_FACTORY_GIRL.md).
 
+Follow the [Getting Started Guide](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md)
+
 ## Rails
 
 factory_bot_rails provides Rails integration for [factory_bot][fb].
