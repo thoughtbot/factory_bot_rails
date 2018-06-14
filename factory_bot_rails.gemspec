@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
   s.version     = '4.10.0'
   s.authors     = ["Joe Ferris"]
   s.email       = %q{jferris@thoughtbot.com}
-  s.homepage    = "http://github.com/thoughtbot/factory_bot_rails"
+  s.homepage    = "https://github.com/thoughtbot/factory_bot_rails"
   s.summary     = %q{factory_bot_rails provides integration between
     factory_bot and rails 3 or newer}
   s.description = %q{factory_bot_rails provides integration between
