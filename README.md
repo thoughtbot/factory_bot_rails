@@ -93,6 +93,6 @@ software, and may be redistributed under the terms specified in the
 
 [fb]: https://github.com/thoughtbot/factory_bot
 [ci]: http://travis-ci.org/thoughtbot/factory_bot_rails?branch=master
-[ci-image]: https://secure.travis-ci.org/thoughtbot/factory_bot_rails.png
+[ci-image]: https://secure.travis-ci.org/thoughtbot/factory_bot_rails.svg
 [grade]: https://codeclimate.com/github/thoughtbot/factory_bot_rails
-[grade-image]: https://codeclimate.com/github/thoughtbot/factory_bot_rails.png
+[grade-image]: https://codeclimate.com/github/thoughtbot/factory_bot_rails.svg
