@@ -1,8 +1,8 @@
-require 'factory_girl_rails/generators/rspec_generator'
-require 'factory_girl_rails/generators/non_rspec_generator'
-require 'factory_girl_rails/generators/null_generator'
+require 'factory_bot_rails/generators/rspec_generator'
+require 'factory_bot_rails/generators/non_rspec_generator'
+require 'factory_bot_rails/generators/null_generator'
 
-module FactoryGirlRails
+module FactoryBotRails
   class Generator
     def initialize(config)
       @generators = if config.respond_to?(:app_generators)
@@ -17,7 +17,7 @@ module FactoryGirlRails
     end
 
     def generator
-      if factory_girl_disabled?
+      if factory_bot_disabled?
         Generators::NullGenerator
       else
         if test_framework == :rspec
@@ -32,8 +32,8 @@ module FactoryGirlRails
       rails_options[:test_framework]
     end
 
-    def factory_girl_disabled?
-      rails_options[:factory_girl] == false
+    def factory_bot_disabled?
+      rails_options[:factory_bot] == false
     end
 
     def rails_options
