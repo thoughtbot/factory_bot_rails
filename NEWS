@@ -1,12 +1,18 @@
-factory_girl_rails versioning is synced with factory_girl releases. For this reason
+factory_bot_rails versioning is synced with factory_bot releases. For this reason
 there might not be any notable changes in new versions of this project.
+
+4.10.0 (May 25, 2018)
+  No notable changes
+
+4.8.2 (October 20, 2017)
+  Rename factory_girl_rails to factory_bot_rails
 
 4.7.0 (April 1, 2016)
   No notable changes
 
 4.6.0 (February 1, 2016)
   No notable changes
-  
+
 4.5.0 (October 17, 2014)
   Improved README
 

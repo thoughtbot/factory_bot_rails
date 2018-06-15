@@ -7,7 +7,7 @@ agree to abide by the thoughtbot [code of conduct].
 
 Fork, then clone the repo:
 
-    git clone git@github.com:your-username/factory_girl_rails.git
+    git clone git@github.com:your-username/factory_bot_rails.git
 
 Set up your machine:
 
@@ -23,7 +23,7 @@ Make your change. Add tests for your change. Make the tests pass:
 
 Push to your fork and [submit a pull request][pr].
 
-[pr]: https://github.com/thoughtbot/factory_girl_rails/compare/
+[pr]: https://github.com/thoughtbot/factory_bot_rails/compare/
 
 At this point you're waiting on us. We like to at least comment on pull requests
 within three business days (and, typically, one business day). We may suggest
