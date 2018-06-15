@@ -8,7 +8,14 @@ Feature: automatically load step definitions
     And I run `bundle install` with a clean environment
     And I write to "db/migrate/1_create_users.rb" with:
       """
-      class CreateUsers < ActiveRecord::Migration
+      migration_class =
+        if ActiveRecord::Migration.respond_to?(:[])
+          ActiveRecord::Migration[4.2]
+        else
+          ActiveRecord::Migration
+        end
+
+      class CreateUsers < migration_class
         def self.up
           create_table :users do |t|
             t.string :name
