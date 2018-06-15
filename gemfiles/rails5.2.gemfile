@@ -16,7 +16,7 @@ gem "jdbc-sqlite3", :platforms => :jruby
 gem "therubyrhino", :platforms => :jruby
 gem "jruby-openssl", :platforms => :jruby
 gem "sqlite3", :platforms => :ruby
-gem "activerecord", "~> 5.0.0"
-gem "railties", "~> 5.0.0"
+gem "activerecord", "~> 5.2.0"
+gem "railties", "~> 5.2.0"
 
 gemspec :name => "factory_bot_rails", :path => "../"
