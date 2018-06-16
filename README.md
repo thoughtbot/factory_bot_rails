@@ -75,15 +75,9 @@ You may need to configure your test suite to include factory_bot methods; see
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Credits
-
-[factory_bot][fb] was originally written by Joe Ferris.
-
-![thoughtbot](http://thoughtbot.com/images/tm/logo.png)
-
-factory_bot is maintained and funded by [thoughtbot, inc](http://thoughtbot.com/community)
-
-The names and logos for thoughtbot are trademarks of thoughtbot, inc.
+factory_bot_rails was originally written by Joe Ferris and is now maintained by Josh
+Clayton. Many improvements and bugfixes were contributed by the [open source
+community](https://github.com/thoughtbot/factory_bot_rails/graphs/contributors).
 
 ## License
 
@@ -91,8 +85,21 @@ factory_bot_rails is Copyright © 2008-2016 Joe Ferris and thoughtbot. It is fre
 software, and may be redistributed under the terms specified in the
 [LICENSE](LICENSE) file.
 
+## About thoughtbot
+
+![thoughtbot](https://thoughtbot.com/logo.png)
+
+factory_bot_rails is maintained and funded by thoughtbot, inc.
+The names and logos for thoughtbot are trademarks of thoughtbot, inc.
+
+We are passionate about open source software.
+See [our other projects][community].
+We are [available for hire][hire].
+
 [fb]: https://github.com/thoughtbot/factory_bot
 [ci]: http://travis-ci.org/thoughtbot/factory_bot_rails?branch=master
 [ci-image]: https://secure.travis-ci.org/thoughtbot/factory_bot_rails.svg
 [grade]: https://codeclimate.com/github/thoughtbot/factory_bot_rails
 [grade-image]: https://codeclimate.com/github/thoughtbot/factory_bot_rails.svg
+[community]: https://thoughtbot.com/community?utm_source=github
+[hire]: https://thoughtbot.com/hire-us?utm_source=github
