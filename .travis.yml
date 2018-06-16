@@ -1,20 +1,38 @@
 language: ruby
+env:
+  - ARUBA_TIMEOUT=240
+before_install:
+  - gem update --system
+  - gem update bundler
+  - gem cleanup bundler
 cache: bundler
 rvm:
-  - 1.9.3
-  - 2.0.0
-  - 2.1.2
-  - jruby-19mode
-jdk:
-  - openjdk6
+  - 2.1
+  - 2.2
+  - 2.3
+  - 2.4
+  - 2.5
+  - ruby-head
 branches:
   only:
     - master
 install:
-  - "travis_retry bundle install"
-  - "bundle exec appraisal generate"
-  - "travis_retry bundle exec appraisal install"
+  - "bundle install --retry 3 --jobs 8"
 gemfile:
   - gemfiles/rails3.2.gemfile
-  - gemfiles/rails4.0.gemfile
   - gemfiles/rails4.1.gemfile
+  - gemfiles/rails4.2.gemfile
+  - gemfiles/rails5.0.gemfile
+matrix:
+  fast_finish: true
+  allow_failures:
+    - rvm: ruby-head
+    - rvm: 2.1
+      gemfile: gemfiles/rails5.0.gemfile
+    # Ruby 2.4+ doesn't work with ActiveSupport 4.1
+    # https://github.com/rails/rails/pull/25161
+    # https://github.com/rails/rails/pull/25737
+    - rvm: 2.4
+      gemfile: gemfiles/rails4.1.gemfile
+    - rvm: 2.5
+      gemfile: gemfiles/rails4.1.gemfile

@@ -16,7 +16,6 @@ gem "jdbc-sqlite3", :platforms => :jruby
 gem "therubyrhino", :platforms => :jruby
 gem "jruby-openssl", :platforms => :jruby
 gem "sqlite3", :platforms => :ruby
-gem "rails", "~> 3.2.21"
-gem "sass-rails"
+gem "rails", "~> 4.2.0"
 
 gemspec :name => "factory_bot_rails", :path => "../"

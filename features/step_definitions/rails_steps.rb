@@ -6,19 +6,6 @@ When /^I add "([^"]+)" as a dependency$/ do |gem_name|
   append_to_file('Gemfile', %{gem "#{gem_name}"\n})
 end
 
-When /^I set the FactoryGirl :suffix option to "([^"]+)"$/ do |suffix|
-  append_to_file('config/application.rb', <<-RUBY)
-    module Testapp
-      class Application < Rails::Application
-        config.generators do |g|
-          g.fixture_replacement :factory_girl, :suffix => '#{suffix}'
-        end
-      end
-    end
-  RUBY
-
-end
-
 When /^I print out "([^"]*)"$/ do |path|
   in_current_dir do
     File.open(path, 'r') do |f|
@@ -39,7 +26,7 @@ When /^I configure the factories directory as "([^"]+)"$/ do |factory_dir|
   append_to_file File.join('config', 'application.rb'), <<-END
 class Testapp::Application
   config.generators do |g|
-    g.fixture_replacement :factory_girl, :dir => "#{factory_dir}"
+    g.fixture_replacement :factory_bot, :dir => "#{factory_dir}"
   end
 end
   END
