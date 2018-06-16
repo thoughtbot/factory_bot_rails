@@ -96,7 +96,7 @@ We are passionate about open source software.
 See [our other projects][community].
 We are [available for hire][hire].
 
-[fg]: https://github.com/thoughtbot/factory_bot
+[fb]: https://github.com/thoughtbot/factory_bot
 [ci]: http://travis-ci.org/thoughtbot/factory_bot_rails?branch=master
 [ci-image]: https://secure.travis-ci.org/thoughtbot/factory_bot_rails.svg
 [grade]: https://codeclimate.com/github/thoughtbot/factory_bot_rails
