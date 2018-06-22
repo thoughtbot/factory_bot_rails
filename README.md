@@ -6,7 +6,13 @@ instances, attribute hashes, and stubbed objects), and support for multiple
 factories for the same class (`user`, `admin_user`, and so on), including factory
 inheritance.
 
-### Transitioning from factory\_girl\_rails?
+## Documentation
+
+You should find the documentation for your version of factory_bot on [Rubygems](https://rubygems.org/gems/factory_bot).
+
+See [Getting Started Guide](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md) for information on defining and using factories. We also have a detailed introductory video, available for free on Upcase.
+
+## Transitioning from factory\_girl\_rails?
 
 Check out the [guide](https://github.com/thoughtbot/factory_bot/blob/4-9-0-stable/UPGRADE_FROM_FACTORY_GIRL.md).
 
