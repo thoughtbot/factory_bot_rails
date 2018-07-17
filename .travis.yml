@@ -41,5 +41,7 @@ matrix:
       gemfile: gemfiles/rails4.1.gemfile
     - rvm: 2.5
       gemfile: gemfiles/rails4.1.gemfile
+    - rvm: ruby-head
+      gemfile: gemfiles/rails4.1.gemfile
   allow_failures:
     - rvm: ruby-head
