@@ -7,8 +7,6 @@ before_install:
   - gem cleanup bundler
 cache: bundler
 rvm:
-  - 2.1
-  - 2.2
   - 2.3
   - 2.4
   - 2.5
@@ -19,29 +17,11 @@ branches:
 install:
   - "bundle install --retry 3 --jobs 8"
 gemfile:
-  - gemfiles/rails3.2.gemfile
-  - gemfiles/rails4.1.gemfile
   - gemfiles/rails4.2.gemfile
   - gemfiles/rails5.0.gemfile
   - gemfiles/rails5.1.gemfile
   - gemfiles/rails5.2.gemfile
 matrix:
   fast_finish: true
-  exclude:
-    - rvm: 2.1
-      gemfile: gemfiles/rails5.0.gemfile
-    - rvm: 2.1
-      gemfile: gemfiles/rails5.1.gemfile
-    - rvm: 2.1
-      gemfile: gemfiles/rails5.2.gemfile
-    # Ruby 2.4+ doesn't work with ActiveSupport 4.1
-    # https://github.com/rails/rails/pull/25161
-    # https://github.com/rails/rails/pull/25737
-    - rvm: 2.4
-      gemfile: gemfiles/rails4.1.gemfile
-    - rvm: 2.5
-      gemfile: gemfiles/rails4.1.gemfile
-    - rvm: ruby-head
-      gemfile: gemfiles/rails4.1.gemfile
   allow_failures:
     - rvm: ruby-head
