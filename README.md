@@ -1,4 +1,4 @@
-# factory_bot_rails [![Build Status][ci-image]][ci] [![Code Climate][grade-image]][grade] [![Gem Version][version-image]][version]
+# factory_bot_rails [![Build Status][ci-image]][ci] [![Code Climate][grade-image]][grade] [![Gem Version][version-image]][version] [![Reviewed by Hound][hound-image]][hound]
 
 [factory_bot][fb] is a fixtures replacement with a straightforward definition
 syntax, support for multiple build strategies (saved instances, unsaved
@@ -105,3 +105,5 @@ We are [available for hire][hire].
 [hire]: https://thoughtbot.com/hire-us?utm_source=github
 [version-image]: https://badge.fury.io/rb/factory_bot_rails.svg
 [version]: https://badge.fury.io/rb/factory_bot_rails
+[hound-image]: https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg
+[hound]: https://houndci.com
