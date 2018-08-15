@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
     factory_bot and rails 3 or newer (currently just automatic factory definition
     loading)}
 
-  s.files         = Dir['**/*'].keep_if { |file| File.file?(file) }
+  s.files         = Dir['lib/**/*'] + %w[CONTRIBUTING.md LICENSE NEWS README.md]
   s.require_paths = ["lib"]
   s.executables   = []
   s.license       = "MIT"
