@@ -70,7 +70,7 @@ RUBY
 
       def factory_attributes
         attributes.map do |attribute|
-          "#{attribute.name} #{attribute.default.inspect}"
+          "#{attribute.name} { #{attribute.default.inspect} }"
         end.join("\n")
       end
 

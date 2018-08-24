@@ -18,8 +18,8 @@ Feature:
       """
       FactoryBot.define do
         factory :user do
-          name "MyString"
-          age 1
+          name { "MyString" }
+          age { 1 }
         end
       end
 
@@ -38,7 +38,7 @@ Feature:
       """
       FactoryBot.define do
         factory :user do
-          name "MyString"
+          name { "MyString" }
         end
       end
       """
