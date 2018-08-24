@@ -35,7 +35,7 @@ Feature: automatically load step definitions
       """
       FactoryBot.define do
         factory :user do
-          name "Frank"
+          name { "Frank" }
         end
       end
       """
@@ -73,7 +73,7 @@ Feature: automatically load step definitions
       """
       FactoryBot.define do
         factory :factory_from_some_railtie, class: 'User' do
-          name 'Artem'
+          name { 'Artem' }
         end
       end
       """
