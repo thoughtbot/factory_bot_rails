@@ -1,6 +1,9 @@
 factory_bot_rails versioning is synced with factory_bot releases. For this reason
 there might not be any notable changes in new versions of this project.
 
+4.11.1 (September 7, 2018)
+  Update generator to use dynamic attributes instead of deprecated static attributes
+
 4.11.0 (August 16, 2018)
   No notable changes
 
