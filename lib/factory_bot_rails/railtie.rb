@@ -7,17 +7,15 @@ require "rails"
 
 module FactoryBotRails
   class Railtie < Rails::Railtie
+    config.factory_bot = ActiveSupport::OrderedOptions.new
+    config.factory_bot.definition_file_paths = FactoryBot.definition_file_paths
 
     initializer "factory_bot.set_fixture_replacement" do
       Generator.new(config).run
     end
 
     initializer "factory_bot.set_factory_paths" do
-      FactoryBot.definition_file_paths = [
-        Rails.root.join("factories"),
-        Rails.root.join("test", "factories"),
-        Rails.root.join("spec", "factories"),
-      ]
+      FactoryBot.definition_file_paths = definition_file_paths
     end
 
     initializer "factory_bot.register_reloader" do |app|
@@ -26,6 +24,14 @@ module FactoryBotRails
 
     config.after_initialize do
       FactoryBot.find_definitions
+    end
+
+    private
+
+    def definition_file_paths
+      config.factory_bot.definition_file_paths.map do |path|
+        Rails.root.join(path)
+      end
     end
   end
 end
