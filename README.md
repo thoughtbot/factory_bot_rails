@@ -12,9 +12,7 @@ Check out the [guide](https://github.com/thoughtbot/factory_bot/blob/4-9-0-stabl
 
 ## Rails
 
-factory_bot_rails provides Rails integration for [factory_bot][fb].
-
-Currently, automatic factory definition loading is the only Rails-specific feature.
+factory\_bot\_rails provides Rails integration for [factory_bot][fb].
 
 Supported Rails versions are listed in [`Appraisals`](Appraisals). Supported
 Ruby versions are listed in [`.travis.yml`](.travis.yml).
@@ -37,9 +35,56 @@ group :development, :test do
 end
 ```
 
-Generators for factories will automatically substitute fixture (and maybe any other
-`fixture_replacement` you set). If you want to disable this feature, add the
-following to your application.rb file:
+You may want to configure your test suite to include factory\_bot methods; see
+[configuration](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md#configure-your-test-suite).
+
+### Automatic Factory Definition Loading
+
+By default, factory\_bot\_rails will automatically load factories
+defined in the following locations,
+relative to the root of the Rails project:
+
+```
+factories.rb
+test/factories.rb
+spec/factories.rb
+factories/*.rb
+test/factories/*.rb
+spec/factories/*.rb
+```
+
+You can configure by adding the following to "config/application.rb" or the
+appropriate environment configuration in "config/environments":
+
+```ruby
+config.factory_bot.definition_file_paths = ["custom/factories"]
+```
+
+This will cause factory\_bot\_rails to automatically load factories in
+`custom/factories.rb` and `custom/factories/*.rb`.
+
+It is possible to use this setting to share factories from a gem:
+
+```rb
+class MyEngine < ::Rails::Engine
+  config.factory_bot.definition_file_paths =
+    File.expand_path('../factories, __FILE__) if defined?(FactoryBotRails)
+end
+```
+
+You can also disable automatic factory definition loading entirely by
+using an empty array:
+
+```rb
+config.factory_bot.definition_file_paths = []
+```
+
+### Generators
+
+Including factory\_bot\_rails in the development group of your Gemfile,
+will cause Rails to generate factories instead of fixtures.
+If you want to disable this feature, you can either move factory\_bot\_rails out
+of the development group of your Gemfile, or add the following configuration:
 
 ```ruby
 config.generators do |g|
@@ -47,8 +92,15 @@ config.generators do |g|
 end
 ```
 
-Default factories directory is `test/factories`, or `spec/factories` if
-`test_framework` generator is set to `:rspec`; change this behavior with:
+If fixture replacement is enabled and you already have a `test/factories.rb`
+file (or `spec/factories.rb` if using rspec_rails), generated factories will be
+inserted at the top of the existing file.
+Otherwise, factories will be generated in the
+`test/factories` directory (`spec/factories` if using rspec_rails),
+in a file matching the name of the table (e.g. 'test/factories/users.rb').
+
+To generate factories in a different directory, you can use the following
+configuration:
 
 ```ruby
 config.generators do |g|
@@ -56,20 +108,29 @@ config.generators do |g|
 end
 ```
 
-If you use factory_bot for fixture replacement, ensure that
-factory_bot_rails is available in the development group. If it's not, Rails
-will generate standard .yml files instead of factory files.
+Note that factory\_bot\_rails will not automatically load files in custom
+locations unless you add them to `config.factory_bot.defintion_file_paths` as
+well.
 
-factory_bot takes an option `suffix: 'some_suffix'` to generate factories as
-`modelname_some_suffix.rb`.
+The suffix option allows you to customize the name of the generated file with a
+suffix:
 
-If you use factory_bot for fixture replacement and already have a
-`factories.rb` file in the directory that contains your tests,
-factory_bot_rails will insert new factory definitions at the top of
-`factories.rb`.
+```ruby
+config.generators do |g|
+  g.factory_bot suffix: "factory"
+end
+```
 
-You may need to configure your test suite to include factory_bot methods; see
-[configuration](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md#configure-your-test-suite).
+This will generate `test/factories/users_factory.rb` instead of
+`test/factories/users.rb`.
+
+For even more customization, use the `filename_proc` option:
+
+```ruby
+config.generators do |g|
+  g.factory_bot filename_proc: -> { |table_name| "prefix_#{table_name}_suffix" }
+end
+```
 
 ## Contributing
 
