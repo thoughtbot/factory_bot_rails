@@ -5,11 +5,7 @@ require 'factory_bot_rails/generators/null_generator'
 module FactoryBotRails
   class Generator
     def initialize(config)
-      @generators = if config.respond_to?(:app_generators)
-                      config.app_generators
-                    else
-                      config.generators
-                    end
+      @generators = config.app_generators
     end
 
     def run
@@ -17,14 +13,12 @@ module FactoryBotRails
     end
 
     def generator
-      if factory_bot_disabled?
-        Generators::NullGenerator
+      return Generators::NullGenerator if factory_bot_disabled?
+
+      if test_framework == :rspec
+        Generators::RSpecGenerator
       else
-        if test_framework == :rspec
-          Generators::RSpecGenerator
-        else
-          Generators::NonRSpecGenerator
-        end
+        Generators::NonRSpecGenerator
       end
     end
 

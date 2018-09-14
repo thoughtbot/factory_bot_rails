@@ -91,8 +91,7 @@ RUBY
       end
 
       def generators
-        config = FactoryBotRails::Railtie.config
-        config.respond_to?(:app_generators) ? config.app_generators : config.generators
+        FactoryBotRails::Railtie.config.app_generators
       end
     end
   end
