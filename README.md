@@ -128,7 +128,7 @@ For even more customization, use the `filename_proc` option:
 
 ```ruby
 config.generators do |g|
-  g.factory_bot filename_proc: -> { |table_name| "prefix_#{table_name}_suffix" }
+  g.factory_bot filename_proc: ->(table_name) { "prefix_#{table_name}_suffix" }
 end
 ```
 
