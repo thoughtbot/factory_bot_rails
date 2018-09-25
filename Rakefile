@@ -1,27 +1,27 @@
-require 'bundler/setup'
-require 'cucumber/rake/task'
-require 'rspec/core/rake_task'
+require "bundler/setup"
+require "cucumber/rake/task"
+require "rspec/core/rake_task"
 
-Bundler::GemHelper.install_tasks name: 'factory_bot_rails'
+Bundler::GemHelper.install_tasks name: "factory_bot_rails"
 
 Cucumber::Rake::Task.new(:cucumber) do |t|
   t.fork = true
-  t.cucumber_opts = ['--format', (ENV['CUCUMBER_FORMAT'] || 'progress')]
+  t.cucumber_opts = ["--format", (ENV["CUCUMBER_FORMAT"] || "progress")]
 end
 
 RSpec::Core::RakeTask.new(:spec)
 
-require 'appraisal'
+require "appraisal"
 
-desc 'Run the test suite'
-task :default do |t|
-  if ENV['BUNDLE_GEMFILE'] =~ /gemfiles/
-    exec 'rake spec && rake cucumber'
+desc "Run the test suite"
+task :default do |_|
+  if ENV["BUNDLE_GEMFILE"] =~ /gemfiles/
+    exec "rake spec && rake cucumber"
   else
-    Rake::Task['appraise'].execute
+    Rake::Task["appraise"].execute
   end
 end
 
-task :appraise => ['appraisal:install'] do |t|
-  exec 'rake appraisal'
+task appraise: ["appraisal:install"] do |_|
+  exec "rake appraisal"
 end
