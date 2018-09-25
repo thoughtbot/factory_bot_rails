@@ -1,5 +1,5 @@
-require 'generators/factory_bot'
-require 'factory_bot_rails'
+require "generators/factory_bot"
+require "factory_bot_rails"
 
 module FactoryBot
   module Generators
@@ -8,21 +8,21 @@ module FactoryBot
         :attributes,
         type: :array,
         default: [],
-        banner: "field:type field:type"
+        banner: "field:type field:type",
       )
 
       class_option(
         :dir,
         type: :string,
         default: "test/factories",
-        desc: "The directory or file root where factories belong"
+        desc: "The directory or file root where factories belong",
       )
 
       class_option(
         :suffix,
         type: :string,
         default: nil,
-        desc: "Suffix to add factory file"
+        desc: "Suffix to add factory file",
       )
 
       def create_fixture_file
@@ -43,7 +43,7 @@ module FactoryBot
         insert_into_file(
           factories_file,
           factory_definition,
-          after: "FactoryBot.define do\n"
+          after: "FactoryBot.define do\n",
         )
       end
 
@@ -53,19 +53,19 @@ module FactoryBot
       end
 
       def factory_definition
-<<-RUBY
+        <<-RUBY
   factory :#{singular_table_name}#{explicit_class_option} do
-#{factory_attributes.gsub(/^/, "    ")}
+#{factory_attributes.gsub(/^/, '    ')}
   end
-RUBY
+        RUBY
       end
 
       def single_file_factory_definition
-<<-RUBY
+        <<-RUBY
 FactoryBot.define do
 #{factory_definition.chomp}
 end
-RUBY
+        RUBY
       end
 
       def factory_attributes
@@ -78,7 +78,7 @@ RUBY
         if factory_bot_options[:filename_proc].present?
           factory_bot_options[:filename_proc].call(table_name)
         else
-          [table_name, filename_suffix].compact.join('_')
+          [table_name, filename_suffix].compact.join(" ")
         end
       end
 

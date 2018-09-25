@@ -28,13 +28,6 @@ Layout/IndentHeredoc:
     - 'lib/generators/factory_bot/model/model_generator.rb'
 
 # Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: Width, IgnoredPatterns.
-Layout/IndentationWidth:
-  Exclude:
-    - 'lib/generators/factory_bot/model/model_generator.rb'
-
-# Offense count: 2
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/BlockLength:
   Max: 40
@@ -49,25 +42,6 @@ Style/Documentation:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
-    - 'lib/generators/factory_bot/model/model_generator.rb'
-
-# Offense count: 84
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  EnforcedStyle: "double_quotes"
-  Exclude:
-    - 'lib/generators/factory_bot.rb'
-    - 'lib/generators/factory_bot/model/model_generator.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiteralsInInterpolation:
-  Exclude:
-    - 'lib/generators/factory_bot/model/model_generator.rb'
 
 # Offense count: 4
 # Cop supports --auto-correct.
@@ -76,7 +50,6 @@ Style/StringLiteralsInInterpolation:
 Style/TrailingCommaInArguments:
   Exclude:
     - 'spec/factory_bot_rails/definition_file_paths_spec.rb'
-    - 'lib/generators/factory_bot/model/model_generator.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
