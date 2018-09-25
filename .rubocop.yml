@@ -86,14 +86,6 @@ Style/Documentation:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
-    - 'lib/factory_bot_rails.rb'
-    - 'lib/factory_bot_rails/definition_file_paths.rb'
-    - 'lib/factory_bot_rails/generator.rb'
-    - 'lib/factory_bot_rails/generators/non_rspec_generator.rb'
-    - 'lib/factory_bot_rails/generators/null_generator.rb'
-    - 'lib/factory_bot_rails/generators/rspec_generator.rb'
-    - 'lib/factory_bot_rails/railtie.rb'
-    - 'lib/factory_bot_rails/reloader.rb'
     - 'lib/generators/factory_bot/model/model_generator.rb'
 
 # Offense count: 2
@@ -101,8 +93,7 @@ Style/Documentation:
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: compact, expanded
 Style/EmptyMethod:
-  Exclude:
-    - 'lib/factory_bot_rails/generators/null_generator.rb'
+  EnforcedStyle: expanded
 
 # Offense count: 29
 # Cop supports --auto-correct.
@@ -143,9 +134,6 @@ Style/StringLiterals:
     - 'factory_bot_rails.gemspec'
     - 'features/step_definitions/rails_steps.rb'
     - 'features/support/env.rb'
-    - 'lib/factory_bot_rails.rb'
-    - 'lib/factory_bot_rails/generator.rb'
-    - 'lib/factory_bot_rails/generators/rspec_generator.rb'
     - 'lib/generators/factory_bot.rb'
     - 'lib/generators/factory_bot/model/model_generator.rb'
 
