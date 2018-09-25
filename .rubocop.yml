@@ -50,31 +50,17 @@ Layout/IndentationWidth:
   Exclude:
     - 'lib/generators/factory_bot/model/model_generator.rb'
 
-# Offense count: 7
-Lint/AmbiguousRegexpLiteral:
-  Exclude:
-    - 'features/step_definitions/appraisal.rb'
-    - 'features/step_definitions/rails_steps.rb'
-
 # Offense count: 3
 # Cop supports --auto-correct.
 # Configuration parameters: IgnoreEmptyBlocks, AllowUnusedKeywordArguments.
 Lint/UnusedBlockArgument:
   Exclude:
     - 'Rakefile'
-    - 'features/support/env.rb'
 
 # Offense count: 2
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/BlockLength:
   Max: 40
-
-# Offense count: 2
-# Configuration parameters: Blacklist.
-# Blacklist: END, (?-mix:EO[A-Z]{1})
-Naming/HeredocDelimiterNaming:
-  Exclude:
-    - 'features/step_definitions/rails_steps.rb'
 
 # Offense count: 1
 Naming/MemoizedInstanceVariableName:
@@ -116,19 +102,12 @@ Style/HashSyntax:
     - 'gemfiles/rails5.1.gemfile'
     - 'gemfiles/rails5.2.gemfile'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/MultilineIfModifier:
-  Exclude:
-    - 'features/support/env.rb'
-
 # Offense count: 5
 # Cop supports --auto-correct.
 # Configuration parameters: PreferredDelimiters.
 Style/PercentLiteralDelimiters:
   Exclude:
     - 'factory_bot_rails.gemspec'
-    - 'features/step_definitions/rails_steps.rb'
 
 # Offense count: 84
 # Cop supports --auto-correct.
@@ -141,8 +120,6 @@ Style/StringLiterals:
     - 'Gemfile'
     - 'Rakefile'
     - 'factory_bot_rails.gemspec'
-    - 'features/step_definitions/rails_steps.rb'
-    - 'features/support/env.rb'
     - 'lib/factory_bot_rails.rb'
     - 'lib/factory_bot_rails/generator.rb'
     - 'lib/factory_bot_rails/generators/rspec_generator.rb'
