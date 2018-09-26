@@ -78,7 +78,7 @@ end
         if factory_bot_options[:filename_proc].present?
           factory_bot_options[:filename_proc].call(table_name)
         else
-          [table_name, filename_suffix].compact.join(" ")
+          [table_name, filename_suffix].compact.join("_")
         end
       end
 
