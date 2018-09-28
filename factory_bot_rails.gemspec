@@ -4,11 +4,11 @@ Gem::Specification.new do |s|
   s.authors     = ["Joe Ferris"]
   s.email       = "jferris@thoughtbot.com"
   s.homepage    = "https://github.com/thoughtbot/factory_bot_rails"
-  s.summary     = "factory_bot_rails provides integration between
-    factory_bot and rails 3 or newer"
-  s.description = "factory_bot_rails provides integration between
-    factory_bot and rails 3 or newer (currently just automatic factory definition
-    loading)}"
+  s.summary     = "factory_bot_rails provides integration between "\
+                  "factory_bot and rails 3 or newer"
+  s.description = "factory_bot_rails provides integration between "\
+                  "factory_bot and rails 3 or newer (currently just automatic "\
+                  "factory definition loading)}"
 
   s.files         = Dir["lib/**/*"] + %w[CONTRIBUTING.md LICENSE NEWS README.md]
   s.require_paths = ["lib"]
