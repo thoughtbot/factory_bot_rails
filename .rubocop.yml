@@ -64,7 +64,6 @@ Lint/AmbiguousRegexpLiteral:
 # Configuration parameters: IgnoreEmptyBlocks, AllowUnusedKeywordArguments.
 Lint/UnusedBlockArgument:
   Exclude:
-    - 'Rakefile'
     - 'features/support/env.rb'
 
 # Offense count: 2
@@ -97,7 +96,6 @@ Style/Documentation:
 # SupportedStyles: ruby19, hash_rockets, no_mixed_keys, ruby19_no_mixed_keys
 Style/HashSyntax:
   Exclude:
-    - 'Rakefile'
     - 'gemfiles/rails4.2.gemfile'
     - 'gemfiles/rails5.0.gemfile'
     - 'gemfiles/rails5.1.gemfile'
@@ -124,9 +122,7 @@ Style/PercentLiteralDelimiters:
 Style/StringLiterals:
   EnforcedStyle: "double_quotes"
   Exclude:
-    - 'Appraisals'
     - 'Gemfile'
-    - 'Rakefile'
     - 'factory_bot_rails.gemspec'
     - 'features/step_definitions/rails_steps.rb'
     - 'features/support/env.rb'
@@ -169,10 +165,3 @@ Style/WordArray:
 # URISchemes: http, https
 Metrics/LineLength:
   Max: 133
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Performance/RegexpMatch:
-  Exclude:
-    - 'Rakefile'
-
