@@ -16,7 +16,7 @@ module FactoryBotRails
       end
 
       def factory_bot_directory
-        @generators.options.fetch(:factory_bot, {}).fetch(:dir, 'spec/factories')
+        @generators.options.fetch(:factory_bot, {}).fetch(:dir, "spec/factories")
       end
     end
   end
