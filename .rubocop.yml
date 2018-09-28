@@ -4,6 +4,7 @@ inherit_from:
 AllCops:
   Exclude:
     - "tmp/**/*"
+    - "gemfiles/*"
 
 Style/EmptyMethod:
   EnforcedStyle: expanded
