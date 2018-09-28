@@ -1,6 +1,6 @@
-require 'factory_bot_rails/generators/rspec_generator'
-require 'factory_bot_rails/generators/non_rspec_generator'
-require 'factory_bot_rails/generators/null_generator'
+require "factory_bot_rails/generators/rspec_generator"
+require "factory_bot_rails/generators/non_rspec_generator"
+require "factory_bot_rails/generators/null_generator"
 
 module FactoryBotRails
   class Generator
