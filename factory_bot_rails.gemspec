@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
                   "factory_bot and rails 3 or newer"
   s.description = "factory_bot_rails provides integration between "\
                   "factory_bot and rails 3 or newer (currently just automatic "\
-                  "factory definition loading)}"
+                  "factory definition loading)"
 
   s.files         = Dir["lib/**/*"] + %w[CONTRIBUTING.md LICENSE NEWS README.md]
   s.require_paths = ["lib"]
