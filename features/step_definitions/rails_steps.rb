@@ -15,20 +15,20 @@ When /^I print out "([^"]*)"$/ do |path|
 end
 
 When /^I configure the factories as:$/ do |string|
-  append_to_file File.join("config", "application.rb"), <<-RUBY
-class Testapp::Application
-  #{string}
-end
+  append_to_file File.join("config", "application.rb"), <<~RUBY
+    class Testapp::Application
+      #{string}
+    end
   RUBY
 end
 
 When /^I configure the factories directory as "([^"]+)"$/ do |factory_dir|
-  append_to_file File.join("config", "application.rb"), <<-RUBY
-class Testapp::Application
-  config.generators do |g|
-    g.fixture_replacement :factory_bot, :dir => "#{factory_dir}"
-  end
-end
+  append_to_file File.join("config", "application.rb"), <<~RUBY
+    class Testapp::Application
+      config.generators do |g|
+        g.fixture_replacement :factory_bot, :dir => "#{factory_dir}"
+      end
+    end
   RUBY
 end
 
