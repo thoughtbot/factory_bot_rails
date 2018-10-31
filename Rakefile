@@ -11,17 +11,5 @@ end
 
 RSpec::Core::RakeTask.new(:spec)
 
-require "appraisal"
-
 desc "Run the test suite"
-task :default do
-  if ENV["BUNDLE_GEMFILE"] =~ /gemfiles/
-    exec "rake spec && rake cucumber"
-  else
-    Rake::Task["appraise"].execute
-  end
-end
-
-task appraise: ["appraisal:install"] do
-  exec "rake appraisal"
-end
+task default: %w(spec cucumber)
