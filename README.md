@@ -53,8 +53,8 @@ test/factories/*.rb
 spec/factories/*.rb
 ```
 
-You can configure by adding the following to "config/application.rb" or the
-appropriate environment configuration in "config/environments":
+You can configure by adding the following to `config/application.rb` or the
+appropriate environment configuration in `config/environments`:
 
 ```ruby
 config.factory_bot.definition_file_paths = ["custom/factories"]
@@ -81,7 +81,7 @@ config.factory_bot.definition_file_paths = []
 
 ### Generators
 
-Including factory\_bot\_rails in the development group of your Gemfile,
+Including factory\_bot\_rails in the development group of your Gemfile
 will cause Rails to generate factories instead of fixtures.
 If you want to disable this feature, you can either move factory\_bot\_rails out
 of the development group of your Gemfile, or add the following configuration:
@@ -97,7 +97,7 @@ file (or `spec/factories.rb` if using rspec_rails), generated factories will be
 inserted at the top of the existing file.
 Otherwise, factories will be generated in the
 `test/factories` directory (`spec/factories` if using rspec_rails),
-in a file matching the name of the table (e.g. 'test/factories/users.rb').
+in a file matching the name of the table (e.g. `test/factories/users.rb`).
 
 To generate factories in a different directory, you can use the following
 configuration:
