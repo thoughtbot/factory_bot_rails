@@ -49,7 +49,7 @@ module FactoryBot
 
       def create_factory_file
         file = File.join(options[:dir], "#{filename}.rb")
-        create_file(file, single_file_factory_definition)
+        template "factories.erb", file
       end
 
       def factory_definition
@@ -58,14 +58,6 @@ module FactoryBot
           #{factory_attributes.gsub(/^/, '    ')}
             end
 
-        RUBY
-      end
-
-      def single_file_factory_definition
-        <<~RUBY
-          FactoryBot.define do
-          #{factory_definition.rstrip}
-          end
         RUBY
       end
 

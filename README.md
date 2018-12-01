@@ -132,6 +132,15 @@ config.generators do |g|
 end
 ```
 
+To override the [default factory template][], define your own template in
+`lib/templates/factory\_bot/models/factories.erb`. This template will have
+access to any methods available in `FactoryBot::Generators::ModelGenerator`.
+Note that factory\_bot\_rails will only use this custom template if you are
+generating each factory in a separate file; it will have no effect if you are
+generating all of your factories in `test/factories.rb` or `spec/factories.rb`.
+
+[default factory template]: https://github.com/thoughtbot/factory_bot_rails/tree/master/lib/generators/factory_bot/model/templates/factories.erb
+
 ## Contributing
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md).
