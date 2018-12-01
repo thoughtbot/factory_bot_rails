@@ -34,12 +34,18 @@ Feature:
       end
       """
     And I run `bundle exec rails generate model User name:string` with a clean environment
+    And I run `bundle exec rails generate model Robot name:string` with a clean environment
     Then the file "test/factories.rb" should contain exactly:
       """
       FactoryBot.define do
+        factory :robot do
+          name { "MyString" }
+        end
+
         factory :user do
           name { "MyString" }
         end
+
       end
       """
 
@@ -51,4 +57,4 @@ Feature:
       end
       """
     And I run `bundle exec rails generate model User name:string` with a clean environment
-    Then the file "test/factories.rb" should contain "factory :user do"
+    Then the file "test/factories/users.rb" should not contain "factory :user do"
