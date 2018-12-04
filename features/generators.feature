@@ -13,7 +13,7 @@ Feature:
     When I run `bundle exec rails generate model User name:string age:integer` with a clean environment
     And I run `bundle exec rails generate model Namespaced::User name:string` with a clean environment
     Then the output should contain "test/factories/users.rb"
-    And the output should contain "test/factories/namespaced_users.rb"
+    And the output should contain "test/factories/namespaced/users.rb"
     And the file "test/factories/users.rb" should contain exactly:
       """
       FactoryBot.define do
@@ -23,7 +23,7 @@ Feature:
         end
       end
       """
-    And the file "test/factories/namespaced_users.rb" should contain "factory :namespaced_user, class: 'Namespaced::User' do"
+    And the file "test/factories/namespaced/users.rb" should contain "factory :namespaced_user, class: 'Namespaced::User' do"
 
   Scenario: The factory_bot_rails generators add a factory in the correct spot
     When I write to "test/factories.rb" with:

@@ -71,7 +71,8 @@ module FactoryBot
         if factory_bot_options[:filename_proc].present?
           factory_bot_options[:filename_proc].call(table_name)
         else
-          [table_name, filename_suffix].compact.join("_")
+          name = File.join(class_path, plural_name)
+          [name, filename_suffix].compact.join("_")
         end
       end
 
