@@ -133,7 +133,7 @@ end
 ```
 
 To override the [default factory template][], define your own template in
-`lib/templates/factory\_bot/models/factories.erb`. This template will have
+`lib/templates/factory_bot/models/factories.erb`. This template will have
 access to any methods available in `FactoryBot::Generators::ModelGenerator`.
 Note that factory\_bot\_rails will only use this custom template if you are
 generating each factory in a separate file; it will have no effect if you are
