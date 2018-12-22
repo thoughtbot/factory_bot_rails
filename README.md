@@ -27,7 +27,7 @@ Gem:
 
 ## Configuration
 
-Add `factory_bot_rails` to your Gemfile:
+Add `factory_bot_rails` to your Gemfile in both the test and development groups:
 
 ```ruby
 group :development, :test do
