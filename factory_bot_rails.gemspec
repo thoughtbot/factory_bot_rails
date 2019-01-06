@@ -15,6 +15,6 @@ Gem::Specification.new do |s|
   s.executables   = []
   s.license       = "MIT"
 
-  s.add_runtime_dependency("factory_bot", "~> 4.11.1")
-  s.add_runtime_dependency("railties", ">= 3.0.0")
+  s.add_runtime_dependency("factory_bot", "~> 5.0.0.rc1")
+  s.add_runtime_dependency("railties", ">= 4.2.0")
 end
