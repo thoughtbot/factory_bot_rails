@@ -1,6 +1,14 @@
 factory_bot_rails versioning is synced with factory_bot releases. For this reason
 there might not be any notable changes in new versions of this project.
 
+5.0.0
+  Added: calling reload! in the Rails console will reload any factory definition files that have changed
+  Added: support for custom generator templates
+  Added: definition_file_paths configuration option, making it easier to place factories in custom locations
+  Changed: namespaced models are now generated inside a directory matching the namespace
+  Changed: added newline between factories generated into the same file
+  Removed: support for EOL version of Ruby and Rails
+
 4.11.1 (September 7, 2018)
   Update generator to use dynamic attributes instead of deprecated static attributes
 

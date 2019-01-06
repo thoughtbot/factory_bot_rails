@@ -1,14 +1,15 @@
 # Releasing
 
-1. Update the version in the gemspec (and the factory_bot version, if necessary)
+1. Update the version in the gemspec (and the factory\_bot version, if necessary)
+   and run `bundle install`
 1. Update `NEWS.md` to reflect the changes since last release.
 1. Commit changes.
    There shouldn't be code changes,
    and thus CI doesn't need to run,
-   you can then add "[ci skip]" to the commit message.
+   so you can add "[ci skip]" to the commit message.
 1. Tag the release: `git tag -s vVERSION`
   - We recommend the [_quick guide on how to sign a release_] from git ready.
-1. Push changes: `git push --tags`
+1. Push changes: `git push && git push --tags`
 1. Build and publish:
   ```bash
   gem build factory_bot_rails.gemspec
