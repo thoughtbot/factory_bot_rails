@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    factory_bot_rails (5.0.0.rc1)
-      factory_bot (~> 5.0.0.rc1)
+    factory_bot_rails (5.0.0.rc2)
+      factory_bot (~> 5.0.0.rc2)
       railties (>= 4.2.0)
 
 GEM
@@ -72,7 +72,7 @@ GEM
     diff-lcs (1.3)
     erubi (1.7.1)
     execjs (2.7.0)
-    factory_bot (5.0.0.rc1)
+    factory_bot (5.0.0.rc2)
       activesupport (>= 4.2.0)
     ffi (1.9.25)
     ffi (1.9.25-java)
@@ -183,4 +183,4 @@ DEPENDENCIES
   uglifier
 
 BUNDLED WITH
-   1.16.6
+   1.17.3
