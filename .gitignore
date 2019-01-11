@@ -8,3 +8,4 @@ rdoc
 test.db
 tmp
 .rubocop-https*
+factory_bot_rails-*.gem
