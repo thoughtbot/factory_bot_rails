@@ -19,5 +19,6 @@ gem "sqlite3", platforms: :ruby
 gem "rubocop", "0.54", require: false
 gem "activerecord", "~> 6.0.0.beta1"
 gem "railties", "~> 6.0.0.beta1"
+gem "bootsnap"
 
 gemspec name: "factory_bot_rails", path: "../"

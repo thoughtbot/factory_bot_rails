@@ -21,4 +21,5 @@ end
 appraise "rails6.0" do
   gem "activerecord", "~> 6.0.0.beta1"
   gem "railties", "~> 6.0.0.beta1"
+  gem "bootsnap"
 end
