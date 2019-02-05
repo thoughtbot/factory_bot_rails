@@ -2,8 +2,6 @@
 
 module FactoryBotRails
   class DefinitionFilePaths
-    attr_reader :files, :directories
-
     def initialize(definition_file_paths)
       @files = []
       @directories = {}
@@ -12,6 +10,14 @@ module FactoryBotRails
         @files << "#{path}.rb"
         @directories[path.to_s] = [:rb]
       end
+    end
+
+    def directories
+      @directories.select { |path| Dir.exist?(path) }
+    end
+
+    def files
+      @files.select { |file| File.exist?(file) }
     end
   end
 end

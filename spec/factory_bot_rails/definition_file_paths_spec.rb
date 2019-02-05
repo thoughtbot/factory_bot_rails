@@ -2,33 +2,32 @@
 
 describe FactoryBotRails::DefinitionFilePaths do
   describe "#files" do
-    it "returns a list of definition files" do
-      definition_file_paths = ["definition_path", "another_definition_path"]
+    it "returns a list of definition files that only exist" do
+      definition_file_paths = ["spec/fixtures/factories", "not_exist_directory"]
 
       files = described_class.new(definition_file_paths).files
 
-      expect(files).to eq ["definition_path.rb", "another_definition_path.rb"]
+      expect(files).to eq ["spec/fixtures/factories.rb"]
     end
   end
 
   describe "#directories" do
-    it "returns a hash of definition directories" do
-      definition_file_paths = ["definition_path", "another_definition_path"]
+    it "returns a hash of definition directories that only exist" do
+      definition_file_paths = ["spec/fixtures/factories", "not_exist_directory"]
 
       directories = described_class.new(definition_file_paths).directories
 
       expect(directories).to eq(
-        "definition_path" => [:rb],
-        "another_definition_path" => [:rb],
+        "spec/fixtures/factories" => [:rb],
       )
     end
 
     it "converts Pathname objects to strings" do
-      definition_file_paths = [Pathname.new("definition_path")]
+      definition_file_paths = [Pathname.new("spec/fixtures/factories")]
 
       directories = described_class.new(definition_file_paths).directories
 
-      expect(directories).to eq("definition_path" => [:rb])
+      expect(directories).to eq("spec/fixtures/factories" => [:rb])
     end
   end
 end
