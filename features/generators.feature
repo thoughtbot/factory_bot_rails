@@ -4,7 +4,7 @@ Feature:
   I would like to use factory_bot_rails generators.
 
   Background:
-    Given I successfully run `bundle exec rails new testapp`
+    Given I successfully run `bundle exec rails new testapp -m ../../features/support/rails_template`
     And I cd to "testapp"
     And I add "factory_bot_rails" from this project as a dependency
     And I run `bundle install` with a clean environment
