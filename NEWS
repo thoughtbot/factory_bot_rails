@@ -1,6 +1,10 @@
 factory_bot_rails versioning is synced with factory_bot releases. For this reason
 there might not be any notable changes in new versions of this project.
 
+5.0.1
+  Bugfix: Avoid watching files and directories that don't exist (to avoid a
+  file watching bug in Rails https://github.com/rails/rails/issues/32700)
+
 5.0.0
   Added: calling reload! in the Rails console will reload any factory definition files that have changed
   Added: support for custom generator templates
