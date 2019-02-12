@@ -17,8 +17,6 @@ gem "jruby-openssl", platforms: :jruby
 gem "therubyrhino", platforms: :jruby
 gem "sqlite3", platforms: :ruby
 gem "rubocop", "0.54", require: false
-gem "activerecord", "~> 6.0.0.beta1"
-gem "railties", "~> 6.0.0.beta1"
-gem "bootsnap"
+gem "rails", "~> 6.0.0.beta1"
 
 gemspec name: "factory_bot_rails", path: "../"
