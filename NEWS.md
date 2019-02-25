@@ -3,11 +3,11 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
-## 5.0.1
+## 5.0.1 (February 9, 2019)
   Bugfix: Avoid watching files and directories that don't exist (to avoid a
   file watching bug in Rails https://github.com/rails/rails/issues/32700)
 
-## 5.0.0
+## 5.0.0 (February 1, 2019)
   Added: calling reload! in the Rails console will reload any factory definition files that have changed
   Added: support for custom generator templates
   Added: definition_file_paths configuration option, making it easier to place factories in custom locations
