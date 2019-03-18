@@ -109,7 +109,7 @@ end
 ```
 
 Note that factory\_bot\_rails will not automatically load files in custom
-locations unless you add them to `config.factory_bot.defintion_file_paths` as
+locations unless you add them to `config.factory_bot.definition_file_paths` as
 well.
 
 The suffix option allows you to customize the name of the generated file with a
