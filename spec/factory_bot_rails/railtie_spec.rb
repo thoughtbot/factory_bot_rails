@@ -9,7 +9,7 @@ describe FactoryBotRails::Railtie do
         touch("factories.rb")
         reload_rails!
 
-        expect(FactoryBot).to have_received(:reload)
+        expect(FactoryBot).to have_received(:reload).at_least(1).times
       end
     end
 
@@ -20,17 +20,17 @@ describe FactoryBotRails::Railtie do
         touch("factories/definitions.rb")
         reload_rails!
 
-        expect(FactoryBot).to have_received(:reload)
+        expect(FactoryBot).to have_received(:reload).at_least(1).times
       end
     end
 
     context "when the factory definitions have NOT been updated" do
-      it "does NOT reload the factory definitions" do
+      it "reloads the factory definitions" do
         allow(FactoryBot).to receive(:reload)
 
         reload_rails!
 
-        expect(FactoryBot).not_to have_received(:reload)
+        expect(FactoryBot).to have_received(:reload).at_least(1).times
       end
     end
 

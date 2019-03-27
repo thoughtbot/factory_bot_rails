@@ -31,7 +31,7 @@ module FactoryBotRails
 
     def register_reloader(reloader)
       config.to_prepare do
-        reloader.execute_if_updated
+        reloader.execute
       end
 
       app.reloaders << reloader
