@@ -30,4 +30,14 @@ describe FactoryBotRails::DefinitionFilePaths do
       expect(directories).to eq("spec/fixtures/factories" => [:rb])
     end
   end
+
+  describe "#any?" do
+    it "returns true only if definition file paths exist" do
+      definition_file_paths = ["spec/fixtures/factories", "not_exist_directory"]
+      expect(described_class.new(definition_file_paths).any?).to eq true
+
+      definition_file_paths = ["not_exist_directory"]
+      expect(described_class.new(definition_file_paths).any?).to eq false
+    end
+  end
 end

@@ -19,5 +19,9 @@ module FactoryBotRails
     def files
       @files.select { |file| File.exist?(file) }
     end
+
+    def any?
+      directories.any? || files.any?
+    end
   end
 end
