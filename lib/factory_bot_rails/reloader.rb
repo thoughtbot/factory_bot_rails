@@ -7,9 +7,12 @@ module FactoryBotRails
     def initialize(app, config)
       @app = app
       @config = config
+      @paths = DefinitionFilePaths.new(FactoryBot.definition_file_paths)
     end
 
     def run
+      return unless @paths.any?
+
       register_reloader(build_reloader)
     end
 
@@ -18,9 +21,7 @@ module FactoryBotRails
     attr_reader :app, :config
 
     def build_reloader
-      paths = DefinitionFilePaths.new(FactoryBot.definition_file_paths)
-
-      reloader_class.new(paths.files, paths.directories) do
+      reloader_class.new(@paths.files, @paths.directories) do
         FactoryBot.reload
       end
     end
