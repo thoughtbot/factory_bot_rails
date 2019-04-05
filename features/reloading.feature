@@ -52,12 +52,14 @@ Feature:
         end
       end
       """
-    And I run `bundle exec rake test` with Spring enabled
+    And I run `bundle binstubs bundler rake spring --force` with a clean environment
+    And I run `bin/spring binstub --all` with a clean environment
+    And I run `bin/rake test` with Spring enabled
     And I append to "app/models/user.rb" with:
       """
       # User model edited
       """
-    And I run `bundle exec rake test` with Spring enabled
+    And I run `bin/rake test` with Spring enabled
     And I run `spring stop` with a clean environment
     Then the output should contain "1 runs, 1 assertions"
     And the output should not contain "Failure:"
