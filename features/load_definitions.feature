@@ -138,16 +138,27 @@ Feature: automatically load factory definitions
         end
       end
       """
+    When I write to "test/factories.rb" with:
+      """
+      FactoryBot.define do
+        factory :user do
+          name { "Frank" }
+        end
+      end
+      """
     When I write to "test/unit/user_test.rb" with:
       """
       require 'test_helper'
 
       class UserTest < ActiveSupport::TestCase
         test "use factory of some_railtie" do
-          user = FactoryBot.create(:factory_from_some_railtie)
-          assert_equal 'Artem', user.name
+          railtie_user = FactoryBot.create(:factory_from_some_railtie)
+          assert_equal 'Artem', railtie_user.name
+
+          user = FactoryBot.create(:user)
+          assert_equal 'Frank', user.name
         end
       end
       """
     When I run `bundle exec rake test` with a clean environment
-    Then the output should contain "1 assertions, 0 failures, 0 errors"
+    Then the output should contain "2 assertions, 0 failures, 0 errors"
