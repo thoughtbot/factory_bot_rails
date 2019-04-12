@@ -115,7 +115,44 @@ Feature: automatically load factory definitions
     When I run `bundle exec rake test` with a clean environment
     Then the output should contain "1 assertions, 0 failures, 0 errors"
 
-  Scenario: use 3rd-party factories with an initializer
+  Scenario: use 3rd-party factories with an initializer and without any user-defined factories
+    When I append to "config/application.rb" with:
+      """
+        require File.expand_path('../../lib/some_railtie/railties.rb', __FILE__)
+      """
+    When I write to "lib/some_railtie/railties.rb" with:
+      """
+      module SomeRailtie
+        class Railtie < ::Rails::Engine
+          initializer "some_railtie.factories", :after => "factory_bot.set_factory_paths" do
+            FactoryBot.definition_file_paths << File.expand_path('../factories', __FILE__)
+          end
+        end
+      end
+      """
+    When I write to "lib/some_railtie/factories.rb" with:
+      """
+      FactoryBot.define do
+        factory :factory_from_some_railtie, class: 'User' do
+          name { 'Artem' }
+        end
+      end
+      """
+    When I write to "test/unit/user_test.rb" with:
+      """
+      require 'test_helper'
+
+      class UserTest < ActiveSupport::TestCase
+        test "use factory of some_railtie" do
+          railtie_user = FactoryBot.create(:factory_from_some_railtie)
+          assert_equal 'Artem', railtie_user.name
+        end
+      end
+      """
+    When I run `bundle exec rake test` with a clean environment
+    Then the output should contain "1 assertions, 0 failures, 0 errors"
+
+  Scenario: use 3rd-party factories with an initializer together with a user-defined factory
     When I append to "config/application.rb" with:
       """
         require File.expand_path('../../lib/some_railtie/railties.rb', __FILE__)

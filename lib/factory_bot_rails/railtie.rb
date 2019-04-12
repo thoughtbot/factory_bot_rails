@@ -22,6 +22,10 @@ module FactoryBotRails
       Reloader.new(app, config).run
     end
 
+    config.after_initialize do
+      FactoryBot.reload
+    end
+
     private
 
     def definition_file_paths
