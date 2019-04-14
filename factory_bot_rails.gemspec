@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.description = "factory_bot_rails provides integration between "\
                   "factory_bot and rails 4.2 or newer"
 
-  s.files         = Dir["lib/**/*"] + %w[CONTRIBUTING.md LICENSE NEWS README.md]
+  s.files = Dir["lib/**/*"] + %w[CONTRIBUTING.md LICENSE NEWS.md README.md]
   s.require_paths = ["lib"]
   s.executables   = []
   s.license       = "MIT"
