@@ -3,6 +3,11 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
+## 5.0.2 (April 14, 2019)
+* Bugfix: Reload factory\_bot whenever the application changes to avoid holding
+  onto stale object references
+* Bugfix: Avoid watching project root when no factory definitions exist
+
 ## 5.0.1 (February 9, 2019)
 * Bugfix: Avoid watching files and directories that don't exist (to avoid a
   file watching bug in Rails https://github.com/rails/rails/issues/32700)
@@ -10,7 +15,7 @@ there might not be any notable changes in new versions of this project.
 ## 5.0.0 (February 1, 2019)
 * Added: calling reload! in the Rails console will reload any factory definition files that have changed
 * Added: support for custom generator templates
-* Added: definition_file_paths configuration option, making it easier to place factories in custom locations
+* Added: `definition_file_paths` configuration option, making it easier to place factories in custom locations
 * Changed: namespaced models are now generated inside a directory matching the namespace
 * Changed: added newline between factories generated into the same file
 * Removed: support for EOL version of Ruby and Rails
@@ -25,7 +30,7 @@ there might not be any notable changes in new versions of this project.
 * No notable changes
 
 ## 4.8.2 (October 20, 2017)
-* Rename factory_girl_rails to factory_bot_rails
+* Rename factory\_girl\_rails to factory\_bot\_rails
 
 ## 4.7.0 (April 1, 2016)
 * No notable changes
@@ -42,7 +47,7 @@ there might not be any notable changes in new versions of this project.
 ## 4.2.1 (February 8, 2013)
 * Fix bug when configuring FG and RSpec fixture directory
 * Remove debugging
-* Require factory_girl_rails explicitly in generator
+* Require factory\_girl\_rails explicitly in generator
 
 ## 4.2.0 (January 25, 2013)
 * Add appraisal and get test suite working reliably with turn gem
