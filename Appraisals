@@ -1,29 +1,30 @@
 # These are the versions of Rails we want to test against.
 appraise "rails4.2" do
-  gem "rails", "~> 4.2.0"
+  gem "rails", "~> 4.2.11"
+  gem "sqlite3", "~> 1.3.6"
 end
 
 appraise "rails5.0" do
-  gem "activerecord", "~> 5.0.0"
-  gem "railties", "~> 5.0.0"
+  gem "activerecord", "~> 5.0.7"
+  gem "railties", "~> 5.0.7"
+  gem "sqlite3", "~> 1.3.6"
 end
 
 appraise "rails5.1" do
-  gem "activerecord", "~> 5.1.0"
-  gem "railties", "~> 5.1.0"
+  gem "activerecord", "~> 5.1.7"
+  gem "railties", "~> 5.1.7"
 end
 
 appraise "rails5.2" do
-  gem "activerecord", "~> 5.2.0"
-  gem "railties", "~> 5.2.0"
+  gem "activerecord", "~> 5.2.3"
+  gem "railties", "~> 5.2.3"
 end
 
 appraise "rails6.0" do
-  gem "rails", "~> 6.0.0.beta3"
+  gem "rails", "~> 6.0.0.rc1"
   gem "bootsnap"
   gem "byebug"
   gem "capybara"
-  gem "chromedriver-helper"
   gem "jbuilder"
   gem "listen"
   gem "puma", "~> 3.11"
@@ -31,8 +32,8 @@ appraise "rails6.0" do
   gem "selenium-webdriver"
   gem "spring"
   gem "spring-watcher-listen"
-  gem "sqlite3", "~> 1.3.6"
   gem "turbolinks"
-  gem "web-console"
+  gem "web-console", group: :development
+  gem "webdrivers"
   gem "webpacker"
 end
