@@ -64,23 +64,24 @@ module FactoryBot
       def factory_attributes
         i = 0
         attributes.map do |attribute|
+          attribute_name = attribute.name
           if attribute.reference?
-            "association :#{attribute.name}, factory: :#{attribute.name}"
-          elsif attribute.name == 'email'
-            "sequence(:#{attribute.name}) {|n| \"email#\{format '%03d', n}@gmail.com\" }"
-          elsif attribute.name =~ /(.*)_url$/
-            "sequence(:#{attribute.name}) {|n| \"http://#\{$1}#\{format '%03d', n}.com\" }"
-          elsif attribute.name == 'password'
+            "association :#{attribute_name}, factory: :#{attribute_name}"
+          elsif attribute_name == 'email'
+            "sequence(:#{attribute_name}) {|n| \"email#\{format '%03d', n}@gmail.com\" }"
+          elsif attribute_name =~ /(.*)_url$/
+            "sequence(:#{attribute_name}) {|n| \"http://#\{$1}#\{format '%03d', n}.com\" }"
+          elsif attribute_name == 'password'
             "password 'password'"
-          elsif attribute.name == 'position'
-            "sequence(:#{attribute.name}) {|n| n }"
+          elsif attribute_name == 'position'
+            "sequence(:#{attribute_name}) {|n| n }"
           elsif %i[string text].include? attribute.type
-            "sequence(:#{attribute.name}) {|n| \"#{attribute.name.capitalize.gsub('_', ' ')}#\{format '%03d', n}\" }"
+            "sequence(:#{attribute_name}) {|n| \"#{attribute_name.capitalize.gsub('_', ' ')}#\{format '%03d', n}\" }"
           elsif attribute.type == :integer
             i += 1
-            "sequence(:#{attribute.name}) {|n| \"#\{i}#\{format '%03d', n}\" }"
+            "sequence(:#{attribute_name}) {|n| \"#\{i}#\{format '%03d', n}\" }"
           else
-            "#{attribute.name} { #{attribute.default.inspect} }"
+            "#{attribute_name} { #{attribute.default.inspect} }"
           end
         end.join("\n")
       end
