@@ -62,8 +62,26 @@ module FactoryBot
       end
 
       def factory_attributes
+        i = 0
         attributes.map do |attribute|
-          "#{attribute.name} { #{attribute.default.inspect} }"
+          if attribute.reference?
+            "association :#{attribute.name}, factory: :#{attribute.name}"
+          elsif attribute.name == 'email'
+            "sequence(:#{attribute.name}) {|n| \"email#\{format '%03d', n}@gmail.com\" }"
+          elsif attribute.name =~ /(.*)_url$/
+            "sequence(:#{attribute.name}) {|n| \"http://#\{$1}#\{format '%03d', n}.com\" }"
+          elsif attribute.name == 'password'
+            "password 'password'"
+          elsif attribute.name == 'position'
+            "sequence(:#{attribute.name}) {|n| n }"
+          elsif [:string, :text].include? attribute.type
+            "sequence(:#{attribute.name}) {|n| \"#{attribute.name.capitalize.gsub('_', ' ')}#\{format '%03d', n}\" }"
+          elsif attribute.type == :integer
+            i += 1
+            "sequence(:#{attribute.name}) {|n| \"#\{i}#\{format '%03d', n}\" }"
+          else
+            "#{attribute.name} { #{attribute.default.inspect} }"
+          end
         end.join("\n")
       end
 
