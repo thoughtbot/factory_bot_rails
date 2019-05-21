@@ -67,13 +67,13 @@ module FactoryBot
           attribute_name = attribute.name
           if attribute.reference?
             "association :#{attribute_name}, factory: :#{attribute_name}"
-          elsif attribute_name == 'email'
+          elsif attribute_name == "email"
             "sequence(:#{attribute_name}) {|n| \"email#\{format '%03d', n}@gmail.com\" }"
           elsif attribute_name =~ /(.*)_url$/
             "sequence(:#{attribute_name}) {|n| \"http://#\{$1}#\{format '%03d', n}.com\" }"
-          elsif attribute_name == 'password'
+          elsif attribute_name == "password"
             "password 'password'"
-          elsif attribute_name == 'position'
+          elsif attribute_name == "position"
             "sequence(:#{attribute_name}) {|n| n }"
           elsif %i[string text].include? attribute.type
             "sequence(:#{attribute_name}) {|n| \"#{attribute_name.capitalize.gsub('_', ' ')}#\{format '%03d', n}\" }"
