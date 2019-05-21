@@ -74,7 +74,7 @@ module FactoryBot
             "password 'password'"
           elsif attribute.name == 'position'
             "sequence(:#{attribute.name}) {|n| n }"
-          elsif [:string, :text].include? attribute.type
+          elsif %i[string text].include? attribute.type
             "sequence(:#{attribute.name}) {|n| \"#{attribute.name.capitalize.gsub('_', ' ')}#\{format '%03d', n}\" }"
           elsif attribute.type == :integer
             i += 1
