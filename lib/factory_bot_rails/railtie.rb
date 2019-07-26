@@ -18,12 +18,8 @@ module FactoryBotRails
       FactoryBot.definition_file_paths = definition_file_paths
     end
 
-    initializer "factory_bot.register_reloader" do |app|
-      Reloader.new(app, config).run
-    end
-
-    config.after_initialize do
-      FactoryBot.reload
+    config.after_initialize do |app|
+      Reloader.new(app).run
     end
 
     private
