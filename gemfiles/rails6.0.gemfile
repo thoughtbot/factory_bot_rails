@@ -17,7 +17,7 @@ gem "jruby-openssl", platforms: :jruby
 gem "therubyrhino", platforms: :jruby
 gem "sqlite3", platforms: :ruby
 gem "rubocop", "0.54", require: false
-gem "rails", "~> 6.0.0.rc1"
+gem "rails", "~> 6.0.0"
 gem "bootsnap"
 gem "byebug"
 gem "capybara"
