@@ -8,16 +8,24 @@ appraise "rails5.0" do
   gem "activerecord", "~> 5.0.7"
   gem "railties", "~> 5.0.7"
   gem "sqlite3", "~> 1.3.6"
+  gem "actionmailer", "~> 5.0.7"
+  gem "sass-rails"
 end
 
 appraise "rails5.1" do
   gem "activerecord", "~> 5.1.7"
   gem "railties", "~> 5.1.7"
+  gem "actionmailer", "~> 5.1.7"
+  gem "sass-rails"
 end
 
 appraise "rails5.2" do
   gem "activerecord", "~> 5.2.3"
   gem "railties", "~> 5.2.3"
+  gem "actionmailer", "~> 5.2.3"
+  gem "bootsnap"
+  gem "activestorage", "~> 5.2.3"
+  gem "sass-rails"
 end
 
 appraise "rails6.0" do

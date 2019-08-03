@@ -19,5 +19,7 @@ gem "sqlite3", platforms: :ruby
 gem "rubocop", "0.54", require: false
 gem "activerecord", "~> 5.1.7"
 gem "railties", "~> 5.1.7"
+gem "actionmailer", "~> 5.1.7"
+gem "sass-rails"
 
 gemspec name: "factory_bot_rails", path: "../"
