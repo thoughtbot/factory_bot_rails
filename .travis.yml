@@ -3,7 +3,7 @@ env:
   - ARUBA_TIMEOUT=240
 before_install:
   - gem update --system
-  - rvm @default,@global do gem uninstall bundler -v 2.0.1 -x
+  - rvm @default,@global do gem uninstall bundler -v 2.0.2 -x
 cache: bundler
 rvm:
   - 2.3
