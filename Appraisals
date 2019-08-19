@@ -36,7 +36,7 @@ appraise "rails6.0" do
   gem "jbuilder"
   gem "listen"
   gem "puma", "~> 3.11"
-  gem "sass-rails"
+  gem "sass-rails", "~> 5"
   gem "selenium-webdriver"
   gem "spring"
   gem "spring-watcher-listen"
