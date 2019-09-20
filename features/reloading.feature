@@ -63,3 +63,45 @@ Feature:
     And I run `spring stop` with a clean environment
     Then the output should contain "1 runs, 1 assertions"
     And the output should not contain "Failure:"
+
+Scenario: Initializing the reloader with I18n support
+    When I successfully run `bundle exec rails new testapp -m ../../features/support/rails_template`
+    And I cd to "testapp"
+    And I add "factory_bot_rails" from this project as a dependency
+    And I add "test-unit" as a dependency
+    And I run `bundle install` with a clean environment
+    And I run `bundle exec rake db:migrate` with a clean environment
+    And I write to "app/models/user.rb" with:
+      """
+      class User
+        TRANSLATION = I18n.translate("translation_key")
+      end
+      """
+    And I write to "config/locales/en.yml" with:
+      """
+        en:
+          translation_key: "translation_value"
+      """
+    And I write to "test/factories.rb" with:
+      """
+      FactoryBot.define do
+        factory :user do
+          User::TRANSLATION
+        end
+      end
+      """
+    And I write to "test/unit/user_test.rb" with:
+      """
+      require 'test_helper'
+
+      class UserTest < ActiveSupport::TestCase
+        test "use factory" do
+          user = FactoryBot.build(:user)
+
+          assert_equal "translation_value", User::TRANSLATION
+        end
+      end
+      """
+    And I run `bundle exec rake test` with a clean environment
+    Then the output should contain "1 runs, 1 assertions"
+    And the output should not contain "Failure:"

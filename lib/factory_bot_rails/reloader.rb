@@ -31,8 +31,12 @@ module FactoryBotRails
     end
 
     def register_reloader(reloader)
+      closed_over_app = app
+
       config.to_prepare do
-        reloader.execute
+        if closed_over_app.initialized?
+          reloader.execute
+        end
       end
 
       app.reloaders << reloader
