@@ -3,6 +3,9 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
+## 5.1.0 (September 24, 2019)
+* Changed: factory_bot dependency to ~> 5.1.0
+
 ## 5.0.2 (April 14, 2019)
 * Bugfix: Reload factory\_bot whenever the application changes to avoid holding
   onto stale object references
