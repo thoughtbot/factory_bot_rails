@@ -34,7 +34,7 @@ appraise "rails6.0" do
   gem "byebug"
   gem "capybara"
   gem "jbuilder"
-  gem "listen"
+  gem "listen", "~> 3.1.5"
   gem "puma", "~> 3.11"
   gem "sass-rails", "~> 5"
   gem "selenium-webdriver"
