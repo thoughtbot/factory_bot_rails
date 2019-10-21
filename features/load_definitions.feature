@@ -33,6 +33,8 @@ Feature: automatically load factory definitions
   Scenario: generate a Rails application and use factory definitions
     When I write to "test/factories.rb" with:
       """
+      # frozen_string_literal: true
+
       FactoryBot.define do
         factory :user do
           name { 'Frank' }
@@ -60,6 +62,8 @@ Feature: automatically load factory definitions
       """
     When I write to "custom_factories_path.rb" with:
       """
+      # frozen_string_literal: true
+
       FactoryBot.define do
         factory :user do
           name { 'Frank' }
@@ -95,6 +99,8 @@ Feature: automatically load factory definitions
       """
     When I write to "lib/some_railtie/factories.rb" with:
       """
+      # frozen_string_literal: true
+
       FactoryBot.define do
         factory :factory_from_some_railtie, class: 'User' do
           name { 'Artem' }
@@ -132,6 +138,8 @@ Feature: automatically load factory definitions
       """
     When I write to "lib/some_railtie/factories.rb" with:
       """
+      # frozen_string_literal: true
+
       FactoryBot.define do
         factory :factory_from_some_railtie, class: 'User' do
           name { 'Artem' }
@@ -169,6 +177,8 @@ Feature: automatically load factory definitions
       """
     When I write to "lib/some_railtie/factories.rb" with:
       """
+      # frozen_string_literal: true
+
       FactoryBot.define do
         factory :factory_from_some_railtie, class: 'User' do
           name { 'Artem' }
@@ -177,6 +187,8 @@ Feature: automatically load factory definitions
       """
     When I write to "test/factories.rb" with:
       """
+      # frozen_string_literal: true
+
       FactoryBot.define do
         factory :user do
           name { 'Frank' }

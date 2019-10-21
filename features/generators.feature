@@ -16,6 +16,8 @@ Feature:
     And the output should contain "test/factories/namespaced/users.rb"
     And the file "test/factories/users.rb" should contain exactly:
       """
+      # frozen_string_literal: true
+
       FactoryBot.define do
         factory :user do
           name { 'MyString' }
@@ -28,6 +30,8 @@ Feature:
   Scenario: The factory_bot_rails generators add a factory in the correct spot
     When I write to "test/factories.rb" with:
       """
+      # frozen_string_literal: true
+
       FactoryBot.define do
       end
       """
@@ -35,6 +39,8 @@ Feature:
     And I run `bundle exec rails generate model Robot name:string` with a clean environment
     Then the file "test/factories.rb" should contain exactly:
       """
+      # frozen_string_literal: true
+
       FactoryBot.define do
         factory :robot do
           name { 'MyString' }
@@ -50,6 +56,8 @@ Feature:
   Scenario: The factory_bot_rails generators does not create a factory file for each model if there is a factories.rb file in the test directory
     When I write to "test/factories.rb" with:
       """
+      # frozen_string_literal: true
+
       FactoryBot.define do
       end
       """

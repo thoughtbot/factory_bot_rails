@@ -34,6 +34,8 @@ Feature:
       """
     And I write to "test/factories.rb" with:
       """
+      # frozen_string_literal: true
+
       FactoryBot.define do
         factory :author, class: User do
           name { 'Frank' }
@@ -84,6 +86,8 @@ Scenario: Initializing the reloader with I18n support
       """
     And I write to "test/factories.rb" with:
       """
+      # frozen_string_literal: true
+
       FactoryBot.define do
         factory :user do
           User::TRANSLATION
