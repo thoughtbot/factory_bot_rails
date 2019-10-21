@@ -63,7 +63,13 @@ module FactoryBot
 
       def factory_attributes
         attributes.map do |attribute|
-          "#{attribute.name} { #{attribute.default.inspect} }"
+          attribute_value = if attribute.default.is_a?(String)
+                              "'#{attribute.default}'"
+                            else
+                              attribute.default.inspect
+                            end
+
+          "#{attribute.name} { #{attribute_value} }"
         end.join("\n")
       end
 

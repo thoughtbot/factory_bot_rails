@@ -35,7 +35,7 @@ Feature: automatically load factory definitions
       """
       FactoryBot.define do
         factory :user do
-          name { "Frank" }
+          name { 'Frank' }
         end
       end
       """
@@ -62,7 +62,7 @@ Feature: automatically load factory definitions
       """
       FactoryBot.define do
         factory :user do
-          name { "Frank" }
+          name { 'Frank' }
         end
       end
       """
@@ -179,7 +179,7 @@ Feature: automatically load factory definitions
       """
       FactoryBot.define do
         factory :user do
-          name { "Frank" }
+          name { 'Frank' }
         end
       end
       """

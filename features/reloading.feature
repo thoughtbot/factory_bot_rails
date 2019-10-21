@@ -36,7 +36,7 @@ Feature:
       """
       FactoryBot.define do
         factory :author, class: User do
-          name { "Frank" }
+          name { 'Frank' }
         end
       end
       """
