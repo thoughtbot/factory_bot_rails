@@ -79,7 +79,7 @@ module FactoryBot
             "sequence(:#{attribute_name}) {|n| \"#{attribute_name.capitalize.gsub('_', ' ')}#\{format '%03d', n}\" }"
           elsif attribute.type == :integer
             i += 1
-            "sequence(:#{attribute_name}) {|n| \"#\{i}#\{format '%03d', n}\" }"
+            "sequence(:#{attribute_name}) {|n| \"#{i}#\{format '%03d', n}\" }"
           else
             "#{attribute_name} { #{attribute.default.inspect} }"
           end
