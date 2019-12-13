@@ -162,7 +162,7 @@ software, and may be redistributed under the terms specified in the
 
 ## About thoughtbot
 
-![thoughtbot](https://thoughtbot.com/logo.png)
+![thoughtbot](https://thoughtbot.com/brand_assets/93:44.svg)
 
 factory_bot_rails is maintained and funded by thoughtbot, inc.
 The names and logos for thoughtbot are trademarks of thoughtbot, inc.
