@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    factory_bot_rails (5.1.1)
-      factory_bot (~> 5.1.0)
+    factory_bot_rails (5.1.1.1)
+      factory_bot (~> 5.1.1)
       railties (>= 4.2.0)
 
 GEM
@@ -183,4 +183,4 @@ DEPENDENCIES
   uglifier
 
 BUNDLED WITH
-   2.0.2
+   2.1.3
