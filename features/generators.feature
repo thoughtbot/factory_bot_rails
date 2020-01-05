@@ -10,7 +10,7 @@ Feature:
     And I run `bundle install` with a clean environment
 
   Scenario: The factory_bot_rails generators create a factory file for each model if there is not a factories.rb file
-    When I run `bundle exec rails generate model User name:string age:integer` with a clean environment
+    When I run `bundle exec rails generate model User name:string age:integer company:belongs_to email home_url password password_confirmation position` with a clean environment
     And I run `bundle exec rails generate model Namespaced::User name:string` with a clean environment
     Then the output should contain "test/factories/users.rb"
     And the output should contain "test/factories/namespaced/users.rb"
@@ -18,8 +18,14 @@ Feature:
       """
       FactoryBot.define do
         factory :user do
-          name { "MyString" }
-          age { 1 }
+          sequence(:name) {|n| "Name#{format '%03d', n}" }
+          sequence(:age) {|n| "1#{format '%03d', n}" }
+          association :company, factory: :company
+          sequence(:email) {|n| "email#{format '%03d', n}@gmail.com" }
+          sequence(:home_url) {|n| "http://home#{format '%03d', n}.com" }
+          password {'password'}
+          password_confirmation {'password'}
+          sequence(:position) {|n| n }
         end
       end
       """
@@ -37,11 +43,11 @@ Feature:
       """
       FactoryBot.define do
         factory :robot do
-          name { "MyString" }
+          sequence(:name) {|n| "Name#{format '%03d', n}" }
         end
 
         factory :user do
-          name { "MyString" }
+          sequence(:name) {|n| "Name#{format '%03d', n}" }
         end
 
       end

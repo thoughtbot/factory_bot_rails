@@ -61,6 +61,7 @@ module FactoryBot
         RUBY
       end
 
+      # rubocop:disable Metrics/MethodLength, Layout/LineLength, Metrics/PerceivedComplexity
       def factory_attributes
         i = 0
         attributes.map do |attribute|
@@ -70,9 +71,11 @@ module FactoryBot
           elsif attribute_name == "email"
             "sequence(:#{attribute_name}) {|n| \"email#\{format '%03d', n}@gmail.com\" }"
           elsif attribute_name =~ /(.*)_url$/
-            "sequence(:#{attribute_name}) {|n| \"http://#\{$1}#\{format '%03d', n}.com\" }"
+            "sequence(:#{attribute_name}) {|n| \"http://#{$1}#\{format '%03d', n}.com\" }"
           elsif attribute_name == "password"
-            "password 'password'"
+            "password {'password'}"
+          elsif attribute_name == "password_confirmation"
+            "password_confirmation {'password'}"
           elsif attribute_name == "position"
             "sequence(:#{attribute_name}) {|n| n }"
           elsif %i[string text].include? attribute.type
@@ -85,6 +88,7 @@ module FactoryBot
           end
         end.join("\n")
       end
+      # rubocop:enable Metrics/MethodLength, Layout/LineLength, Metrics/PerceivedComplexity
 
       def filename
         if factory_bot_options[:filename_proc].present?
