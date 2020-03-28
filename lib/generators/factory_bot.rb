@@ -15,7 +15,7 @@ module FactoryBot
       end
 
       def explicit_class_name
-        class_name.gsub('::', '').underscore
+        class_name.gsub("::", "").underscore
       end
 
       def explicit_class_option
