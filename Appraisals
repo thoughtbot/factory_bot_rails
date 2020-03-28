@@ -40,7 +40,7 @@ appraise "rails6.0" do
   gem "capybara", ">= 2.15"
   gem "jbuilder", "~> 2.7"
   gem "puma", "~> 4.1"
-  gem "rails", "~> 6.0.0"
+  gem "rails", "~> 6.0.2", ">= 6.0.2.2"
   gem "sass-rails", ">= 6"
   gem "selenium-webdriver"
   gem "sqlite3", "~> 1.3.6", platforms: :ruby
