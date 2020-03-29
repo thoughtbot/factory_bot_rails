@@ -21,6 +21,7 @@ module RailsHelper
 
   def validate_rails_new_success(result)
     expect(result).to have_output(/README/)
+    $stdout.puts result.output
     expect(last_command_started).to be_successfully_executed
   end
 
