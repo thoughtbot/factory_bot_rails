@@ -1,3 +1,14 @@
+When /^I create a new rails application$/ do
+  options = "--skip-bootsnap --skip-javascript"
+  template = "-m ../../features/support/rails_template"
+  result = run_command("bundle exec rails new test_app #{options} #{template}")
+
+  expect(result).to have_output(/README/)
+  expect(last_command_started).to be_successfully_executed
+
+  cd("test_app")
+end
+
 When /^I add "([^"]+)" from this project as a dependency$/ do |gem_name|
   append_to_file("Gemfile", %{gem "#{gem_name}", :path => "#{PROJECT_ROOT}"\n})
 end
@@ -16,7 +27,7 @@ end
 
 When /^I configure the factories as:$/ do |string|
   append_to_file File.join("config", "application.rb"), <<~RUBY
-    class Testapp::Application
+    class TestApp::Application
       #{string}
     end
   RUBY
@@ -24,7 +35,7 @@ end
 
 When /^I configure the factories directory as "([^"]+)"$/ do |factory_dir|
   append_to_file File.join("config", "application.rb"), <<~RUBY
-    class Testapp::Application
+    class TestApp::Application
       config.generators do |g|
         g.fixture_replacement :factory_bot, :dir => "#{factory_dir}"
       end

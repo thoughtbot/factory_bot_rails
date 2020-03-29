@@ -3,8 +3,7 @@ Feature:
   I would like the Factory Bot Rails gem to configure Factory Bot as the fixture replacement.
 
   Background:
-    Given I successfully run `bundle exec rails new testapp -m ../../features/support/rails_template`
-    And I cd to "testapp"
+    Given I create a new rails application
     And I add "factory_bot_rails" from this project as a dependency
 
   Scenario: Using Factory Bot and Factory Bot Rails with Test Unit generates a factory file and does not generate a fixture file

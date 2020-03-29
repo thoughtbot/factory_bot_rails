@@ -4,10 +4,8 @@ Feature:
   So that factory_bot_rails doesn't hold onto stale class references
 
   Scenario: Editing a model without editing the factory
-    When I successfully run `bundle exec rails new testapp -m ../../features/support/rails_template`
-    And I cd to "testapp"
+    When I create a new rails application
     And I add "factory_bot_rails" from this project as a dependency
-    And I add "test-unit" as a dependency
     And I run `bundle install` with a clean environment
     And I write to "db/migrate/1_create_users.rb" with:
       """
@@ -65,10 +63,8 @@ Feature:
     And the output should not contain "Failure:"
 
 Scenario: Initializing the reloader with I18n support
-    When I successfully run `bundle exec rails new testapp -m ../../features/support/rails_template`
-    And I cd to "testapp"
+    When I create a new rails application
     And I add "factory_bot_rails" from this project as a dependency
-    And I add "test-unit" as a dependency
     And I run `bundle install` with a clean environment
     And I run `bundle exec rake db:migrate` with a clean environment
     And I write to "app/models/user.rb" with:
