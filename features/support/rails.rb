@@ -10,13 +10,12 @@ module RailsHelper
   def install_gems
     add_conditional_gems
     run_command_and_stop "bundle install"
-    run_command_and_stop "bundle exec rails webpacker:install" if rails6?
   end
 
   private
 
   def run_rails_new_command(name)
-    run_command "bundle exec rails new #{name} --skip-bundle --skip-bootsnap}"
+    run_command "bundle exec rails new #{name} --skip-bundle --skip-bootsnap --skip-javascript"
   end
 
   def validate_rails_new_success(result)

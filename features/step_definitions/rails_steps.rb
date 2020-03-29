@@ -22,7 +22,7 @@ end
 
 When /^I configure the factories as:$/ do |string|
   append_to_file File.join("config", "application.rb"), <<~RUBY
-    class Testapp::Application
+    class TestApp::Application
       #{string}
     end
   RUBY
@@ -30,7 +30,7 @@ end
 
 When /^I configure the factories directory as "([^"]+)"$/ do |factory_dir|
   append_to_file File.join("config", "application.rb"), <<~RUBY
-    class Testapp::Application
+    class TestApp::Application
       config.generators do |g|
         g.fixture_replacement :factory_bot, :dir => "#{factory_dir}"
       end

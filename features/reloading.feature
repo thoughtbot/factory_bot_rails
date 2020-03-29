@@ -64,8 +64,7 @@ Feature:
     And the output should not contain "Failure:"
 
 Scenario: Initializing the reloader with I18n support
-    When I successfully run `bundle exec rails new testapp -m ../../features/support/rails_template`
-    And I cd to "testapp"
+    When I create a new rails application
     And I add "factory_bot_rails" from this project as a dependency
     And I add "test-unit" as a dependency
     And I run `bundle install` with a clean environment
