@@ -1,7 +1,12 @@
 When /^I create a new rails application$/ do
-  rails_new("test_app")
+  options = "--skip-bootsnap --skip-javascript"
+  template = "-m ../../features/support/rails_template"
+  result = run_command("bundle exec rails new test_app #{options} #{template}")
+
+  expect(result).to have_output(/README/)
+  expect(last_command_started).to be_successfully_executed
+
   cd("test_app")
-  install_gems
 end
 
 When /^I add "([^"]+)" from this project as a dependency$/ do |gem_name|
