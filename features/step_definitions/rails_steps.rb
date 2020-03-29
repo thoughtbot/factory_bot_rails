@@ -1,5 +1,5 @@
 When /^I create a new rails application$/ do
-  options = "--skip-bootsnap --skip-javascript"
+  options = "--api --skip-bootsnap --skip-javascript --skip-action-mailer --skip-active-storage --skip-action-cable"
   template = "-m ../../features/support/rails_template"
   result = run_command("bundle exec rails new test_app #{options} #{template}")
 
