@@ -6,7 +6,7 @@ Bundler::GemHelper.install_tasks name: "factory_bot_rails"
 
 Cucumber::Rake::Task.new(:cucumber) do |t|
   t.fork = true
-  t.cucumber_opts = ["--format", "pretty", "--backtrace", "--verbose"]
+  t.cucumber_opts = ["--format", (ENV["CUCUMBER_FORMAT"] || "progress")]
 end
 
 RSpec::Core::RakeTask.new(:spec)
