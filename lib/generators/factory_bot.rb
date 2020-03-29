@@ -14,12 +14,12 @@ module FactoryBot
         File.expand_path(path)
       end
 
-      def explicit_class_name
+      def factory_name
         class_name.gsub("::", "").underscore
       end
 
       def explicit_class_option
-        return if class_name.underscore == explicit_class_name
+        return if class_name.underscore == factory_name
 
         ", class: '#{class_name}'"
       end
