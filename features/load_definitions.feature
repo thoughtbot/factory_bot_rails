@@ -3,7 +3,6 @@ Feature: automatically load factory definitions
   Background:
     When I create a new rails application
     And I add "factory_bot_rails" from this project as a dependency
-    And I add "test-unit" as a dependency
     And I run `bundle install` with a clean environment
     And I write to "db/migrate/1_create_users.rb" with:
       """
