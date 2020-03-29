@@ -1,21 +1,23 @@
 # frozen_string_literal: true
 
-# Much here borrowed from
-# https://github.com/cucumber/cucumber-rails/blob/f2b77091a614874bea21fc2a0a29913f7882bc96/features/support/cucumber_rails_helper.rb
+# Much here borrowed from the rails helper on
+# https://github.com/cucumber/cucumber-rails
 module RailsHelper
   def rails_new(name)
     validate_rails_new_success(run_rails_new_command(name))
   end
 
   def install_gems
-    add_conditional_gems
+    # NOTE: this addresses https://github.com/rails/rails/issues/35161
+    add_gem "sqlite3", "~> 1.3.6" unless rails6?
     run_command_and_stop "bundle install"
   end
 
   private
 
   def run_rails_new_command(name)
-    run_command "bundle exec rails new #{name} --skip-bundle --skip-bootsnap --skip-javascript"
+    options = "--skip-bundle --skip-bootsnap --skip-javascript"
+    run_command "bundle exec rails new #{name} #{options}"
   end
 
   def validate_rails_new_success(result)
@@ -27,17 +29,9 @@ module RailsHelper
     `bundle exec rails -v`.start_with?("Rails 6")
   end
 
-  def add_conditional_gems
-    if rails6?
-      add_gem "sqlite3", "~> 1.4"
-    else
-      add_gem "sqlite3", "~> 1.3.6"
-    end
-  end
-
   def add_gem(name, *args)
     line = convert_gem_opts_to_string(name, *args)
-    gem_regexp = /gem [""]#{name}[""].*$/
+    gem_regexp = /gem '#{name}'.*$/
     gemfile_content = File.read(expand_path("Gemfile"))
 
     if gemfile_content =~ gem_regexp
@@ -48,13 +42,9 @@ module RailsHelper
     end
   end
 
-  def convert_gem_opts_to_string(name, *args)
-    options = args.last.is_a?(Hash) ? args.pop : {}
-    parts = ["'#{name}'"]
-    parts << args.map(&:inspect) if args.any?
-    parts << options.inspect[1..-2] if options.any?
-    new_parts = parts.flatten.map { |part| part.gsub(/:(\w+)=>/, '\1: ') }
-    "gem #{new_parts.join(', ')}\n"
+  def convert_gem_opts_to_string(*args)
+    gem_args = args.map(&:inspect).join(", ")
+    "gem #{gem_args}\n"
   end
 end
 
