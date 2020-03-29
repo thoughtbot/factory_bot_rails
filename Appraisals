@@ -1,47 +1,61 @@
 # These are the versions of Rails we want to test against.
-appraise "rails4.2" do
-  gem "rails", "~> 4.2.11"
-  gem "sqlite3", "~> 1.3.6"
-end
-
 appraise "rails5.0" do
-  gem "activerecord", "~> 5.0.7"
-  gem "railties", "~> 5.0.7"
   gem "sqlite3", "~> 1.3.6"
-  gem "actionmailer", "~> 5.0.7"
-  gem "sass-rails"
+  gem "byebug"
+  gem "jbuilder", "~> 2.5"
+  gem "listen", "~> 3.0.5"
+  gem "puma", "~> 3.0"
+  gem "rails", "~> 5.0.7", ">= 5.0.7.2"
+  gem "sass-rails", "~> 5.0"
+  gem "spring"
+  gem "spring-watcher-listen", "~> 2.0.0"
+  gem "uglifier", ">= 1.3.0"
+  gem "web-console", ">= 3.3.0", group: :development
 end
 
 appraise "rails5.1" do
-  gem "activerecord", "~> 5.1.7"
-  gem "railties", "~> 5.1.7"
-  gem "actionmailer", "~> 5.1.7"
-  gem "sass-rails"
+  gem "byebug"
+  gem "capybara", ">= 2.15"
+  gem "jbuilder", "~> 2.5"
+  gem "listen", ">= 3.0.5", "< 3.2"
+  gem "puma", "~> 3.7"
+  gem "rails", "~> 5.1.7"
+  gem "sass-rails", "~> 5.0"
+  gem "selenium-webdriver"
+  gem "spring"
+  gem "spring-watcher-listen", "~> 2.0.0"
+  gem "sqlite3", "~> 1.3.6"
+  gem "web-console", ">= 3.3.0", group: :development
 end
 
 appraise "rails5.2" do
-  gem "activerecord", "~> 5.2.3"
-  gem "railties", "~> 5.2.3"
-  gem "actionmailer", "~> 5.2.3"
-  gem "bootsnap"
-  gem "activestorage", "~> 5.2.3"
-  gem "sass-rails"
+  gem "byebug"
+  gem "capybara", ">= 2.15"
+  gem "chromedriver-helper"
+  gem "jbuilder", "~> 2.5"
+  gem "listen", ">= 3.0.5", "< 3.2"
+  gem "puma", "~> 3.11"
+  gem "rails", "~> 5.2.4", ">= 5.2.4.2"
+  gem "sass-rails", "~> 5.0"
+  gem "selenium-webdriver"
+  gem "spring"
+  gem "spring-watcher-listen", "~> 2.0.0"
+  gem "sqlite3", "~> 1.3.6"
+  gem "web-console", ">= 3.3.0", group: :development
 end
 
 appraise "rails6.0" do
-  gem "rails", "~> 6.0.0"
-  gem "bootsnap"
   gem "byebug"
-  gem "capybara"
-  gem "jbuilder"
-  gem "listen", "~> 3.1.5"
-  gem "puma", "~> 3.11"
-  gem "sass-rails", "~> 5"
+  gem "capybara", ">= 2.15"
+  gem "jbuilder", "~> 2.7"
+  gem "listen", ">= 3.0.5", "< 3.2"
+  gem "puma", "~> 4.1"
+  gem "rails", "~> 6.0.2", ">= 6.0.2.2"
+  gem "sass-rails", ">= 6"
   gem "selenium-webdriver"
   gem "spring"
-  gem "spring-watcher-listen"
-  gem "turbolinks"
-  gem "web-console", group: :development
+  gem "spring-watcher-listen", "~> 2.0.0"
+  gem "sqlite3", "~> 1.4"
+  gem "web-console", ">= 3.3.0", group: :development
   gem "webdrivers"
-  gem "webpacker"
 end
