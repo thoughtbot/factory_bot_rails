@@ -3,20 +3,20 @@ env:
   - ARUBA_TIMEOUT=240
 cache: bundler
 rvm:
-  - 2.3
-  - 2.4
+  # - 2.3
+  # - 2.4
   - 2.5
   - 2.6
-  - ruby-head
+  # - ruby-head
 branches:
   only:
     - master
 install:
   - "bundle install --retry 3 --jobs 8"
 gemfile:
-  - gemfiles/rails5.0.gemfile
-  - gemfiles/rails5.1.gemfile
-  - gemfiles/rails5.2.gemfile
+  # - gemfiles/rails5.0.gemfile
+  # - gemfiles/rails5.1.gemfile
+  # - gemfiles/rails5.2.gemfile
   - gemfiles/rails6.0.gemfile
 matrix:
   fast_finish: true
