@@ -15,7 +15,6 @@ appraise "rails5.1" do
 end
 
 appraise "rails5.2" do
-  gem "bootsnap", ">= 1.1.0", require: false
   gem "byebug", platforms: :ruby
   gem "capybara", ">= 2.15"
   gem "chromedriver-helper"
@@ -35,7 +34,6 @@ appraise "rails5.2" do
 end
 
 appraise "rails6.0" do
-  gem "bootsnap", ">= 1.4.2", require: false
   gem "byebug", platforms: :ruby
   gem "capybara", ">= 2.15"
   gem "jbuilder", "~> 2.7"
@@ -43,7 +41,7 @@ appraise "rails6.0" do
   gem "rails", "~> 6.0.2", ">= 6.0.2.2"
   gem "sass-rails", ">= 6"
   gem "selenium-webdriver"
-  gem "sqlite3", "~> 1.3.6", platforms: :ruby
+  gem "sqlite3", "~> 1.4", platforms: :ruby
   gem "turbolinks", "~> 5"
   gem "webdrivers"
   gem "webpacker", "~> 4.0"
