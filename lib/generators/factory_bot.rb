@@ -14,8 +14,12 @@ module FactoryBot
         File.expand_path(path)
       end
 
+      def factory_name
+        class_name.gsub("::", "").underscore
+      end
+
       def explicit_class_option
-        return if class_name == singular_table_name.camelize
+        return if class_name.underscore == factory_name
 
         ", class: '#{class_name}'"
       end

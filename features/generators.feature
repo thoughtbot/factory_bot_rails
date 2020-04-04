@@ -24,6 +24,18 @@ Feature:
       """
     And the file "test/factories/namespaced/users.rb" should contain "factory :namespaced_user, class: 'Namespaced::User' do"
 
+  Scenario: The factory_bot_rails generators create a factory file with correct naming when I use --force-plural
+    When I run `bundle exec rails generate model UserMedia filename:string --force-plural` with a clean environment
+    Then the output should contain "test/factories/user_media.rb"
+    And the file "test/factories/user_media.rb" should contain exactly:
+      """
+      FactoryBot.define do
+        factory :user_media do
+          filename { "MyString" }
+        end
+      end
+      """
+
   Scenario: The factory_bot_rails generators add a factory in the correct spot
     When I write to "test/factories.rb" with:
       """
