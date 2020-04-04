@@ -150,8 +150,7 @@ generating all of your factories in `test/factories.rb` or `spec/factories.rb`.
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-factory_bot_rails was originally written by Joe Ferris and is now maintained by Josh
-Clayton. Many improvements and bugfixes were contributed by the [open source
+factory_bot_rails was originally written by Joe Ferris and is maintained by thoughtbot. Many improvements and bugfixes were contributed by the [open source
 community](https://github.com/thoughtbot/factory_bot_rails/graphs/contributors).
 
 ## License
