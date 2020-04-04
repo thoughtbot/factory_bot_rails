@@ -8,7 +8,9 @@ When /^I create a new rails application$/ do
       --skip-active-storage
       --skip-action-cable
       --skip-sprockets
+      --skip-bundle
     ].join(" ")
+
   template = "-m ../../features/support/rails_template"
   result = run_command("bundle exec rails new test_app #{options} #{template}")
 

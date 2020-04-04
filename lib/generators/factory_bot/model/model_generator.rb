@@ -54,7 +54,7 @@ module FactoryBot
 
       def factory_definition
         <<~RUBY
-            factory :#{singular_table_name}#{explicit_class_option} do
+            factory :#{factory_name}#{explicit_class_option} do
           #{factory_attributes.gsub(/^/, '    ')}
             end
 
