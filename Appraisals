@@ -1,13 +1,12 @@
 # These are the versions of Rails we want to test against.
 appraise "rails5.0" do
-  gem "sqlite3", "~> 1.3.6"
   gem "byebug"
   gem "listen", "~> 3.0.5"
   gem "puma", "~> 3.0"
   gem "rails", "~> 5.0.7", ">= 5.0.7.2"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
-  gem "uglifier", ">= 1.3.0"
+  gem "sqlite3", "~> 1.3.6"
 end
 
 appraise "rails5.1" do
