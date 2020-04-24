@@ -3,7 +3,6 @@ env:
   - ARUBA_TIMEOUT=240
 cache: bundler
 rvm:
-  - 2.4
   - 2.5
   - 2.6
   - 2.7
@@ -22,6 +21,3 @@ matrix:
   fast_finish: true
   allow_failures:
     - rvm: ruby-head
-  exclude:
-    - rvm: 2.4
-      gemfile: gemfiles/rails6.0.gemfile
