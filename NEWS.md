@@ -3,6 +3,9 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
+## 5.2.0 (April 26, 2020)
+* Changed: factory_bot dependency to ~> 5.2.0
+
 ## 5.1.1 (September 24, 2019)
 * Fixed: Ensure definitions do not load before I18n is initialized
 
