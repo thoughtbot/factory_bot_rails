@@ -39,14 +39,7 @@ describe FactoryBotRails::Railtie do
     end
 
     def reload_rails!
-      if defined? ActiveSupport::Reloader
-        Rails.application.reloader.reload!
-      else
-        # For Rails 4
-        ActionDispatch::Reloader.cleanup!
-        ActionDispatch::Reloader.prepare!
-      end
-
+      Rails.application.reloader.reload!
       wait_for_rails_to_reload
     end
 
