@@ -42,8 +42,8 @@ describe FactoryBotRails::Reloader do
 
     def run_reloader(definition_file_paths)
       FactoryBot.definition_file_paths = definition_file_paths
-      FactoryBotRails::Reloader.
-        new(Rails.application, Rails.application.config).run
+      FactoryBotRails::Reloader
+        .new(Rails.application, Rails.application.config).run
     end
 
     def reloader_class

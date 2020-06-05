@@ -12,4 +12,4 @@ end
 RSpec::Core::RakeTask.new(:spec)
 
 desc "Run the test suite"
-task default: %w(spec cucumber)
+task default: %w[spec cucumber]

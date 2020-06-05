@@ -18,7 +18,7 @@ describe FactoryBotRails::DefinitionFilePaths do
       directories = described_class.new(definition_file_paths).directories
 
       expect(directories).to eq(
-        "spec/fixtures/factories" => [:rb],
+        "spec/fixtures/factories" => [:rb]
       )
     end
 

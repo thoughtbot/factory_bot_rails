@@ -8,7 +8,7 @@ module FactoryBot
           File.dirname(__FILE__),
           "factory_bot",
           generator_name,
-          "templates",
+          "templates"
         )
 
         File.expand_path(path)

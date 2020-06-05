@@ -8,7 +8,7 @@ module FactoryBotRails
       def run
         @generators.fixture_replacement(
           fixture_replacement_setting,
-          dir: factory_bot_directory,
+          dir: factory_bot_directory
         )
       end
 

@@ -11,7 +11,7 @@ if RUBY_PLATFORM == "java"
   Aruba.configure do |config|
     config.before_cmd do
       # disable JIT since these processes are so short lived
-      set_env("JRUBY_OPTS", "-X-C #{ENV['JRUBY_OPTS']}")
+      set_env("JRUBY_OPTS", "-X-C #{ENV["JRUBY_OPTS"]}")
 
       java_options = ENV["JAVA_OPTS"]
 
@@ -20,7 +20,7 @@ if RUBY_PLATFORM == "java"
       else
         set_env(
           "JAVA_OPTS",
-          "-XX:+TieredCompilation -XX:TieredStopAtLevel=1 #{java_options}",
+          "-XX:+TieredCompilation -XX:TieredStopAtLevel=1 #{java_options}"
         )
       end
     end
