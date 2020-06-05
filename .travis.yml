@@ -12,6 +12,7 @@ branches:
     - master
 install:
   - "bundle install --retry 3 --jobs 8"
+script: "bundle exec rake"
 gemfile:
   - gemfiles/rails5.0.gemfile
   - gemfiles/rails5.1.gemfile
