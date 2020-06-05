@@ -9,7 +9,7 @@ module FactoryBotRails
         @generators.test_framework(
           test_framework,
           fixture: false,
-          fixture_replacement: :factory_bot,
+          fixture_replacement: :factory_bot
         )
       end
 

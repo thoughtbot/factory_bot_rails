@@ -1,4 +1,4 @@
-When /^I create a new rails application$/ do
+When(/^I create a new rails application$/) do
   options =
     %w[
       --api
@@ -20,15 +20,15 @@ When /^I create a new rails application$/ do
   cd("test_app")
 end
 
-When /^I add "([^"]+)" from this project as a dependency$/ do |gem_name|
-  append_to_file("Gemfile", %{gem "#{gem_name}", :path => "#{PROJECT_ROOT}"\n})
+When(/^I add "([^"]+)" from this project as a dependency$/) do |gem_name|
+  append_to_file("Gemfile", %(gem "#{gem_name}", :path => "#{PROJECT_ROOT}"\n))
 end
 
-When /^I add "([^"]+)" as a dependency$/ do |gem_name|
-  append_to_file("Gemfile", %{gem "#{gem_name}"\n})
+When(/^I add "([^"]+)" as a dependency$/) do |gem_name|
+  append_to_file("Gemfile", %(gem "#{gem_name}"\n))
 end
 
-When /^I print out "([^"]*)"$/ do |path|
+When(/^I print out "([^"]*)"$/) do |path|
   in_current_dir do
     File.open(path, "r") do |f|
       puts f.inspect
@@ -36,7 +36,7 @@ When /^I print out "([^"]*)"$/ do |path|
   end
 end
 
-When /^I configure the factories as:$/ do |string|
+When(/^I configure the factories as:$/) do |string|
   append_to_file File.join("config", "application.rb"), <<~RUBY
     class TestApp::Application
       #{string}
@@ -44,7 +44,7 @@ When /^I configure the factories as:$/ do |string|
   RUBY
 end
 
-When /^I configure the factories directory as "([^"]+)"$/ do |factory_dir|
+When(/^I configure the factories directory as "([^"]+)"$/) do |factory_dir|
   append_to_file File.join("config", "application.rb"), <<~RUBY
     class TestApp::Application
       config.generators do |g|
@@ -54,7 +54,7 @@ When /^I configure the factories directory as "([^"]+)"$/ do |factory_dir|
   RUBY
 end
 
-When /^I comment out gem "([^"]*)" from my Gemfile$/ do |gem_name|
+When(/^I comment out gem "([^"]*)" from my Gemfile$/) do |gem_name|
   in_current_dir do
     content = File.read("Gemfile")
     File.open("Gemfile", "w") do |f|
