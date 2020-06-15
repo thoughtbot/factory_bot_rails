@@ -12,42 +12,74 @@ describe FactoryBotRails::Reloader do
 
     context "when a definition file paths exist" do
       it "registers a reloader" do
-        allow(reloader_class).to receive(:new)
+        file_watcher = file_watcher_double
 
-        run_reloader(["spec/fixtures/factories", "not_exist_directory"])
+        run_reloader(
+          ["spec/fixtures/factories", "not_exist_directory"],
+          file_watcher
+        )
 
-        expect(reloader_class).to have_received(:new)
+        expect(file_watcher).to have_received(:new)
       end
     end
 
     context "when a file exists but not a directory" do
       it "registers a reloader" do
-        allow(reloader_class).to receive(:new)
+        file_watcher = file_watcher_double
 
-        run_reloader(["spec/fake_app", "not_exist_directory"])
+        run_reloader(
+          ["spec/fake_app", "not_exist_directory"],
+          file_watcher
+        )
 
-        expect(reloader_class).to have_received(:new)
+        expect(file_watcher).to have_received(:new)
       end
     end
 
     context "when a definition file paths NOT exist" do
       it "does NOT register a reloader" do
-        allow(reloader_class).to receive(:new)
+        file_watcher = file_watcher_double
 
-        run_reloader(["not_exist_directory"])
+        run_reloader(["not_exist_directory"], file_watcher)
 
-        expect(reloader_class).not_to have_received(:new)
+        expect(file_watcher).not_to have_received(:new)
       end
     end
 
-    def run_reloader(definition_file_paths)
+    def run_reloader(definition_file_paths, file_watcher)
       FactoryBot.definition_file_paths = definition_file_paths
-      FactoryBotRails::Reloader
-        .new(Rails.application, Rails.application.config).run
+      app = app_double(file_watcher)
+      FactoryBotRails::Reloader.new(app).run
     end
 
-    def reloader_class
-      Rails.application.config.file_watcher
+    def file_watcher_double
+      class_double(
+        Rails.application.config.file_watcher,
+        new: double(:reloader, execute: nil)
+      )
+    end
+
+    def app_double(file_watcher)
+      instance_double(
+        Rails.application.class,
+        config: app_config_double(file_watcher),
+        reloader: reloader_double,
+        reloaders: []
+      )
+    end
+
+    def app_config_double(file_watcher)
+      instance_double(
+        Rails.application.config.class,
+        file_watcher: file_watcher
+      )
+    end
+
+    def reloader_double
+      class_double(
+        Rails.application.reloader,
+        to_prepare: nil
+      )
     end
   end
 end
