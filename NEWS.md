@@ -3,6 +3,10 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
+## 6.1.0 (July 8, 2020)
+
+* Changed: factory\_bot dependency to ~> 6.1.0
+
 ## 6.0.0 (June 18, 2020)
 
 * Fixed: generate a plural factory name when the --force-plural flag is provided
