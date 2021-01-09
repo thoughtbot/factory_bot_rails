@@ -4,7 +4,7 @@ PROJECT_ROOT =
   File.expand_path(File.join(File.dirname(__FILE__), "..", "..")).freeze
 
 Aruba.configure do |config|
-  config.exit_timeout = Integer ENV.fetch("ARUBA_TIMEOUT") { 120 }
+  config.exit_timeout = Integer ENV.fetch("ARUBA_TIMEOUT", 120)
 end
 
 if RUBY_PLATFORM == "java"
