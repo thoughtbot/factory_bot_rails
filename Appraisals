@@ -2,6 +2,7 @@
 appraise "rails5.0" do
   gem "byebug"
   gem "listen", "~> 3.0.5"
+  gem "nokogiri", ">= 1.11.0"
   gem "puma", "~> 3.0"
   gem "rails", "~> 5.0.7", ">= 5.0.7.2"
   gem "spring", "!= 2.1.1"
@@ -12,6 +13,7 @@ end
 appraise "rails5.1" do
   gem "byebug"
   gem "listen", ">= 3.0.5", "< 3.2"
+  gem "nokogiri", ">= 1.11.0"
   gem "puma", "~> 3.7"
   gem "rails", "~> 5.1.7"
   gem "spring", "!= 2.1.1"
@@ -22,6 +24,7 @@ end
 appraise "rails5.2" do
   gem "byebug"
   gem "listen", ">= 3.0.5", "< 3.2"
+  gem "nokogiri", ">= 1.11.0"
   gem "puma", "~> 3.11"
   gem "rails", "~> 5.2.4", ">= 5.2.4.2"
   gem "spring", "!= 2.1.1"
@@ -32,6 +35,7 @@ end
 appraise "rails6.0" do
   gem "byebug"
   gem "listen", "~> 3.2"
+  gem "nokogiri", ">= 1.11.0"
   gem "puma", "~> 4.1"
   gem "rails", "~> 6.0.2", ">= 6.0.2.2"
   gem "spring", "!= 2.1.1"
@@ -42,6 +46,7 @@ end
 appraise "rails6.1" do
   gem "byebug"
   gem "listen", "~> 3.2"
+  gem "nokogiri", ">= 1.11.0"
   gem "puma", "~> 5.0"
   gem "rails", "~> 6.1.0", ">= 6.1.0.0"
   gem "spring", "!= 2.1.1"
