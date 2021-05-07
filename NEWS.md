@@ -3,6 +3,10 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
+## 6.2.0 (May 7, 2021)
+
+* Changed: factory\_bot dependency to ~> 6.2.0
+
 ## 6.1.0 (July 8, 2020)
 
 * Changed: factory\_bot dependency to ~> 6.1.0
