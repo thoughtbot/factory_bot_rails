@@ -4,7 +4,7 @@ gemspec name: "factory_bot_rails"
 
 gem "appraisal"
 gem "aruba"
-gem "cucumber", "1.3.19"
+gem "cucumber"
 gem "rake"
 gem "rspec-rails"
 gem "standard"
