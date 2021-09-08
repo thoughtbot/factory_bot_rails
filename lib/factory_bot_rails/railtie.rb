@@ -19,6 +19,7 @@ module FactoryBotRails
     end
 
     config.after_initialize do |app|
+      return if FactoryBot.factories.count > 62
       FactoryBot.find_definitions
       Reloader.new(app).run
     end
