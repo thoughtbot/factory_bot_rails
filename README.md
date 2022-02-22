@@ -144,6 +144,12 @@ Note that factory\_bot\_rails will only use this custom template if you are
 generating each factory in a separate file; it will have no effect if you are
 generating all of your factories in `test/factories.rb` or `spec/factories.rb`.
 
+Factory\_bot\_rails will add a custom generator:
+
+```shell
+rails generate factory_bot:model NAME [field:type field:type] [options]
+```
+
 [default factory template]: https://github.com/thoughtbot/factory_bot_rails/tree/master/lib/generators/factory_bot/model/templates/factories.erb
 
 ## Contributing
