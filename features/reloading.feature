@@ -53,7 +53,7 @@ Feature: automatically reloading factory_bot definitions
         puts Spring.project_root_path.join("config/application.rb").exist?
       """
     And I run `bin/rails runner spring_stuff.rb` with Spring enabled
-    And I run `bin/spring binstub --all` with a clean environment
+    # And I run `bin/spring binstub --all` with a clean environment
     And I run `bin/spring server` with Spring enabled
     And I run `bin/rails test` with Spring enabled
     # And I append to "app/models/user.rb" with:
