@@ -54,6 +54,7 @@ Feature: automatically reloading factory_bot definitions
       """
     And I run `bin/rails runner spring_stuff.rb` with Spring enabled
     And I run `bin/spring binstub --all` with a clean environment
+    And I run `bin/spring server` with Spring enabled
     And I run `bin/rails test` with Spring enabled
     # And I append to "app/models/user.rb" with:
     #   """
