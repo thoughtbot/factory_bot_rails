@@ -1,6 +1,5 @@
 *.swp
 .bundle
-gemfiles/*.lock
 coverage
 factory_girl_rails-*.gem
 pkg
