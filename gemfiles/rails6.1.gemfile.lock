@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/composerinteralia/spring.git
+  revision: 6922516237d39b1c82a5a651a948ae535a0c22f6
+  branch: factory_bot_rails_debugging
+  specs:
+    spring (2.1.0)
+
 PATH
   remote: ..
   specs:
@@ -218,7 +225,6 @@ GEM
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.11.0)
-    spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -258,7 +264,7 @@ DEPENDENCIES
   rails (~> 6.1.0, >= 6.1.0.0)
   rake
   rspec-rails
-  spring (!= 2.1.1)
+  spring!
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
   standard
