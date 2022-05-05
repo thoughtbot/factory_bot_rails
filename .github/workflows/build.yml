@@ -42,4 +42,4 @@ jobs:
       - name: Setup project
         run: bundle install
       - name: Run test
-        run: bundle exec rake
+        run: bundle exec cucumber features/reloading.feature
