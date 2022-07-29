@@ -35,5 +35,5 @@ Some things that will increase the chance that your pull request is accepted:
 * Follow our [style guide][style].
 * Write a [good commit message][commit].
 
-[style]: https://github.com/thoughtbot/guides/tree/master/style
+[style]: https://github.com/thoughtbot/guides/tree/main/general
 [commit]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
