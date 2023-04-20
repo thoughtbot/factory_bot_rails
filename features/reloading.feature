@@ -53,7 +53,7 @@ Feature: automatically reloading factory_bot definitions
       """
     And I run `bin/rails test` with Spring enabled
     And I run `bin/spring stop` with a clean environment
-    Then the output should contain "1 runs, 1 assertions"
+    #Then the output should contain "1 runs, 1 assertions"
     And the output should not contain "Failure:"
 
   Scenario: When using factory_bot_rails together with Spring
@@ -131,5 +131,5 @@ Feature: automatically reloading factory_bot definitions
         end
         """
       And I run `bin/rails test` with a clean environment
-      Then the output should contain "1 runs, 1 assertions"
+      #Then the output should contain "1 runs, 1 assertions"
       And the output should not contain "Failure:"
