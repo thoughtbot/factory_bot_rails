@@ -9,24 +9,25 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby:
-          - "2.5"
-          - "2.6"
-          - "2.7"
-          - "3.0"
-        rails:
-          - "5.0"
-          - "5.1"
-          - "5.2"
-          - "6.0"
-          - "6.1"
-        exclude:
-          - ruby: 3.0
-            rails: "5.0"
-          - ruby: 3.0
-            rails: "5.1"
-          - ruby: 3.0
-            rails: "5.2"
+        rails: ["7.0"]
+        ruby: [3.2]
+        include:
+          - rails: "6.1"
+            ruby: "3.1"
+          - rails: "6.1"
+            ruby: "3.0"
+          - rails: "6.1"
+            ruby: "2.7"
+          - rails: "6.0"
+            ruby: "2.7"
+          - rails: "5.2"
+            ruby: "2.7"
+          - rails: "5.2"
+            ruby: "2.6"
+          - rails: "5.1"
+            ruby: "2.6"
+          - rails: "5.0"
+            ruby: "2.5"
 
     runs-on: 'ubuntu-latest'
 
