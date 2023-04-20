@@ -1,4 +1,4 @@
-# factory_bot_rails [![Build Status][ci-image]][ci] [![Code Climate][grade-image]][grade] [![Gem Version][version-image]][version]
+# factory_bot_rails [![Code Climate][grade-image]][grade] [![Gem Version][version-image]][version]
 
 [factory_bot][fb] is a fixtures replacement with a straightforward definition
 syntax, support for multiple build strategies (saved instances, unsaved
@@ -15,7 +15,7 @@ Check out the [guide](https://github.com/thoughtbot/factory_bot/blob/4-9-0-stabl
 factory\_bot\_rails provides Rails integration for [factory_bot][fb].
 
 Supported Rails versions are listed in [`Appraisals`](Appraisals). Supported
-Ruby versions are listed in [`.travis.yml`](.travis.yml).
+Ruby versions are listed in [`.github/workflows/build.yml`](.github/workflows/build.yml).
 
 ## Download
 
@@ -171,8 +171,6 @@ See [our other projects][community].
 We are [available for hire][hire].
 
 [fb]: https://github.com/thoughtbot/factory_bot
-[ci]: http://travis-ci.org/thoughtbot/factory_bot_rails?branch=master
-[ci-image]: https://secure.travis-ci.org/thoughtbot/factory_bot_rails.svg
 [grade]: https://codeclimate.com/github/thoughtbot/factory_bot_rails
 [grade-image]: https://codeclimate.com/github/thoughtbot/factory_bot_rails.svg
 [community]: https://thoughtbot.com/community?utm_source=github
