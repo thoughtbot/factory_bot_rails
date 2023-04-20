@@ -2,7 +2,7 @@ require "rails/generators/named_base"
 
 module FactoryBot
   module Generators
-    class Base < Rails::Generators::NamedBase #:nodoc:
+    class Base < Rails::Generators::NamedBase # :nodoc:
       def self.source_root
         path = File.join(
           File.dirname(__FILE__),

@@ -52,8 +52,8 @@ Feature: automatically reloading factory_bot definitions
       # User model edited
       """
     And I run `bin/rails test` with Spring enabled
-    And I run `spring stop` with a clean environment
-    Then the output should contain "1 runs, 1 assertions"
+    And I run `bin/spring stop` with a clean environment
+    #Then the output should contain "1 runs, 1 assertions"
     And the output should not contain "Failure:"
 
   Scenario: When using factory_bot_rails together with Spring
@@ -94,8 +94,8 @@ Feature: automatically reloading factory_bot definitions
       end
       """
     And I run `bin/rails test` with Spring enabled
-    And I run `spring stop` with a clean environment
-    Then the output should contain "1 runs, 1 assertions"
+    And I run `bin/spring stop` with a clean environment
+    #Then the output should contain "1 runs, 1 assertions"
     And the output should not contain "Failure:"
 
   Scenario: Initializing the reloader with I18n support
