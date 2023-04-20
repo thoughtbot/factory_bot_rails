@@ -1,7 +1,7 @@
 module FactoryBotRails
   module Generators
     class NullGenerator
-      def initialize(generators)
+      def initialize(*)
       end
 
       def run
