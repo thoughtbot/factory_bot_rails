@@ -4,9 +4,9 @@ Gem::Specification.new do |s|
   s.authors = ["Joe Ferris"]
   s.email = "jferris@thoughtbot.com"
   s.homepage = "https://github.com/thoughtbot/factory_bot_rails"
-  s.summary = "factory_bot_rails provides integration between "\
+  s.summary = "factory_bot_rails provides integration between " \
                   "factory_bot and rails 5.0 or newer"
-  s.description = "factory_bot_rails provides integration between "\
+  s.description = "factory_bot_rails provides integration between " \
                   "factory_bot and rails 5.0 or newer"
 
   s.files = Dir["lib/**/*"] + %w[CONTRIBUTING.md LICENSE NEWS.md README.md]
