@@ -77,3 +77,16 @@ Feature:
       """
       Custom factory definition
       """
+
+  Scenario: The factory_bot_rails generator can be disabled
+    When I append to "config/application.rb" with:
+      """
+      Rails.application.configure do
+        config.generators do |g|
+          g.factory_bot false
+        end
+      end
+      """
+    And I run `bundle exec rails generate model User name:string age:integer` with a clean environment
+    Then the output should not contain "test/factories/users.rb"
+    And the output should contain "test/fixtures/users.yml"
