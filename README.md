@@ -1,3 +1,8 @@
+⚠️ **Warning:** You are viewing this file on the `master` branch, which is no
+longer used and does not receive any updates. Please view [this file on the
+`main` branch](https://github.com/thoughtbot/factory_bot_rails/tree/main#readme)
+for up-to-date information.
+
 # factory_bot_rails [![Build Status][ci-image]][ci] [![Code Climate][grade-image]][grade] [![Gem Version][version-image]][version]
 
 [factory_bot][fb] is a fixtures replacement with a straightforward definition
