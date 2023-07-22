@@ -1,3 +1,8 @@
+⚠️ **Warning:** You are viewing this file on the `master` branch, which is no
+longer used and does not receive any updates. Please view [this file on the
+`main` branch](https://github.com/thoughtbot/factory_bot_rails/blob/main/NEWS.md)
+for up-to-date information.
+
 factory\_bot\_rails versioning is synced with factory\_bot releases. For this reason
 there might not be any notable changes in new versions of this project.
 

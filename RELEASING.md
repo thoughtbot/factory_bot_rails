@@ -1,3 +1,8 @@
+⚠️ **Warning:** You are viewing this file on the `master` branch, which is no
+longer used and does not receive any updates. Please view [this file on the
+`main` branch](https://github.com/thoughtbot/factory_bot_rails/blob/main/RELEASING.md)
+for up-to-date information.
+
 # Releasing
 
 1. Update the version in the gemspec (and the factory\_bot version, if necessary)
