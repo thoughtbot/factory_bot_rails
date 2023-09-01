@@ -7,7 +7,7 @@ Feature:
     And I add "factory_bot_rails" from this project as a dependency
 
   Scenario: Using Factory Bot and Factory Bot Rails with Test Unit generates a factory file and does not generate a fixture file
-    And I run `bundle install` with a clean environment
+    And I run `bundle install --verbose` with a clean environment
     And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should exist:
       | test/factories/users.rb |
@@ -23,7 +23,7 @@ Feature:
         g.fixture_replacement :factory_bot
       end
       """
-    And I run `bundle install` with a clean environment
+    And I run `bundle install --verbose` with a clean environment
     Then the output should contain "rspec-rails"
     And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should exist:
@@ -40,7 +40,7 @@ Feature:
         g.fixture_replacement :factory_bot, suffix: 'factory'
       end
       """
-    And I run `bundle install` with a clean environment
+    And I run `bundle install --verbose` with a clean environment
     Then the output should contain "rspec-rails"
     And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should exist:
@@ -51,7 +51,7 @@ Feature:
   Scenario: Using Factory Bot and Factory Bot Rails does not override a manually-configured factories directory using RSpec
     When I add "rspec-rails" as a dependency
     And I configure the factories directory as "custom/dir"
-    And I run `bundle install` with a clean environment
+    And I run `bundle install --verbose` with a clean environment
     Then the output should contain "rspec-rails"
     And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should not exist:
@@ -62,7 +62,7 @@ Feature:
 
   Scenario: Using Factory Bot and Factory Bot Rails does not override a manually-configured factories directory using Test::Unit
     When I configure the factories directory as "custom/dir"
-    And I run `bundle install` with a clean environment
+    And I run `bundle install --verbose` with a clean environment
     And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should not exist:
       | test/factories/users.rb |
@@ -71,7 +71,7 @@ Feature:
       | custom/dir/users.rb |
 
   Scenario: Using Factory Bot Rails with MiniTest should generate a factory file
-    When I run `bundle install` with a clean environment
+    When I run `bundle install --verbose` with a clean environment
     And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should exist:
       | test/factories/users.rb |
@@ -80,7 +80,7 @@ Feature:
 
   Scenario: Using Factory Bot Rails with MiniTest and a custom directory should generate a factory file
     When I configure the factories directory as "custom/dir"
-    And I run `bundle install` with a clean environment
+    And I run `bundle install --verbose` with a clean environment
     And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should exist:
       | custom/dir/users.rb |
@@ -94,7 +94,7 @@ Feature:
         g.factory_bot false
       end
       """
-    And I run `bundle install` with a clean environment
+    And I run `bundle install --verbose` with a clean environment
     And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should not exist:
       | test/factories/users.rb |
@@ -108,7 +108,7 @@ Feature:
         g.factory_bot suffix: 'suffix'
       end
       """
-    And I run `bundle install` with a clean environment
+    And I run `bundle install --verbose` with a clean environment
     And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should exist:
       | spec/factories/users_suffix.rb |
@@ -123,7 +123,7 @@ Feature:
         g.factory_bot filename_proc: Proc.new { |tb| "prefix_#{tb.singularize}_suffix" }
       end
       """
-    And I run `bundle install` with a clean environment
+    And I run `bundle install --verbose` with a clean environment
     And I run `bundle exec rails generate model User name:string` with a clean environment
     Then the following files should exist:
       | spec/factories/prefix_user_suffix.rb |
