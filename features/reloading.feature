@@ -123,7 +123,7 @@ Feature: automatically reloading factory_bot definitions
         require 'test_helper'
 
         class UserTest < ActiveSupport::TestCase
-          test "eser factory" do
+          test "user factory" do
             user = FactoryBot.build(:user)
 
             assert_equal "translation_value", User::TRANSLATION
