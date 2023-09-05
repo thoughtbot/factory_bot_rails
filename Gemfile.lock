@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     factory_bot_rails (6.2.0)
-      factory_bot (~> 6.2.0)
+      factory_bot (~> 6.3.0)
       railties (>= 5.0.0)
 
 GEM
@@ -21,6 +21,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    activemodel (7.0.4.3)
+      activesupport (= 7.0.4.3)
+    activerecord (7.0.4.3)
+      activemodel (= 7.0.4.3)
+      activesupport (= 7.0.4.3)
     activesupport (7.0.4.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
@@ -69,7 +74,7 @@ GEM
     cucumber-tag-expressions (4.1.0)
     diff-lcs (1.5.0)
     erubi (1.12.0)
-    factory_bot (6.2.1)
+    factory_bot (6.3.0)
       activesupport (>= 5.0.0)
     ffi (1.15.5)
     ffi (1.15.5-java)
@@ -150,6 +155,8 @@ GEM
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.13.0)
+    sqlite3 (1.6.2)
+      mini_portile2 (~> 2.8.0)
     standard (1.27.0)
       language_server-protocol (~> 3.17.0.2)
       rubocop (~> 1.50.2)
@@ -167,12 +174,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord (>= 5.0.0)
   appraisal
   aruba
   cucumber
   factory_bot_rails!
   rake
   rspec-rails
+  sqlite3
   standard
 
 BUNDLED WITH
