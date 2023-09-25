@@ -4,6 +4,7 @@ ENV["RAILS_ENV"] = "test"
 
 require "factory_bot_rails"
 require "fake_app"
+require "rspec/rails"
 
 Dir["spec/support/**/*.rb"].each { |f| require File.expand_path(f) }
 
