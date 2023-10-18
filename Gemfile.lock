@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     factory_bot_rails (6.2.0)
-      factory_bot (~> 6.3.0)
+      factory_bot (~> 6.3)
       railties (>= 5.0.0)
 
 GEM
