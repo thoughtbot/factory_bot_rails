@@ -36,7 +36,7 @@ end
 ```
 
 You may want to configure your test suite to include factory\_bot methods; see
-[configuration](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md#configure-your-test-suite).
+[configuration](https://github.com/thoughtbot/factory_bot/blob/main/GETTING_STARTED.md#configure-your-test-suite).
 
 ### Automatic Factory Definition Loading
 
@@ -150,7 +150,7 @@ Factory\_bot\_rails will add a custom generator:
 rails generate factory_bot:model NAME [field:type field:type] [options]
 ```
 
-[default factory template]: https://github.com/thoughtbot/factory_bot_rails/tree/master/lib/generators/factory_bot/model/templates/factories.erb
+[default factory template]: https://github.com/thoughtbot/factory_bot_rails/tree/main/lib/generators/factory_bot/model/templates/factories.erb
 
 ### Active Record Configuration
 
