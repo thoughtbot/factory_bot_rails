@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        rails: ["7.0", "6.1"]
+        rails: ["7.1", "7.0", "6.1"]
         ruby: ["3.2", "3.1"]
         include:
           - rails: "6.1"
