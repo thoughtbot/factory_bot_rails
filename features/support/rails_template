@@ -3,3 +3,11 @@ if Rails.gem_version < Gem::Version.new('6')
 end
 
 gsub_file "Gemfile", /^ gem 'spring'$/, ' gem "spring", "!= 2.1.1"'
+
+if Rails.gem_version >= Gem::Version.new('7.1')
+  append_to_file File.join("config", "application.rb"), <<~RUBY
+    class TestApp::Application
+      config.autoload_lib(ignore: %w(some_railtie))
+    end
+  RUBY
+end
