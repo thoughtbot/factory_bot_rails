@@ -10,4 +10,6 @@ if Rails.gem_version >= Gem::Version.new('7.1')
       config.autoload_lib(ignore: %w(some_railtie))
     end
   RUBY
+
+  gsub_file "config/routes.rb",  /^  get/, '  # get'
 end
