@@ -3,6 +3,25 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
+## 6.3.0 (November 17, 2023)
+
+* Changed: reject sequence definitions for ActiveRecord primary keys (Sean
+  Doyle).
+* Changed: factory\_bot dependency to ~> 6.4 (Mike Burns).
+* Changed: upgrade dependencies (Daniel Colson).
+* Add: `projections.json` for Rails.vim (Caleb Hearth).
+* Docs: fix broken link (Edu Depetris).
+* Docs: mention Rails generator in docs (Edu Depetris).
+* Docs: fix typo (Yudai Takada).
+* Internal: skip Spring version 2.1.1 due to a bug in that release (Christina
+  Entcheva, Daniel Colson).
+* Internal: test against Rails 6.1 (Antonis Berkakis).
+* Internal: test against Ruby 3 (Daniel Colson).
+* Internal: fewer warnings in Cucumber tests (Daniel Colson).
+* Internal: use GitHub Actions for CI (Mathieu Jobin).
+* Internal: a whole bunch of cleanup (Daniel Colson).
+* Internal: fix CI due to a Bundler output change (Mike Burns).
+
 ## 6.2.0 (May 7, 2021)
 
 * Changed: factory\_bot dependency to ~> 6.2.0
