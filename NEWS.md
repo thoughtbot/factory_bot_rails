@@ -3,6 +3,10 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
+## 6.4.0 (November 17, 2023)
+
+* Releasing this for consistency with the factory\_bot dependency.
+
 ## 6.3.0 (November 17, 2023)
 
 * Changed: reject sequence definitions for ActiveRecord primary keys (Sean
