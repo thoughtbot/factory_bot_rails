@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
                   "factory_bot and rails 5.0 or newer"
 
   s.files = Dir["lib/**/*"] + %w[CONTRIBUTING.md LICENSE NEWS.md README.md]
+  s.metadata["changelog_uri"] = "https://github.com/thoughtbot/factory_bot_rails/blob/main/NEWS.md"
   s.require_paths = ["lib"]
   s.executables = []
   s.license = "MIT"
