@@ -21,7 +21,7 @@ module FactoryBotRails
       FactoryBot.definition_file_paths = definition_file_paths
     end
 
-    ActiveSupport.on_load :active_record do
+    ActiveSupport.on_load :after_initialize do
       config = Rails.configuration.factory_bot
 
       if config.reject_primary_key_attributes
