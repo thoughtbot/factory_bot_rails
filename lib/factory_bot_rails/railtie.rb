@@ -21,13 +21,14 @@ module FactoryBotRails
       FactoryBot.definition_file_paths = definition_file_paths
     end
 
-    ActiveSupport.on_load :active_record do
-      config = Rails.configuration.factory_bot
+    initializer "factory_bot.active_record" do
+      ActiveSupport.on_load(:active_record) do
+        fb_config = Rails.application.config.factory_bot
 
-      if config.reject_primary_key_attributes
-        require "factory_bot_rails/factory_validator/active_record_validator"
-
-        config.validator.add_validator FactoryValidator::ActiveRecordValidator.new
+        if fb_config.reject_primary_key_attributes
+          require "factory_bot_rails/factory_validator/active_record_validator"
+          fb_config.validator.add_validator FactoryBotRails::FactoryValidator::ActiveRecordValidator.new
+        end
       end
     end
 
