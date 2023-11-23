@@ -3,6 +3,13 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
+## 6.4.2 (November 23, 2023)
+* Fixed: Fix Rails 7.1.2 + monkey-patched ActiveRecord compatibility (Adif
+  Sgaid, Benoit Tigeot)
+* Internal: Test against Rails 7.1 (y-yagi)
+* Internal: Fix links to old files after renaming the main branch to `main`
+  (y-yagi)
+
 ## 6.4.0 (November 17, 2023)
 
 * Releasing this for consistency with the factory\_bot dependency.
