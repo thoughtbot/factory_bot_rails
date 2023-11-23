@@ -8,10 +8,12 @@ require "rails"
 
 module FactoryBotRails
   class Railtie < Rails::Railtie
-    config.factory_bot = ActiveSupport::OrderedOptions.new
-    config.factory_bot.definition_file_paths = FactoryBot.definition_file_paths
-    config.factory_bot.reject_primary_key_attributes = true
-    config.factory_bot.validator = FactoryBotRails::FactoryValidator.new
+    initializer "factory_bot.configuration" do
+      config.factory_bot = ActiveSupport::OrderedOptions.new
+      config.factory_bot.definition_file_paths = FactoryBot.definition_file_paths
+      config.factory_bot.reject_primary_key_attributes = true
+      config.factory_bot.validator = FactoryBotRails::FactoryValidator.new
+    end
 
     initializer "factory_bot.set_fixture_replacement" do
       Generator.new(config).run
