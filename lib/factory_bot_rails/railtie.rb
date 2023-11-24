@@ -5,6 +5,7 @@ require "factory_bot_rails/generator"
 require "factory_bot_rails/reloader"
 require "factory_bot_rails/factory_validator"
 require "rails"
+require "active_support/testing/file_fixtures"
 
 module FactoryBotRails
   class Railtie < Rails::Railtie
@@ -29,6 +30,22 @@ module FactoryBotRails
           require "factory_bot_rails/factory_validator/active_record_validator"
 
           config.validator.add_validator FactoryValidator::ActiveRecordValidator.new
+        end
+      end
+    end
+
+    config.after_initialize do
+      FactoryBot::SyntaxRunner.include ActiveSupport::Testing::FileFixtures
+
+      ActiveSupport.on_load :active_support_test_case do
+        FactoryBot::SyntaxRunner.file_fixture_path = file_fixture_path
+      end
+
+      if defined?(RSpec)
+        RSpec.configure do |config|
+          if config.respond_to?(:file_fixture_path)
+            FactoryBot::SyntaxRunner.file_fixture_path = config.file_fixture_path
+          end
         end
       end
     end
