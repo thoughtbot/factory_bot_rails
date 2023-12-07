@@ -161,8 +161,8 @@ column named `id` as its primary key.
 For example, defining an `id` attribute with `add_attribute(:id)`, `id { ... }`,
 or `sequence(:id)` will raise a `FactoryBot::AttributeDefinitionError`.
 
-You can disable this behavior by adding the following to `config/application.rb`
-or the appropriate environment configuration in `config/environments`:
+You can disable this behavior by adding the following to the appropriate environment configuration in `config/environments`
+e.g. `config/environments/test.rb`:
 
 ```ruby
 config.factory_bot.reject_primary_key_attributes = false
