@@ -152,22 +152,6 @@ rails generate factory_bot:model NAME [field:type field:type] [options]
 
 [default factory template]: https://github.com/thoughtbot/factory_bot_rails/tree/main/lib/generators/factory_bot/model/templates/factories.erb
 
-### Active Record Configuration
-
-By default, FactoryBot will refuse to generate Active Record primary key
-columns. Without additional configuration, an Active Record model treats a
-column named `id` as its primary key.
-
-For example, defining an `id` attribute with `add_attribute(:id)`, `id { ... }`,
-or `sequence(:id)` will raise a `FactoryBot::AttributeDefinitionError`.
-
-You can disable this behavior by adding the following to the appropriate environment configuration in `config/environments`
-e.g. `config/environments/test.rb`:
-
-```ruby
-config.factory_bot.reject_primary_key_attributes = false
-```
-
 ## Contributing
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md).
