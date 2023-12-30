@@ -3,6 +3,17 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
+## 6.4.3 (December 29, 2023)
+
+* Changed: allow sequence definitions for ActiveRecord primary keys (Mike
+  Burns).
+* Changed: Support Ruby 3.0+, Rails 6.1+ (Mike Burns)
+* Documentation improvements (obregonia1).
+* Internal: GitHub Actions improvements (Lorenzo Zabot, ydah).
+* Internal: RubyGems points to changelog (Tilo Sloboda).
+* Internal: Bump standard, rake, activerecord, appraisal, rspec-rails (Mike
+  Burns).
+
 ## 6.4.2 (November 23, 2023)
 * Fixed: Fix Rails 7.1.2 + monkey-patched ActiveRecord compatibility (Adif
   Sgaid, Benoit Tigeot)
