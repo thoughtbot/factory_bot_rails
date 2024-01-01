@@ -89,7 +89,7 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
-    factory_bot (6.4.0)
+    factory_bot (6.4.5)
       activesupport (>= 5.0.0)
     ffi (1.15.5)
     ffi (1.15.5-java)
