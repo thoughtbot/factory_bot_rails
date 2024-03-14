@@ -161,7 +161,7 @@ community](https://github.com/thoughtbot/factory_bot_rails/graphs/contributors).
 
 ## License
 
-factory_bot_rails is Copyright © 2008-2020 Joe Ferris and thoughtbot. It is free
+factory_bot_rails is Copyright © 2008-2024 Joe Ferris and thoughtbot. It is free
 software, and may be redistributed under the terms specified in the
 [LICENSE](LICENSE) file.
 
