@@ -165,16 +165,8 @@ factory_bot_rails is Copyright © 2008-2020 Joe Ferris and thoughtbot. It is fre
 software, and may be redistributed under the terms specified in the
 [LICENSE](LICENSE) file.
 
-## About thoughtbot
-
-![thoughtbot](https://thoughtbot.com/brand_assets/93:44.svg)
-
-factory_bot_rails is maintained and funded by thoughtbot, inc.
-The names and logos for thoughtbot are trademarks of thoughtbot, inc.
-
-We are passionate about open source software.
-See [our other projects][community].
-We are [available for hire][hire].
+<!-- START /templates/footer.md -->
+<!-- END /templates/footer.md -->
 
 [fb]: https://github.com/thoughtbot/factory_bot
 [grade]: https://codeclimate.com/github/thoughtbot/factory_bot_rails
