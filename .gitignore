@@ -1,11 +1,12 @@
 *.swp
 .bundle
-gemfiles/*.lock
+.idx
+.rubocop-https*
 coverage
+factory_bot_rails-*.gem
 factory_girl_rails-*.gem
+gemfiles/*.lock
 pkg
 rdoc
 test.db
 tmp
-.rubocop-https*
-factory_bot_rails-*.gem
