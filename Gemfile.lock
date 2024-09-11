@@ -88,7 +88,7 @@ GEM
     diff-lcs (1.5.1)
     drb (2.2.1)
     erubi (1.13.0)
-    factory_bot (6.4.0)
+    factory_bot (6.5.0)
       activesupport (>= 5.0.0)
     ffi (1.15.5)
     ffi (1.15.5-java)
