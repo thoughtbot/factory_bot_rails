@@ -3,6 +3,9 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
+## 6.5.0
+Supporting Rails 7.2.
+
 ## 6.4.3 (December 29, 2023)
 
 * Changed: allow sequence definitions for ActiveRecord primary keys (Mike
