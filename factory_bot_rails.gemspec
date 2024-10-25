@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "factory_bot_rails"
-  s.version = "6.4.3"
+  s.version = "6.4.4"
   s.authors = ["Joe Ferris"]
   s.email = "jferris@thoughtbot.com"
   s.homepage = "https://github.com/thoughtbot/factory_bot_rails"
@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.executables = []
   s.license = "MIT"
 
-  s.add_runtime_dependency("factory_bot", "~> 6.4")
+  s.add_runtime_dependency("factory_bot", "~> 6.5")
   s.add_runtime_dependency("railties", ">= 5.0.0")
 
   s.add_development_dependency("sqlite3")
