@@ -1,6 +1,9 @@
+$LOAD_PATH << File.expand_path("lib", __dir__)
+require "factory_bot_rails/version"
+
 Gem::Specification.new do |s|
   s.name = "factory_bot_rails"
-  s.version = "6.4.4"
+  s.version = FactoryBotRails::VERSION
   s.authors = ["Joe Ferris"]
   s.email = "jferris@thoughtbot.com"
   s.homepage = "https://github.com/thoughtbot/factory_bot_rails"
