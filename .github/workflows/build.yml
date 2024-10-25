@@ -30,3 +30,16 @@ jobs:
         run: bundle install
       - name: Run test
         run: bundle exec rake
+
+  standard:
+    name: Run standard
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.1"
+      - name: Setup project
+        run: bundle install
+      - name: Run test
+        run: bundle exec rake standard
