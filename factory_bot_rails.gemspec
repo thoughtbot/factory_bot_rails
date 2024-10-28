@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.files = Dir["lib/**/*"] + %w[CONTRIBUTING.md LICENSE NEWS.md README.md]
   s.metadata["changelog_uri"] = "https://github.com/thoughtbot/factory_bot_rails/blob/main/NEWS.md"
   s.require_paths = ["lib"]
+  s.required_ruby_version = Gem::Requirement.new(">= 3.0.0")
   s.executables = []
   s.license = "MIT"
 
