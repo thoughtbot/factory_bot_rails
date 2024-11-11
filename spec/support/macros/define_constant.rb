@@ -7,8 +7,8 @@ module DefineConstantMacros
     const
   end
 
-  def define_model(name, columns = {}, &block)
-    model = define_class(name, ActiveRecord::Base, &block)
+  def define_model(name, columns = {}, &)
+    model = define_class(name, ActiveRecord::Base, &)
     create_table(model.table_name) do |table|
       columns.each do |column_name, type|
         table.column column_name, type
@@ -17,12 +17,12 @@ module DefineConstantMacros
     model
   end
 
-  def create_table(table_name, &block)
+  def create_table(table_name, &)
     connection = ActiveRecord::Base.connection
 
     begin
       connection.execute("DROP TABLE IF EXISTS #{table_name}")
-      connection.create_table(table_name, &block)
+      connection.create_table(table_name, &)
       created_tables << table_name
       connection
     rescue Exception => e # rubocop:disable Lint/RescueException
