@@ -77,6 +77,17 @@ class MyEngine < ::Rails::Engine
 end
 ```
 
+If your application has a large number of factories, you may want to enable
+lazy loading to speed up boot time:
+
+```rb
+config.factory_bot.lazy_load_definitions = true
+```
+
+With lazy loading of definitions enabled, `FactoryBot.factories` will appear
+empty after booting the application. All factory definitions will be loaded
+when any factory is first accessed by name.
+
 You can also disable automatic factory definition loading entirely by
 using an empty array:
 
