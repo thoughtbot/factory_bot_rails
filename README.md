@@ -84,6 +84,19 @@ using an empty array:
 config.factory_bot.definition_file_paths = []
 ```
 
+### File Fixture Support
+
+Factories have access to [ActiveSupport::Testing::FileFixtures#file_fixture][]
+helper to read files from tests.
+
+To disable file fixture support, set `file_fixture_support = false`:
+
+```rb
+config.factory_bot.file_fixture_support = false
+```
+
+[ActiveSupport::Testing::FileFixtures#file_fixture]: https://api.rubyonrails.org/classes/ActiveSupport/Testing/FileFixtures.html#method-i-file_fixture
+
 ### Generators
 
 Including factory\_bot\_rails in the development group of your Gemfile
