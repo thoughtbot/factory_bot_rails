@@ -3,6 +3,8 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
+* Add: First-party support for [`file_fixture`](https://api.rubyonrails.org/classes/ActiveSupport/Testing/FileFixtures.html#method-i-file_fixture) within factory blocks
+
 ## 6.4.4 (October 25, 2024)
 
 * Changed: Bump Factory Bot 6.5.0
