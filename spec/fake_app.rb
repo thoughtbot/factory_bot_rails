@@ -24,6 +24,6 @@ module Dummy
   end
 end
 
-Rails.logger = Logger.new("/dev/null")
+Rails.logger = Logger.new(File::NULL)
 
 Rails.application.initialize!
