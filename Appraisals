@@ -6,6 +6,7 @@ appraise "rails6.1" do
   gem "spring", "!= 2.1.1"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "sqlite3", "~> 1.4"
+  gem "concurrent-ruby", "< 1.3.5"
 end
 
 appraise "rails7.0" do
@@ -16,6 +17,7 @@ appraise "rails7.0" do
   gem "spring", "!= 2.1.1"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "sqlite3", "~> 1.4"
+  gem "concurrent-ruby", "< 1.3.5"
 end
 
 appraise "rails7.1" do
