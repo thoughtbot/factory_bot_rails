@@ -3,12 +3,10 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
-## 6.4.5 (December 6, 2024)
-
-* Added: Support for Rails 8.0
+* Add: First-party support for [`file_fixture`](https://api.rubyonrails.org/classes/ActiveSupport/Testing/FileFixtures.html#method-i-file_fixture) within factory blocks
+* Internal: Add Rails 8.0 to the test matrix
 
 ## 6.4.4 (October 25, 2024)
-
 * Changed: Bump Factory Bot 6.5.0
 
 ## 6.4.3 (December 29, 2023)

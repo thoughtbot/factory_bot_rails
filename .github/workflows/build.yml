@@ -28,8 +28,10 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
       - name: Setup project
         run: bundle install
-      - name: Run test
-        run: bundle exec rake
+      - name: RSpec specs
+        run: bundle exec rake spec
+      - name: Minitest tests
+        run: bundle exec rake test
 
   standard:
     name: Run standard
@@ -38,7 +40,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.1"
+          ruby-version: "3.3"
       - name: Setup project
         run: bundle install
       - name: Run test
