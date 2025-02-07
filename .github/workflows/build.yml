@@ -10,11 +10,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        rails: ["7.1", "7.0", "6.1"]
-        ruby: ["3.3", "3.2", "3.1"]
+        rails: ["8.0", "7.2", "7.1", "7.0", "6.1"]
+        ruby: ["3.4", "3.3", "3.2", "3.1"]
         exclude:
+          # Rails >= 8.0 requires Ruby 3.2
           - ruby: "3.1"
-            rails: "7.1"
+            rails: "8.0"
+
 
     runs-on: 'ubuntu-latest'
 
@@ -41,7 +43,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3"
+          ruby-version: "3.4"
       - name: Setup project
         run: bundle install
       - name: Run test
