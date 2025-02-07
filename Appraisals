@@ -1,4 +1,5 @@
 appraise "rails6.1" do
+  gem "bigdecimal"
   gem "byebug"
   gem "concurrent-ruby", "< 1.3.5"
   gem "drb"
@@ -11,6 +12,7 @@ appraise "rails6.1" do
 end
 
 appraise "rails7.0" do
+  gem "bigdecimal"
   gem "byebug"
   gem "concurrent-ruby", "< 1.3.5"
   gem "drb"
