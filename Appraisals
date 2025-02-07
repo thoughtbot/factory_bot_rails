@@ -39,3 +39,18 @@ appraise "rails7.2" do
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "sqlite3", "~> 1.4"
 end
+
+appraise "rails8.0" do
+  gem "brakeman"
+  gem "byebug"
+  gem "kamal"
+  gem "listen", "~> 3.2"
+  gem "puma", "~> 6.0"
+  gem "rails", "~> 8.0.0"
+  gem "rubocop-rails-omakase"
+  gem "solid_queue"
+  gem "spring", "!= 2.1.1"
+  gem "spring-watcher-listen", "~> 2.0.0"
+  gem "sqlite3", ">= 2.1"
+  gem "thruster"
+end
