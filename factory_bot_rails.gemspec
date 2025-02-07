@@ -8,9 +8,9 @@ Gem::Specification.new do |s|
   s.email = "jferris@thoughtbot.com"
   s.homepage = "https://github.com/thoughtbot/factory_bot_rails"
   s.summary = "factory_bot_rails provides integration between " \
-                  "factory_bot and rails 5.0 or newer"
+                  "factory_bot and Rails 6.1 or newer"
   s.description = "factory_bot_rails provides integration between " \
-                  "factory_bot and rails 5.0 or newer"
+                  "factory_bot and Rails 6.1 or newer"
 
   s.files = Dir["lib/**/*"] + %w[CONTRIBUTING.md LICENSE NEWS.md README.md]
   s.metadata["changelog_uri"] = "https://github.com/thoughtbot/factory_bot_rails/blob/main/NEWS.md"
@@ -20,10 +20,10 @@ Gem::Specification.new do |s|
   s.license = "MIT"
 
   s.add_runtime_dependency("factory_bot", "~> 6.5")
-  s.add_runtime_dependency("railties", ">= 5.0.0")
+  s.add_runtime_dependency("railties", ">= 6.1.0")
 
-  s.add_development_dependency("activerecord", ">= 5.0.0")
-  s.add_development_dependency("activestorage", ">= 5.0.0")
+  s.add_development_dependency("activerecord", ">= 6.1.0")
+  s.add_development_dependency("activestorage", ">= 6.1.0")
   s.add_development_dependency("mutex_m")
   s.add_development_dependency("sqlite3")
 end
