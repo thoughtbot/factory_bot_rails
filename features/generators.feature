@@ -90,3 +90,19 @@ Feature:
     And I run `bundle exec rails generate model User name:string age:integer` with a clean environment
     Then the output should not contain "test/factories/users.rb"
     And the output should contain "test/fixtures/users.yml"
+
+  Scenario: The factory_bot_rails authentication generator, coupled with rspec-rails, creates a user factory file
+    When I add "rspec-rails" with options `github: "rspec/rspec-rails", branch: "main"` as a dependency
+    And I run `bundle install --verbose` with a clean environment
+    Then the output should contain "rspec-rails"
+    And I run `bundle exec rails generate authentication` with a clean environment
+    Then the output should contain "test/factories/users.rb"
+    And the file "test/factories/users.rb" should contain exactly:
+      """
+      FactoryBot.define do
+        factory :user do
+          email_address { "john@example.com" }
+          password_digest { "MyString" }
+        end
+      end
+      """
