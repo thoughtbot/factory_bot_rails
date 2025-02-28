@@ -35,6 +35,8 @@ jobs:
         run: bundle exec rake spec
       - name: Minitest tests
         run: bundle exec rake test
+      - name: Cucumber tests
+        run: bundle exec rake cucumber
 
   standard:
     name: Run standard
