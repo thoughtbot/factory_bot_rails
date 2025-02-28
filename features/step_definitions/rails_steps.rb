@@ -28,6 +28,10 @@ When(/^I add "([^"]+)" as a dependency$/) do |gem_name|
   append_to_file("Gemfile", %(gem "#{gem_name}"\n))
 end
 
+When(/^I add "([^"]+)" with options `(.+)` as a dependency$/) do |gem_name, options|
+  append_to_file("Gemfile", %(gem "#{gem_name}", #{options}\n))
+end
+
 When(/^I print out "([^"]*)"$/) do |path|
   in_current_dir do
     File.open(path, "r") do |f|
