@@ -40,7 +40,7 @@ module FactoryBotRails
 
     config.after_initialize do |app|
       FactoryBot.find_definitions
-      Reloader.new(app).run
+      Reloader.new(app).run if !app.config.cache_classes && app.config.reload_classes_only_on_change
       app.config.factory_bot.validator.run
     end
 
