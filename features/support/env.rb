@@ -7,6 +7,10 @@ Aruba.configure do |config|
   config.exit_timeout = Integer ENV.fetch("ARUBA_TIMEOUT", 120)
 end
 
+Before do
+  setup_aruba
+end
+
 if RUBY_PLATFORM == "java"
   Aruba.configure do |config|
     config.before_cmd do

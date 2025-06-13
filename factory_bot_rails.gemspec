@@ -26,4 +26,10 @@ Gem::Specification.new do |s|
   s.add_development_dependency("activestorage", ">= 6.1.0")
   s.add_development_dependency("mutex_m")
   s.add_development_dependency("sqlite3")
+  s.add_development_dependency("appraisal")
+  s.add_development_dependency("aruba")
+  s.add_development_dependency("cucumber")
+  s.add_development_dependency("rake")
+  s.add_development_dependency("rspec-rails")
+  s.add_development_dependency("standard")
 end
