@@ -2,7 +2,9 @@
 
 1. Update the version in the gemspec (and the factory\_bot version, if necessary)
    and run `bundle install`
-2. Update `NEWS.md` to reflect the changes since last release.
+1. Update `NEWS.md` to reflect the changes since last release.
+   A useful GitHub URL to compare the changes is:
+   https://github.com/thoughtbot/factory_bot_rails/compare/vLAST_VERSION...main
 3. Commit changes.
    There shouldn't be code changes,
    and thus CI doesn't need to run,

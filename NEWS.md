@@ -3,10 +3,18 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
-* Add: First-party support for [`file_fixture`](https://api.rubyonrails.org/classes/ActiveSupport/Testing/FileFixtures.html#method-i-file_fixture) within factory blocks
-* Internal: Add Rails 8.0 to the test matrix
+## 6.5.0 (June 13, 2025)
+
+* Add: First-party support for [`file_fixture`](https://api.rubyonrails.org/classes/ActiveSupport/Testing/FileFixtures.html#method-i-file_fixture) within factory blocks (Sean Doyle)
+* Changed: Drop support for Ruby 3.0 (Fernando Perales)
+* Changed: Add required Ruby version to the gemspec (Christoph Lipautz)
+* Internal: Add Rails 7.2 to the test matrix (Raj Kumar)
+* Internal: Add Rails 8.0 to the test matrix (James O'Neill)
+* Internal: Run `standardrb` on CI runs (Christoph Lipautz)
+
 
 ## 6.4.4 (October 25, 2024)
+
 * Changed: Bump Factory Bot 6.5.0
 
 ## 6.4.3 (December 29, 2023)
