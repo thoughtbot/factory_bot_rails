@@ -1,3 +1,3 @@
 module FactoryBotRails
-  VERSION = "6.4.4".freeze
+  VERSION = "6.5.0".freeze
 end
