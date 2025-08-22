@@ -11,6 +11,17 @@ Before do
   setup_aruba
 end
 
+Before("@rails_8") do
+  rails_version = Gem::Version.new(
+    Bundler.load.specs.find { |spec| spec.name == 'rails' }&.version.to_s
+  )
+  required_version = Gem::Version.new('8.0.0')
+
+  if rails_version < required_version
+    skip_this_scenario("Requires Rails 8.0 or higher (current: #{rails_version})")
+  end
+end
+
 if RUBY_PLATFORM == "java"
   Aruba.configure do |config|
     config.before_cmd do

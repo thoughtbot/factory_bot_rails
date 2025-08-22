@@ -1,33 +1,22 @@
-# frozen_string_literal: true
-
 require "generators/factory_bot"
+require "generators/factory_bot/model/model_generator"
 require "factory_bot_rails"
-require "fileutils"
+
 
 module FactoryBot
   module Generators
-    class AuthenticationGenerator < Base
-      def create_users_factory
-        dir = factories_dir
-        FileUtils.mkdir_p(dir)
+    FixedAttribute = Struct.new(:name, :default)
 
-        target = File.join(dir, "users.rb")
-        if File.exist?(target)
-          say_status :skip, "users.rb already exists at #{target}", :yellow
-        else
-          template "users.rb", target
-          say_status :create, target, :green
-        end
-      end
+    class AuthenticationGenerator < ModelGenerator
+      self.source_paths << File.join(File.dirname(__FILE__), "../model/templates")
 
       private
 
-      def factories_dir
-        if Dir.exist?(Rails.root.join("spec"))
-          Rails.root.join("spec", "factories").to_s
-        else
-          Rails.root.join("test", "factories").to_s
-        end
+      def attributes
+        [
+          FixedAttribute.new(:email_address, "user@example.com"),
+          FixedAttribute.new(:password, "password")
+        ]
       end
     end
   end
