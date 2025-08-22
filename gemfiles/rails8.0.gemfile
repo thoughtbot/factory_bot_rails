@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 gem "appraisal"
 gem "aruba"
+gem "bcrypt", "~> 3.1.7"
 gem "brakeman"
 gem "byebug"
 gem "cucumber"
