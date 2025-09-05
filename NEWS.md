@@ -3,6 +3,12 @@ there might not be any notable changes in new versions of this project.
 
 # NEWS
 
+## 6.5.1 (September 5, 2025)
+
+* Add: Add AuthenticationGenerator for users factory creation (Rodrigo Toledo)
+* Changed: Update required_ruby_version to require >= Ruby 3.1 (y-yagi)
+* Internal: Fix Cucumber tests (Neil Carvalho)
+
 ## 6.5.0 (June 13, 2025)
 
 * Add: First-party support for [`file_fixture`](https://api.rubyonrails.org/classes/ActiveSupport/Testing/FileFixtures.html#method-i-file_fixture) within factory blocks (Sean Doyle)
