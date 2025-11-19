@@ -11,6 +11,7 @@ module FactoryBotRails
   class Railtie < Rails::Railtie
     config.factory_bot = ActiveSupport::OrderedOptions.new
     config.factory_bot.definition_file_paths = FactoryBot.definition_file_paths
+    config.factory_bot.lazy_load_definitions = false
     config.factory_bot.validator = FactoryBotRails::FactoryValidator.new
     config.factory_bot.file_fixture_support = true
 
@@ -39,7 +40,13 @@ module FactoryBotRails
     end
 
     config.after_initialize do |app|
-      FactoryBot.find_definitions
+      if app.config.factory_bot.lazy_load_definitions && !app.config.eager_load
+        require "factory_bot_rails/lazy_registry_find"
+        FactoryBot::Registry.prepend FactoryBotRails::LazyRegistryFind
+      else
+        FactoryBot.find_definitions
+      end
+
       Reloader.new(app).run
       app.config.factory_bot.validator.run
     end
