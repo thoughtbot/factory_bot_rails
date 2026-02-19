@@ -1,14 +1,10 @@
-# factory_bot_rails [![Code Climate][grade-image]][grade] [![Gem Version][version-image]][version]
+# factory_bot_rails [![Gem Version][version-image]][version]
 
 [factory_bot][fb] is a fixtures replacement with a straightforward definition
 syntax, support for multiple build strategies (saved instances, unsaved
 instances, attribute hashes, and stubbed objects), and support for multiple
 factories for the same class (`user`, `admin_user`, and so on), including factory
 inheritance.
-
-### Transitioning from factory\_girl\_rails?
-
-Check out the [guide](https://github.com/thoughtbot/factory_bot/blob/4-9-0-stable/UPGRADE_FROM_FACTORY_GIRL.md).
 
 ## Rails
 
@@ -196,8 +192,6 @@ We are [available for hire][hire].
 <!-- END /templates/footer.md -->
 
 [fb]: https://github.com/thoughtbot/factory_bot
-[grade]: https://codeclimate.com/github/thoughtbot/factory_bot_rails
-[grade-image]: https://codeclimate.com/github/thoughtbot/factory_bot_rails.svg
 [community]: https://thoughtbot.com/community?utm_source=github
 [hire]: https://thoughtbot.com/hire-us?utm_source=github
 [version-image]: https://badge.fury.io/rb/factory_bot_rails.svg
