@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["lib/**/*"] + %w[CONTRIBUTING.md LICENSE NEWS.md README.md]
   s.metadata = {
-    "changelog_uri" = "https://github.com/thoughtbot/factory_bot_rails/blob/main/NEWS.md",
+    "changelog_uri" => "https://github.com/thoughtbot/factory_bot_rails/blob/main/NEWS.md",
     "rubygems_mfa_required" => "true"
   }
   s.require_paths = ["lib"]
