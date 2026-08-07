@@ -2,20 +2,12 @@
 
 source "https://rubygems.org"
 
-gem "appraisal"
-gem "aruba"
 gem "byebug"
-gem "cucumber"
 gem "error_highlight"
-gem "listen", "~> 3.2"
+gem "minitest", "~> 5.27"
 gem "puma", "~> 6.0"
 gem "rails", "~> 7.1.0"
-gem "rake"
-gem "rspec-rails"
-gem "spring", "!= 2.1.1"
-gem "spring-watcher-listen", "~> 2.0.0"
+gem "rubocop-rails-omakase"
 gem "sqlite3", "~> 1.4"
-gem "standard"
-gem "minitest", "~> 5.27"
 
 gemspec name: "factory_bot_rails", path: "../"
