@@ -197,3 +197,36 @@ Feature: automatically load factory definitions
       """
     When I run `bundle exec rake test` with a clean environment
     Then the output should contain "2 assertions, 0 failures, 0 errors"
+
+  Scenario: use lazy loading of factory definitions
+    When I configure the factories as:
+      """
+      config.factory_bot.lazy_load_definitions = true
+      """
+    When I write to "test/factories.rb" with:
+      """
+      FactoryBot.define do
+        factory :user do
+          name { "Frank" }
+        end
+      end
+      """
+    When I write to "test/unit/user_test.rb" with:
+      """
+      require 'test_helper'
+
+      class UserTest < ActiveSupport::TestCase
+        test "use lazy loaded factory" do
+          assert FactoryBot.factories.none?
+          refute FactoryBot.factories.registered?(:user)
+
+          user = FactoryBot.build(:user)
+          assert_equal 'Frank', user.name
+
+          assert FactoryBot.factories.any?
+          assert FactoryBot.factories.registered?(:user)
+        end
+      end
+      """
+    When I run `bundle exec rake test` with a clean environment
+    Then the output should contain "5 assertions, 0 failures, 0 errors"
